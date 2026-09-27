@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Rêve Holiday Home — Kozhikode, Kerala</title>
+<link rel="icon" type="image/png" sizes="32x32" href="images/img-1db2603c0c.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/img-27572c3591.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/img-8ba2c2944e.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ivory:#FAF8F4; --beige:#F3EEE6; --stone:#E9E2D6; --sand:#EFE9DE;
+  --walnut:#5B4636; --walnut-deep:#43352A; --charcoal:#2E2A25;
+  --bronze:#A98E6F; --bronze-soft:#C2AC8F;
+  --text:#3A332C; --muted:#8A7D6D; --line:rgba(91,70,54,0.12);
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--ivory);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--bronze-soft);color:#fff}
+
+/* ── REVEALS (replay both directions) ── */
+.rv{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv-l{opacity:0;transform:translateX(-44px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv-l.in{opacity:1;transform:translateX(0)}
+.rv-r{opacity:0;transform:translateX(44px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv-r.in{opacity:1;transform:translateX(0)}
+.rv-sc{opacity:0;transform:scale(0.96);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+.rv-sc.in{opacity:1;transform:scale(1)}
+.stg>*{opacity:0;transform:translateY(26px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.stg.in>*{opacity:1;transform:translateY(0)}
+.stg.in>*:nth-child(1){transition-delay:.04s}.stg.in>*:nth-child(2){transition-delay:.12s}
+.stg.in>*:nth-child(3){transition-delay:.2s}.stg.in>*:nth-child(4){transition-delay:.28s}
+.stg.in>*:nth-child(5){transition-delay:.36s}.stg.in>*:nth-child(6){transition-delay:.44s}
+.stg.in>*:nth-child(7){transition-delay:.52s}.stg.in>*:nth-child(8){transition-delay:.6s}
+@media (prefers-reduced-motion:reduce){
+  .rv,.rv-l,.rv-r,.rv-sc,.stg>*{opacity:1!important;transform:none!important;transition:none!important}
+}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:24px 56px;background:transparent;backdrop-filter:none;border-bottom:1px solid transparent;transition:padding .45s var(--ease),background .5s var(--ease),backdrop-filter .5s,border-color .45s,box-shadow .45s}
+nav.sc{padding:12px 56px;background:rgba(250,248,244,0.85);backdrop-filter:blur(24px) saturate(1.4);border-bottom-color:var(--line);box-shadow:0 1px 24px rgba(46,42,37,0.05)}
+.nv-logo{display:flex;align-items:center;gap:13px;text-decoration:none;cursor:pointer}
+.nv-logo img{height:44px;width:44px;object-fit:contain;transition:height .45s var(--ease),width .45s var(--ease)}
+nav.sc .nv-logo img{height:36px;width:36px}
+.nv-name{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--charcoal);letter-spacing:.06em}
+.nv-links{display:flex;gap:34px;list-style:none}
+.nv-links a{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;position:relative;transition:color .3s;font-weight:400}
+.nv-links a::after{content:'';position:absolute;bottom:-5px;left:50%;width:0;height:1px;background:var(--bronze);transition:width .4s var(--ease),left .4s var(--ease)}
+.nv-links a:hover{color:var(--charcoal)}
+.nv-links a:hover::after{width:100%;left:0}
+.nv-cta{padding:11px 26px;background:var(--charcoal);color:var(--ivory);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:background .35s,transform .35s var(--ease);border-radius:2px}
+.nv-cta:hover{background:var(--walnut);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:-70px 0;background-size:cover;background-position:center 32%;will-change:transform}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(46,42,37,0.72) 0%,rgba(46,42,37,0.18) 50%,rgba(46,42,37,0.04) 100%)}
+.hero-inner{position:relative;z-index:2;padding:0 72px 96px;max-width:860px}
+.hero-tag{font-size:10.5px;letter-spacing:.4em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:22px;opacity:0;animation:fdUp 1.2s .35s var(--ease) forwards}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(50px,7vw,92px);font-weight:300;line-height:1;color:#fff;letter-spacing:-0.005em}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln span{display:block;transform:translateY(112%);animation:slUp 1.5s var(--ease) forwards}
+.hero h1 .ln:nth-child(1) span{animation-delay:.55s}
+.hero h1 .ln:nth-child(2) span{animation-delay:.72s;font-style:italic;color:#EDE3D3}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.62);font-weight:300;margin-top:26px;line-height:1.8;opacity:0;animation:fdUp 1.2s 1.1s var(--ease) forwards;letter-spacing:.01em}
+.hero-acts{display:flex;gap:14px;margin-top:42px;flex-wrap:wrap;opacity:0;animation:fdUp 1.2s 1.3s var(--ease) forwards}
+@keyframes fdUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slUp{to{transform:translateY(0)}}
+.btn{padding:16px 38px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;font-weight:400;transition:all .4s var(--ease);border-radius:2px;display:inline-block}
+.btn-fill{background:var(--ivory);color:var(--charcoal)}
+.btn-fill:hover{background:#fff;transform:translateY(-3px);box-shadow:0 18px 38px rgba(0,0,0,0.28)}
+.btn-ghost{border:1px solid rgba(255,255,255,0.42);color:#fff}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,0.08);transform:translateY(-3px)}
+.scroll-cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:11px;color:rgba(255,255,255,0.45);font-size:9px;letter-spacing:.3em;text-transform:uppercase;z-index:2;opacity:0;animation:fdUp 1s 1.9s forwards}
+.scroll-cue::after{content:'';width:1px;height:42px;background:linear-gradient(to bottom,rgba(255,255,255,0.6),transparent);animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%,100%{opacity:.3;transform:scaleY(.65);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+
+/* ── BASE SECTIONS ── */
+section{padding:120px 56px;position:relative}
+.wrap{max-width:1180px;margin:0 auto}
+.eyebrow{font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:var(--bronze);margin-bottom:16px;font-weight:400}
+.h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,54px);font-weight:300;line-height:1.12;color:var(--charcoal);margin-bottom:18px}
+.h2 em{font-style:italic;color:var(--walnut)}
+.lead{font-size:15px;color:var(--muted);line-height:1.9;font-weight:300;max-width:600px}
+.rule{width:44px;height:1px;background:var(--bronze);margin:28px 0;transform-origin:left;transition:transform 1.2s var(--ease)}
+.rv:not(.in) .rule{transform:scaleX(0)}
+
+/* ── INTRO STRIP ── */
+.intro{background:var(--ivory);padding:100px 56px 80px;text-align:center}
+.intro p{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.8vw,34px);font-weight:300;font-style:italic;color:var(--walnut);line-height:1.5;max-width:780px;margin:0 auto}
+
+/* ── ABOUT ── */
+.about{background:var(--beige);overflow:hidden}
+.about-g{display:grid;grid-template-columns:1.05fr 0.95fr;gap:90px;align-items:center}
+.ab-imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ab-w{overflow:hidden;border-radius:3px}
+.ab-main{grid-column:1/-1;height:310px}
+.ab-sm{height:195px}
+.ab-w img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.ab-w:hover img{transform:scale(1.05)}
+.feat-g{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.feat{padding:18px 20px;background:var(--ivory);border:1px solid var(--line);border-radius:3px;font-size:13.5px;color:var(--walnut);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.feat:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(46,42,37,0.08)}
+.feat span{display:block;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+
+/* ── STATS ── */
+.stats{background:var(--ivory);padding:84px 56px}
+.stats-g{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.st-num{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:300;color:var(--walnut);line-height:1}
+.st-num .sf{font-size:30px;color:var(--bronze)}
+.st-lbl{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+
+/* ── WHY MON REVE ── */
+.why{background:var(--ivory)}
+.why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.why-c{background:#fff;border:1px solid var(--line);border-radius:4px;padding:42px 34px;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.why-c:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(46,42,37,0.09)}
+.why-ic{width:44px;height:44px;border:1px solid var(--bronze-soft);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:22px;color:var(--bronze)}
+.why-c h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--charcoal);margin-bottom:10px}
+.why-c p{font-size:13px;color:var(--muted);line-height:1.75;font-weight:300}
+
+/* ── GALLERY ── */
+.gallery{background:var(--beige)}
+.gal-g{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:280px 280px;gap:14px;margin-top:54px}
+.gg1{grid-column:1/6}.gg2{grid-column:6/10}.gg3{grid-column:10/13}
+.gg4{grid-column:1/4}.gg5{grid-column:4/8}.gg6{grid-column:8/13}
+.g-it{overflow:hidden;position:relative;cursor:pointer;border-radius:3px}
+.g-it img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.g-it::after{content:'+';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:200;color:#fff;background:rgba(46,42,37,0);transition:background .5s,opacity .5s;opacity:0}
+.g-it:hover img{transform:scale(1.06)}
+.g-it:hover::after{background:rgba(46,42,37,0.32);opacity:1}
+
+/* ── POOL ── */
+.pool{background:var(--charcoal);padding:0;overflow:hidden}
+.pool-g{display:grid;grid-template-columns:1fr 1fr;min-height:580px}
+.pool-iw{overflow:hidden;position:relative}
+.pool-iw img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease)}
+.pool-iw:hover img{transform:scale(1.045)}
+.pool-tx{padding:100px 76px;display:flex;flex-direction:column;justify-content:center}
+.pool-tx .eyebrow{color:var(--bronze-soft)}
+.pool-tx .h2{color:var(--ivory)}
+.pool-tx .h2 em{color:var(--bronze-soft)}
+.pool-tx .lead{color:rgba(250,248,244,0.55)}
+.pool-tx .rule{background:var(--bronze-soft)}
+.pl-feats{margin-top:38px;display:flex;flex-direction:column;gap:15px}
+.pl-f{display:flex;align-items:center;gap:15px;font-size:14px;color:rgba(250,248,244,0.66);font-weight:300}
+.pl-f::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--bronze-soft);flex-shrink:0}
+
+/* ── ROOMS ── */
+.rooms{background:var(--ivory)}
+.rm-g{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:54px}
+.rm-g2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px}
+.rm-c{position:relative;overflow:hidden;cursor:pointer;border-radius:3px}
+.rm-c img{width:100%;height:340px;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
+.rm-c:hover img{transform:scale(1.055)}
+.rm-lbl{position:absolute;bottom:0;left:0;right:0;padding:52px 28px 26px;background:linear-gradient(to top,rgba(46,42,37,0.82),transparent);color:#fff;transition:padding-bottom .5s var(--ease)}
+.rm-c:hover .rm-lbl{padding-bottom:32px}
+.rm-lbl h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:4px}
+.rm-lbl p{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,0.66)}
+.rm-view{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(250,248,244,0.92);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--charcoal);opacity:0;transform:scale(0.8);transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.rm-c:hover .rm-view{opacity:1;transform:scale(1)}
+
+/* ── ROOM MODAL ── */
+.rmodal{position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;background:rgba(46,42,37,0);visibility:hidden;transition:background .5s var(--ease),visibility .5s}
+.rmodal.open{background:rgba(46,42,37,0.96);visibility:visible}
+.rmodal-box{width:min(1120px,94vw);height:min(720px,90vh);display:grid;grid-template-columns:1.4fr 1fr;background:var(--ivory);border-radius:6px;overflow:hidden;opacity:0;transform:scale(0.94) translateY(20px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rmodal.open .rmodal-box{opacity:1;transform:scale(1) translateY(0)}
+.rmodal-img{position:relative;overflow:hidden;background:var(--stone)}
+.rmodal-img img{width:100%;height:100%;object-fit:cover;transition:opacity .4s var(--ease)}
+.rmodal-img img.fading{opacity:0}
+.rm-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(250,248,244,0.92);border:none;font-size:18px;color:var(--charcoal);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s,transform .3s var(--ease)}
+.rm-nav:hover{background:#fff;transform:translateY(-50%) scale(1.08)}
+.rm-prev{left:18px}.rm-next{right:18px}
+.rm-count{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);background:rgba(46,42,37,0.55);color:rgba(255,255,255,0.85);font-size:11px;letter-spacing:.1em;padding:6px 16px;border-radius:20px}
+.rmodal-info{padding:54px 46px;display:flex;flex-direction:column;overflow-y:auto}
+.rmi-floor{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--bronze);margin-bottom:12px}
+.rmi-title{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--charcoal);margin-bottom:18px;line-height:1.1}
+.rmi-desc{font-size:13.5px;color:var(--muted);line-height:1.85;font-weight:300;margin-bottom:30px}
+.rmi-sub{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.rmi-am{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.rmi-chip{font-size:11.5px;color:var(--walnut);background:var(--beige);padding:8px 16px;border-radius:20px;font-weight:300}
+.rmi-occ{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);font-weight:300;margin-top:auto;padding-top:20px;border-top:1px solid var(--line)}
+.rmodal-x{position:absolute;top:22px;right:26px;width:42px;height:42px;border-radius:50%;background:rgba(250,248,244,0.14);border:1px solid rgba(250,248,244,0.3);color:#fff;font-size:18px;cursor:pointer;transition:all .35s var(--ease);z-index:10;display:flex;align-items:center;justify-content:center}
+.rmodal-x:hover{background:rgba(250,248,244,0.95);color:var(--charcoal);transform:rotate(90deg)}
+
+/* ── LIGHTBOX ── */
+.lb{position:fixed;inset:0;z-index:600;display:flex;align-items:center;justify-content:center;background:rgba(20,18,15,0);visibility:hidden;transition:background .45s var(--ease),visibility .45s}
+.lb.open{background:rgba(20,18,15,0.95);visibility:visible}
+.lb img{max-width:88vw;max-height:86vh;object-fit:contain;border-radius:4px;opacity:0;transform:scale(0.92);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.lb.open img{opacity:1;transform:scale(1)}
+.lb-x{position:absolute;top:26px;right:32px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:19px;cursor:pointer;transition:all .35s var(--ease);display:flex;align-items:center;justify-content:center}
+.lb-x:hover{background:rgba(255,255,255,0.95);color:var(--charcoal);transform:rotate(90deg)}
+
+/* ── PRICING ── */
+.pricing{background:var(--beige)}
+.pr-g{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:54px}
+.pr-c{background:#fff;border:1px solid var(--line);border-radius:4px;padding:46px 40px;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.pr-c:hover{transform:translateY(-6px);box-shadow:0 28px 64px rgba(46,42,37,0.1)}
+.pr-c.dark{background:var(--charcoal);border-color:var(--charcoal)}
+.pr-tag{display:inline-block;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);border:1px solid var(--bronze-soft);padding:7px 16px;border-radius:20px;margin-bottom:24px}
+.pr-c.dark .pr-tag{color:var(--bronze-soft);border-color:rgba(194,172,143,0.4)}
+.pr-h{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:400;color:var(--charcoal);margin-bottom:6px}
+.pr-c.dark .pr-h{color:var(--ivory)}
+.pr-amt{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--walnut);line-height:1;margin-bottom:4px}
+.pr-c.dark .pr-amt{color:var(--bronze-soft)}
+.pr-amt span{font-size:20px}
+.pr-per{font-size:11.5px;color:var(--muted);letter-spacing:.06em;margin-bottom:30px}
+.pr-c.dark .pr-per{color:rgba(250,248,244,0.45)}
+.pr-ls{list-style:none;margin-bottom:24px}
+.pr-ls li{font-size:13.5px;color:var(--text);font-weight:300;padding:10px 0;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;gap:12px;line-height:1.55}
+.pr-c.dark .pr-ls li{color:rgba(250,248,244,0.72);border-bottom-color:rgba(250,248,244,0.1)}
+.pr-ls li::before{content:'—';color:var(--bronze);flex-shrink:0;font-weight:300}
+.pr-note{font-size:11.5px;color:var(--muted);font-weight:300;line-height:1.75;font-style:italic}
+.pr-c.dark .pr-note{color:rgba(250,248,244,0.38)}
+.ex-g{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.ex-c{background:#fff;border:1px solid var(--line);border-radius:4px;padding:28px 22px;text-align:center;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.ex-c:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(46,42,37,0.08)}
+.ex-c .ic{font-size:24px;margin-bottom:12px}
+.ex-c h5{font-size:13px;font-weight:500;color:var(--charcoal);margin-bottom:6px}
+.ex-c p{font-size:11px;color:var(--muted);font-weight:300}
+
+/* ── LOCATION ── */
+.loc{background:var(--ivory);overflow:hidden}
+.loc-g{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;margin-top:54px}
+.loc-iw{overflow:hidden;border-radius:4px}
+.loc-iw img{width:100%;height:450px;object-fit:cover;transition:transform 1.4s var(--ease)}
+.loc-iw:hover img{transform:scale(1.045)}
+.loc-pt{display:flex;gap:18px;margin-bottom:32px;align-items:flex-start}
+.loc-d{width:7px;height:7px;border-radius:50%;background:var(--bronze);margin-top:6px;flex-shrink:0}
+.loc-pt h4{font-size:13.5px;font-weight:500;color:var(--charcoal);margin-bottom:6px;letter-spacing:.02em}
+.loc-pt p{font-size:13px;color:var(--muted);font-weight:300;line-height:1.7}
+.loc-pt a{color:var(--bronze);text-decoration:none}
+
+/* ── BOOKING FORM ── */
+.book{background:var(--beige)}
+.bk-wrap{display:grid;grid-template-columns:0.82fr 1.18fr;gap:64px;align-items:start;margin-top:54px}
+.bk-left img{width:100%;border-radius:4px;display:block}
+.bk-left .im2{margin-top:16px}
+.bk-note{font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.85;margin-top:18px}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:52px 48px;box-shadow:0 40px 100px rgba(46,42,37,0.07)}
+.fs-lbl{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze);margin:34px 0 22px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.fs-lbl:first-child{margin-top:0}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+
+/* Floating labels */
+.ff{position:relative;margin-bottom:26px}
+.ff input,.ff textarea{width:100%;border:none;border-bottom:1px solid rgba(91,70,54,0.2);background:transparent;padding:22px 0 9px;font-size:15px;font-family:'Inter',sans-serif;color:var(--text);outline:none;transition:border-color .35s;font-weight:300}
+.ff textarea{resize:none;height:96px}
+.ff label{position:absolute;left:0;top:22px;font-size:14px;color:#A99C8B;pointer-events:none;transition:all .3s var(--ease);font-weight:300}
+.ff input:focus,.ff textarea:focus{border-bottom-color:var(--bronze)}
+.ff input:focus~label,.ff input.filled~label,.ff textarea:focus~label,.ff textarea.filled~label{top:0;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze)}
+.ff .req{color:var(--bronze)}
+
+/* Date/time */
+.fd{margin-bottom:26px}
+.fd label{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;font-weight:400}
+.fd label .req{color:var(--bronze)}
+.fd input{width:100%;border:1px solid rgba(91,70,54,0.18);padding:14px 15px;background:var(--ivory);font-size:14px;font-family:'Inter',sans-serif;color:var(--text);outline:none;cursor:pointer;border-radius:3px;transition:border-color .3s,background .3s;font-weight:300}
+.fd input:focus{border-color:var(--bronze);background:#fff}
+
+/* Guest counter */
+.gc{display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(91,70,54,0.18);padding:14px 18px;background:var(--ivory);border-radius:3px}
+.gc-n{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--charcoal);line-height:1}
+.gc-s{font-size:10px;color:var(--muted);letter-spacing:.06em;margin-top:4px}
+.gc-btns{display:flex;gap:10px}
+.gb{width:44px;height:44px;border:1px solid var(--line);background:#fff;font-size:19px;color:var(--walnut);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s var(--ease);user-select:none;border-radius:50%;font-family:'Inter',sans-serif;font-weight:300}
+.gb:hover{background:var(--charcoal);color:var(--ivory);border-color:var(--charcoal);transform:scale(1.07)}
+.gb:active{transform:scale(0.94)}
+.exn{font-size:11.5px;color:#A6691E;margin-top:10px;font-weight:400;display:none;animation:fdUp .4s var(--ease)}
+.exn.show{display:block}
+
+/* Price summary */
+.psum{background:var(--charcoal);padding:32px 34px;margin:34px 0 28px;position:relative;border-radius:5px;overflow:hidden}
+.ps-t{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze-soft);margin-bottom:20px}
+.ps-r{display:flex;justify-content:space-between;align-items:center;padding:9px 0;font-size:13px;color:rgba(250,248,244,0.55);font-weight:300}
+.ps-r .v{color:rgba(250,248,244,0.85)}
+.ps-div{height:1px;background:rgba(250,248,244,0.12);margin:14px 0}
+.ps-tot{display:flex;justify-content:space-between;align-items:center}
+.ps-tot .l{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,248,244,0.6)}
+.ps-tot .a{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--bronze-soft)}
+.ps-tot .a.bp{animation:bump .45s var(--ease)}
+@keyframes bump{0%{transform:scale(1)}40%{transform:scale(1.07)}100%{transform:scale(1)}}
+.ps-h{font-size:11px;color:rgba(250,248,244,0.32);margin-top:12px;font-style:italic;font-weight:300}
+
+.sbtn{width:100%;padding:21px;background:var(--charcoal);color:var(--ivory);border:none;font-family:'Inter',sans-serif;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;cursor:pointer;font-weight:400;transition:all .45s var(--ease);border-radius:3px}
+.sbtn:hover{background:var(--walnut);transform:translateY(-2px);box-shadow:0 18px 44px rgba(46,42,37,0.25)}
+.sbtn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.errm{display:none;background:#FBF3F0;border:1px solid #E8C8BC;padding:15px 18px;margin-top:18px;font-size:12.5px;color:#A6512E;text-align:center;border-radius:3px}
+.sucm{display:none;text-align:center;padding:64px 24px}
+.suc-i{width:62px;height:62px;border:1px solid var(--bronze);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;font-size:24px;color:var(--bronze);animation:pop .6s var(--ease)}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+.sucm h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--charcoal);margin-bottom:14px}
+.sucm p{font-size:14px;color:var(--muted);font-weight:300;line-height:1.75}
+
+/* ── FOOTER ── */
+footer{background:var(--charcoal);padding:72px 56px 40px}
+.ft-g{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:56px;margin-bottom:56px}
+.ft-logo img{height:52px;object-fit:contain;margin-bottom:20px}
+.ft-tag{font-size:13px;color:rgba(250,248,244,0.42);font-weight:300;line-height:1.8}
+.ft-c h4{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--bronze-soft);margin-bottom:20px}
+.ft-c p,.ft-c a{display:block;font-size:13px;color:rgba(250,248,244,0.46);font-weight:300;line-height:2.1;text-decoration:none;transition:color .3s,padding-left .3s var(--ease)}
+.ft-c a:hover{color:var(--bronze-soft);padding-left:5px}
+.ft-b{border-top:1px solid rgba(250,248,244,0.08);padding-top:28px;display:flex;justify-content:space-between;align-items:center;max-width:1180px;margin:0 auto}
+.ft-b p{font-size:11.5px;color:rgba(250,248,244,0.26);font-weight:300}
+
+@media(max-width:920px){
+  nav{padding:14px 24px}
+  nav.sc{padding:10px 24px}
+  .nv-links{display:none}
+  section{padding:76px 24px}
+  .about-g,.bk-wrap,.loc-g,.pool-g{grid-template-columns:1fr;gap:46px}
+  .gal-g{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gg1,.gg2,.gg3,.gg4,.gg5,.gg6{grid-column:auto}
+  .g-it{height:215px}
+  .rm-g,.rm-g2{grid-template-columns:1fr}
+  .why-g{grid-template-columns:1fr}
+  .pr-g{grid-template-columns:1fr}
+  .ex-g{grid-template-columns:1fr}
+  .stats-g{grid-template-columns:repeat(2,1fr);gap:38px}
+  .ft-g{grid-template-columns:1fr;gap:38px}
+  .hero-inner{padding:0 24px 76px}
+  .f-row{grid-template-columns:1fr;gap:0}
+  .ft-b{flex-direction:column;gap:10px;text-align:center}
+  .pool-tx{padding:56px 28px}
+  .form-card{padding:38px 26px}
+  .rmodal-box{grid-template-columns:1fr;height:min(860px,92vh);overflow-y:auto}
+  .rmodal-img{height:300px;flex-shrink:0}
+  .rmodal-info{padding:34px 28px}
+}
+
+/* ── MOBILE MENU ── */
+.nv-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:8px;z-index:400}
+.nv-burger span{display:block;height:1.6px;background:var(--charcoal);border-radius:2px;transition:transform .4s var(--ease),opacity .3s}
+.nv-burger.open span:nth-child(1){transform:translateY(6.6px) rotate(45deg)}
+.nv-burger.open span:nth-child(2){opacity:0}
+.nv-burger.open span:nth-child(3){transform:translateY(-6.6px) rotate(-45deg)}
+.m-menu{position:fixed;inset:0;z-index:350;background:var(--ivory);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s}
+.m-menu.open{opacity:1;visibility:visible}
+.m-menu ul{list-style:none;text-align:center;padding:0}
+.m-menu li{margin:10px 0;opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.m-menu.open li{opacity:1;transform:translateY(0)}
+.m-menu.open li:nth-child(1){transition-delay:.08s}.m-menu.open li:nth-child(2){transition-delay:.14s}
+.m-menu.open li:nth-child(3){transition-delay:.2s}.m-menu.open li:nth-child(4){transition-delay:.26s}
+.m-menu.open li:nth-child(5){transition-delay:.32s}.m-menu.open li:nth-child(6){transition-delay:.38s}
+.m-menu.open li:nth-child(7){transition-delay:.46s}
+.m-menu a{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--charcoal);text-decoration:none;letter-spacing:.02em}
+.m-menu .m-reserve{display:inline-block;margin-top:18px;font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;background:var(--charcoal);color:var(--ivory);padding:16px 36px;border-radius:3px}
+@media (max-width:920px){ .nv-burger{display:flex} }
+
+/* ── CINEMATIC HERO (trial) ── */
+.cprog{position:fixed;top:0;left:0;height:2px;background:var(--bronze);z-index:400;width:0}
+.chero{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+.chero-bg{position:absolute;inset:-8% 0;background-size:cover;background-position:center 32%;will-change:transform}
+.chero-veil{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(46,42,37,0.22),rgba(46,42,37,0.74))}
+.chero-inner{position:relative;z-index:3;padding:0 28px;max-width:900px}
+.chero-tag{font-size:11px;letter-spacing:0.42em;text-transform:uppercase;color:rgba(255,255,255,0.72);margin-bottom:26px;opacity:0;animation:cfade 1.5s .4s var(--ease) forwards}
+.chero-title{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:0.98;font-size:clamp(54px,9vw,122px);letter-spacing:-0.01em;color:#fff}
+.chero-title .cl{display:block;overflow:hidden}
+.chero-title .cl span{display:block;transform:translateY(112%);animation:crise 1.6s var(--ease) forwards}
+.chero-title .cl:nth-child(1) span{animation-delay:.5s}
+.chero-title .cl:nth-child(2) span{animation-delay:.68s;font-style:italic;color:#EADBC0}
+.chero-sub{margin-top:28px;font-size:15px;font-weight:300;letter-spacing:0.02em;line-height:1.8;color:rgba(255,255,255,0.62);opacity:0;animation:cfade 1.5s 1.2s var(--ease) forwards}
+.chero-acts{display:flex;gap:14px;margin-top:40px;justify-content:center;flex-wrap:wrap;opacity:0;animation:cfade 1.5s 1.45s var(--ease) forwards}
+.chero-cue{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);z-index:3;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.42);display:flex;flex-direction:column;align-items:center;gap:11px;opacity:0;animation:cfade 1.5s 1.9s forwards}
+.chero-cue::after{content:'';width:1px;height:44px;background:linear-gradient(rgba(255,255,255,0.5),transparent);animation:ccue 2.4s ease-in-out infinite}
+@keyframes crise{to{transform:translateY(0)}}
+@keyframes cfade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ccue{0%,100%{opacity:.3;transform:scaleY(.6);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+
+/* ── TRANSPARENT NAV OVER HERO (trial) ── */
+nav:not(.sc) .nv-name{color:#fff}
+nav:not(.sc) .nv-links a{color:rgba(255,255,255,0.82)}
+nav:not(.sc) .nv-links a:hover{color:#fff}
+nav:not(.sc) .nv-cta{background:rgba(255,255,255,0.16);color:#fff;border:1px solid rgba(255,255,255,0.35);backdrop-filter:blur(6px)}
+nav:not(.sc) .nv-cta:hover{background:#fff;color:var(--charcoal)}
+nav:not(.sc) .nv-burger span{background:#fff}
+/* logo stays visible on both; add subtle shadow so it reads on light image areas */
+nav:not(.sc) .nv-logo img{filter:drop-shadow(0 2px 6px rgba(0,0,0,0.25))}
+/* hero already starts at very top now */
+.chero{margin-top:0}
+
+/* ── PRELOADER (trial) ── */
+.preloader{position:fixed;inset:0;z-index:9999;background:var(--ivory);display:flex;align-items:center;justify-content:center;transition:opacity .8s var(--ease),visibility .8s}
+.preloader.done{opacity:0;visibility:hidden}
+.pl-inner{display:flex;flex-direction:column;align-items:center}
+.pl-logo{width:120px;height:120px;object-fit:contain;opacity:0;transform:scale(0.9);animation:plIn 1s var(--ease) forwards}
+.pl-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;color:var(--charcoal);letter-spacing:.04em;margin-top:14px;opacity:0;animation:plIn 1s .25s var(--ease) forwards}
+.pl-bar{width:120px;height:2px;background:rgba(91,70,54,0.14);border-radius:2px;margin-top:26px;overflow:hidden;opacity:0;animation:plIn 1s .45s var(--ease) forwards}
+.pl-bar span{display:block;height:100%;width:0;background:var(--bronze);animation:plFill 1.6s .5s var(--ease) forwards}
+@keyframes plIn{to{opacity:1;transform:scale(1)}}
+@keyframes plFill{to{width:100%}}
+/* prevent scroll while loading */
+body.loading{overflow:hidden}
+</style>
+</head>
+<body>
+<div class="preloader" id="preloader">
+  <div class="pl-inner">
+    <img src="images/img-a93cbd0d4a.png" alt="Mon Rêve" class="pl-logo">
+    <div class="pl-name">Mon Rêve</div>
+    <div class="pl-bar"><span></span></div>
+  </div>
+</div>
+
+
+<nav id="nav">
+  <a class="nv-logo" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+    <img loading="lazy" decoding="async" src="images/img-a93cbd0d4a.png" alt="Mon Reve Holiday Home">
+    <span class="nv-name">Mon Rêve</span>
+  </a>
+  <ul class="nv-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#why">Why Mon Rêve</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+  <a href="#book" class="nv-cta">Reserve</a>
+  <button class="nv-burger" id="nvBurger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="m-menu" id="mMenu">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#why">Why Mon Rêve</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#book" class="m-reserve">Reserve Your Stay</a></li>
+  </ul>
+</div>
+
+
+<!-- HERO (cinematic trial) -->
+<div class="cprog" id="cprog"></div>
+<section class="chero">
+  <div class="chero-bg" id="cheroBg" style="background-image:url('images/img-3ac1559921.jpg')"></div>
+  <div class="chero-veil"></div>
+  <div class="chero-inner">
+    <p class="chero-tag">Engapuzha · Kozhikode · Kerala</p>
+    <h1 class="chero-title">
+      <span class="cl"><span>Mon Rêve</span></span>
+      <span class="cl"><span>Holiday Home</span></span>
+    </h1>
+    <p class="chero-sub">A private villa in the heart of Kerala — warm wood, open architecture,<br>a private pool and quiet green surroundings.</p>
+    <div class="chero-acts">
+      <a href="#book" class="btn btn-fill">Reserve Your Stay</a>
+      <a href="#gallery" class="btn btn-ghost">Explore</a>
+    </div>
+  </div>
+  <div class="chero-cue">Scroll</div>
+</section>
+
+<!-- INTRO -->
+<div class="intro">
+  <p class="rv">"Some places don't simply give you a room —<br>they give you a feeling."</p>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-g">
+      <div class="ab-imgs rv-l">
+        <div class="ab-w ab-main"><img loading="lazy" decoding="async" src="images/img-44d76ba9ba.jpg" alt="Living area"></div>
+        <div class="ab-w ab-sm"><img loading="lazy" decoding="async" src="images/img-8f8b4c1d5e.jpg" alt="Bathroom"></div>
+        <div class="ab-w ab-sm"><img loading="lazy" decoding="async" src="images/img-5f42ad9e64.jpg" alt="Kitchen"></div>
+      </div>
+      <div class="rv-r">
+        <p class="eyebrow">Welcome</p>
+        <h2 class="h2">Your <em>Dream Home</em><br>in Kerala</h2>
+        <div class="rule"></div>
+        <p class="lead">Nestled in Engapuzha, Kozhikode, Mon Rêve is a thoughtfully designed two-storey residence where contemporary architecture meets Kerala's warm hospitality. Signature round windows, teak floors and a private waterfall pool set among lush greenery.</p>
+        <div class="feat-g stg">
+          <div class="feat"><span>Bedrooms</span>4 Spacious Rooms</div>
+          <div class="feat"><span>Capacity</span>Up to 12 Guests</div>
+          <div class="feat"><span>Pool</span>Private Pool &amp; Waterfall</div>
+          <div class="feat"><span>Setting</span>Tropical Greenery</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-g stg">
+    <div><div class="st-num"><span class="cnt" data-t="4">0</span></div><div class="st-lbl">Bedrooms</div></div>
+    <div><div class="st-num"><span class="cnt" data-t="12">0</span><span class="sf">+</span></div><div class="st-lbl">Guest Capacity</div></div>
+    <div><div class="st-num"><span class="cnt" data-t="2">0</span></div><div class="st-lbl">Storeys</div></div>
+    <div><div class="st-num"><span class="cnt" data-t="7">0</span><span class="sf">km</span></div><div class="st-lbl">To Thusharagiri Falls</div></div>
+  </div>
+</section>
+
+<!-- WHY MON REVE -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <p class="eyebrow">The Difference</p>
+      <h2 class="h2">Why <em>Mon Rêve</em></h2>
+      <div class="rule" style="margin-left:auto;margin-right:auto"></div>
+    </div>
+    <div class="why-g stg">
+      <div class="why-c"><div class="why-ic">⌂</div><h3>Entire Private Villa</h3><p>The whole property is exclusively yours — no shared spaces, no other guests. Just you and the people you choose.</p></div>
+      <div class="why-c"><div class="why-ic">≈</div><h3>Private Swimming Pool</h3><p>A waterfall pool with underwater lighting and a timber deck, reserved entirely for your stay — day and night.</p></div>
+      <div class="why-c"><div class="why-ic">⌒</div><h3>Spacious Family Living</h3><p>Two storeys of open-plan living, dining and lounge spaces designed to bring large families comfortably together.</p></div>
+      <div class="why-c"><div class="why-ic">◇</div><h3>Premium Interiors</h3><p>Teak floors, architectural round windows and warm, considered design throughout every room of the house.</p></div>
+      <div class="why-c"><div class="why-ic">○</div><h3>Complete Privacy</h3><p>Set among quiet greenery in Engapuzha, away from crowds — a calm and secluded base for your Kerala escape.</p></div>
+      <div class="why-c"><div class="why-ic">✦</div><h3>Exclusive Experience</h3><p>Complimentary vegetarian breakfast, optional Kerala cuisine, airport transfers and curated tours — all arranged for you.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Gallery</p>
+      <h2 class="h2">Inside <em>Mon Rêve</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="gal-g rv-sc">
+      <div class="g-it gg1"><img loading="lazy" decoding="async" src="images/img-d64c533dbb.jpg" alt="Floating staircase" onclick="openLB(this.src)"></div>
+      <div class="g-it gg2"><img loading="lazy" decoding="async" src="images/img-f15aba2f5c.jpg" alt="Dining room" onclick="openLB(this.src)"></div>
+      <div class="g-it gg3"><img loading="lazy" decoding="async" src="images/img-8f8b4c1d5e.jpg" alt="Bathroom" onclick="openLB(this.src)"></div>
+      <div class="g-it gg4"><img loading="lazy" decoding="async" src="images/img-a041f5d924.jpg" alt="Bedroom" onclick="openLB(this.src)"></div>
+      <div class="g-it gg5"><img loading="lazy" decoding="async" src="images/img-15e5acb78d.jpg" alt="Master bedroom" onclick="openLB(this.src)"></div>
+      <div class="g-it gg6"><img loading="lazy" decoding="async" src="images/img-d88cea9098.jpg" alt="Living lounge" onclick="openLB(this.src)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- POOL -->
+<section class="pool" id="pool">
+  <div class="pool-g">
+    <div class="pool-iw rv-l"><img loading="lazy" decoding="async" src="images/img-68f1887318.jpg" alt="Private pool with waterfalls"></div>
+    <div class="pool-tx rv-r">
+      <p class="eyebrow">Signature Feature</p>
+      <h2 class="h2">The Private<br><em>Waterfall Pool</em></h2>
+      <div class="rule"></div>
+      <p class="lead">Unwind in your own pool with dramatic waterfall features, soft underwater lighting and a timber deck — beneath a glass canopy framed by tropical green.</p>
+      <div class="pl-feats stg">
+        <div class="pl-f">Dual waterfall features</div>
+        <div class="pl-f">Underwater mood lighting</div>
+        <div class="pl-f">Timber deck with lanterns</div>
+        <div class="pl-f">Glass canopy — swim rain or shine</div>
+        <div class="pl-f">Exclusively yours, day and night</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section class="rooms" id="rooms">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Accommodation</p>
+      <h2 class="h2">Rooms &amp; <em>Spaces</em></h2>
+      <div class="rule"></div>
+      <p class="lead">Tap any space to explore it in detail.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="rm-g rv">
+      <div class="rm-c" onclick="openRoom(0)">
+        <img loading="lazy" decoding="async" src="images/img-54375f88dc.jpg" alt="Modern open kitchen">
+        <div class="rm-view">⤢</div>
+        <div class="rm-lbl"><p>Ground Floor</p><h3>Modern Open Kitchen</h3></div>
+      </div>
+      <div class="rm-c" onclick="openRoom(1)">
+        <img loading="lazy" decoding="async" src="images/img-5f42ad9e64.jpg" alt="Living room">
+        <div class="rm-view">⤢</div>
+        <div class="rm-lbl"><p>Upper Floor</p><h3>Living Room</h3></div>
+      </div>
+      <div class="rm-c" onclick="openRoom(2)">
+        <img loading="lazy" decoding="async" src="images/img-a041f5d924.jpg" alt="Guest bedroom">
+        <div class="rm-view">⤢</div>
+        <div class="rm-lbl"><p>Upper Floor</p><h3>Guest Bedroom</h3></div>
+      </div>
+    </div>
+    <div class="rm-g2 rv">
+      <div class="rm-c" onclick="openRoom(3)">
+        <img loading="lazy" decoding="async" src="images/img-f15aba2f5c.jpg" alt="Dining area">
+        <div class="rm-view">⤢</div>
+        <div class="rm-lbl"><p>Ground Floor</p><h3>Dining Area</h3></div>
+      </div>
+      <div class="rm-c" onclick="openRoom(4)">
+        <img loading="lazy" decoding="async" src="images/img-15e5acb78d.jpg" alt="Master bedroom">
+        <div class="rm-view">⤢</div>
+        <div class="rm-lbl"><p>Upper Floor</p><h3>Master Bedroom</h3></div>
+      </div>
+    </div>
+    <div class="rm-g2 rv">
+      <div class="rm-c" onclick="openRoom(5)">
+        <img loading="lazy" decoding="async" src="images/img-8bbd80cda6.jpg" alt="Prestige Suite">
+        <div class="rm-view">⤢</div>
+        <div class="rm-lbl"><p>Ground Floor</p><h3>Prestige Suite</h3></div>
+      </div>
+      <div class="rm-c" onclick="openRoom(6)">
+        <img loading="lazy" decoding="async" src="images/img-92b74bcf3c.jpg" alt="Azure Suite">
+        <div class="rm-view">⤢</div>
+        <div class="rm-lbl"><p>Ground Floor</p><h3>Azure Suite</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="loc" id="location">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Find Us</p>
+      <h2 class="h2">Kozhikode, <em>Kerala</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="loc-g">
+      <div class="loc-iw rv-l"><img loading="lazy" decoding="async" src="images/img-af0a8b6728.jpg" alt="Mon Reve exterior"></div>
+      <div class="rv-r">
+        <p class="lead" style="margin-bottom:36px">Mon Rêve sits in Engapuzha, Kozhikode district — perfectly positioned to explore the natural beauty of God's Own Country.</p>
+        <div class="loc-pt"><div class="loc-d"></div><div><h4>Address</h4><p>Engapuzha, Kozhikode District<br>Kerala, India</p></div></div>
+        <div class="loc-pt"><div class="loc-d"></div><div><h4>Nearby</h4><p>Thusharagiri Waterfalls · Wayanad · Kakkad Vanaparvam Biodiversity Park</p></div></div>
+        <div class="loc-pt"><div class="loc-d"></div><div><h4>Nearest Airport</h4><p>Calicut International Airport (CCJ)<br>Kozhikode, Kerala</p></div></div>
+        <div class="loc-pt"><div class="loc-d"></div><div><h4>Contact</h4><p><a href="mailto:monreveholidays@gmail.com">monreveholidays@gmail.com</a></p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Reserve</p>
+      <h2 class="h2">Book Your <em>Stay</em></h2>
+      <div class="rule"></div>
+      <p class="lead">Choose your dates, add your guests and see your estimated total instantly. We confirm availability within 24 hours.</p>
+    </div>
+    <div class="bk-wrap">
+      <div class="bk-left rv-l">
+        <img loading="lazy" decoding="async" src="images/img-68f1887318.jpg" alt="Pool at Mon Reve">
+        <img loading="lazy" decoding="async" src="images/img-af0a8b6728.jpg" alt="Mon Reve villa" class="im2">
+        <p class="bk-note">The entire villa, exclusively yours · vegetarian breakfast included · up to 12 guests · pets welcome on request. Send us your dates and we'll reply within 24 hours with availability and a personalised quote.</p>
+      </div>
+      <div class="rv-r">
+        <div class="form-card">
+          <div class="sucm" id="sucMsg">
+            <div class="suc-i">✓</div>
+            <h3>Enquiry Received</h3>
+            <p>Thank you for choosing Mon Rêve.<br>We'll confirm availability and reply within 24 hours.</p>
+          </div>
+          <form id="bkForm" novalidate>
+
+            <p class="fs-lbl">Your Details</p>
+            <div class="f-row">
+              <div class="ff"><input type="text" id="fName" required><label>Full Name <span class="req">*</span></label></div>
+              <div class="ff"><input type="tel" id="fPhone" required><label>Phone <span class="req">*</span></label></div>
+            </div>
+            <div class="ff"><input type="email" id="fEmail" required><label>Email Address <span class="req">*</span></label></div>
+
+            <p class="fs-lbl">Stay Dates</p>
+            <div class="f-row">
+              <div class="fd"><label>Check-in Date <span class="req">*</span></label><input type="date" id="ciD" required></div>
+              <div class="fd"><label>Check-in Time</label><input type="time" id="ciT" value="13:00"></div>
+            </div>
+            <div class="f-row">
+              <div class="fd"><label>Check-out Date <span class="req">*</span></label><input type="date" id="coD" required></div>
+              <div class="fd"><label>Check-out Time</label><input type="time" id="coT" value="11:00"></div>
+            </div>
+
+            <p class="fs-lbl">Guests <span class="req">*</span></p>
+            <div class="fd">
+              <div class="gc">
+                <div>
+                  <div class="gc-n" id="gNum">2</div>
+                  <div class="gc-s">guests · up to 12</div>
+                </div>
+                <div class="gc-btns">
+                  <button type="button" class="gb" id="gMinus">−</button>
+                  <button type="button" class="gb" id="gPlus">+</button>
+                </div>
+              </div>
+              <p class="exn" id="exNote"><span id="exCount"></span> guest(s) over 12 — we'll confirm details by email</p>
+            </div>
+
+            <p class="fs-lbl">Anything Else</p>
+            <div class="ff"><textarea id="fMsg"></textarea><label>Meals, transfers, tours, pets, requests… (optional)</label></div>
+
+            <button type="submit" class="sbtn" id="sBtn">Send Enquiry</button>
+            <div class="errm" id="errMsg"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-g">
+    <div>
+      <div class="ft-logo"><img loading="lazy" decoding="async" src="images/img-8689f63e26.png" alt="Mon Reve logo"></div>
+      <p class="ft-tag">A private holiday villa in Kozhikode, Kerala — warm hospitality, a waterfall pool and quiet green surroundings in Engapuzha.</p>
+    </div>
+    <div class="ft-c">
+      <h4>Explore</h4>
+      <a href="#about">About</a>
+      <a href="#why">Why Mon Rêve</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#book">Reserve</a>
+    </div>
+    <div class="ft-c">
+      <h4>Contact</h4>
+      <a href="mailto:monreveholidays@gmail.com">monreveholidays@gmail.com</a>
+      <p>Engapuzha, Kozhikode District</p>
+      <p>Kerala, India</p>
+    </div>
+  </div>
+  <div class="ft-b">
+    <p>© 2026 Mon Rêve Holiday Home · Kozhikode, Kerala</p>
+    <p>All enquiries via email</p>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" onclick="closeLB()">
+  <button class="lb-x" onclick="closeLB()">×</button>
+  <img id="lbImg" src="" alt="Gallery">
+</div>
+
+<!-- ROOM MODAL -->
+<div class="rmodal" id="rModal">
+  <button class="rmodal-x" onclick="closeRoom()">×</button>
+  <div class="rmodal-box" onclick="event.stopPropagation()">
+    <div class="rmodal-img" id="rmImgWrap">
+      <img id="rmImg" src="" alt="Room">
+      <button class="rm-nav rm-prev" onclick="navRoom(-1)">‹</button>
+      <button class="rm-nav rm-next" onclick="navRoom(1)">›</button>
+      <div class="rm-count" id="rmCount"></div>
+    </div>
+    <div class="rmodal-info">
+      <p class="rmi-floor" id="rmFloor"></p>
+      <h3 class="rmi-title" id="rmTitle"></h3>
+      <p class="rmi-desc" id="rmDesc"></p>
+      <p class="rmi-sub">Amenities</p>
+      <div class="rmi-am" id="rmAm"></div>
+      <div class="rmi-occ" id="rmOcc"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── NAV / PARALLAX ── */
+const nav = document.getElementById('nav');
+const heroBg = document.getElementById('heroBg');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('sc', window.scrollY > 60);
+  const y = window.scrollY;
+  if (heroBg && y < window.innerHeight) heroBg.style.transform = `translateY(${y * 0.32}px)`;
+}, { passive: true });
+
+/* ── REVEALS (replay both directions) ── */
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => e.target.classList.toggle('in', e.isIntersecting));
+}, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-sc,.stg').forEach(el => io.observe(el));
+
+/* ── COUNTERS (replay) ── */
+const cio = new IntersectionObserver((es) => {
+  es.forEach(e => {
+    const el = e.target;
+    if (e.isIntersecting) {
+      const t = parseInt(el.dataset.t); let c = 0;
+      const step = Math.max(1, Math.ceil(t / 36));
+      const tick = () => { c = Math.min(c + step, t); el.textContent = c; if (c < t) requestAnimationFrame(tick); };
+      setTimeout(tick, 250);
+    } else { el.textContent = '0'; }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.cnt').forEach(el => cio.observe(el));
+
+/* ── FLOATING LABELS ── */
+document.querySelectorAll('.ff input, .ff textarea').forEach(el => {
+  const sync = () => el.classList.toggle('filled', el.value.trim() !== '');
+  el.addEventListener('input', sync); el.addEventListener('blur', sync); sync();
+});
+
+/* ── LIGHTBOX ── */
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
+function openLB(src) { lbImg.src = src; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeLB() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+
+/* ── ROOM MODAL ── */
+const ROOMS = [
+  { img: "images/img-54375f88dc.jpg", floor: "Ground Floor", title: "Modern Open Kitchen",
+    desc: "A sleek open-plan kitchen with a central island, premium appliances and warm pendant lighting — flowing directly into the dining and living spaces. Cook together, gather together.",
+    am: ["Kitchen Island","Full Appliances","Microwave & Oven","Double-Door Fridge","Water Dispenser","Open-Plan Layout"], occ: "Shared space · all guests" },
+  { img: "images/img-5f42ad9e64.jpg", floor: "Upper Floor", title: "Living Room",
+    desc: "A bright, open lounge beneath the staircase with hanging greenery, soft seating and views across the double-height interior. The heart of the upper floor.",
+    am: ["Soft Lounge Seating","Hanging Garden","Natural Light","Open Layout","Ceiling Fans"], occ: "Shared space · all guests" },
+  { img: "images/img-a041f5d924.jpg", floor: "Upper Floor", title: "Guest Bedroom",
+    desc: "A calm, warmly lit bedroom with textured walls, a generous queen bed and an en-suite feel — quiet comfort for restful nights.",
+    am: ["Queen Bed","Air Conditioning","Ceiling Fan","Wardrobe","Premium Bedding","Soft Rug"], occ: "Sleeps 2–3 guests" },
+  { img: "images/img-f15aba2f5c.jpg", floor: "Ground Floor", title: "Dining Area",
+    desc: "An elegant eight-seat dining table beneath a floating timber canopy with warm pendant light — set against polished floors and golden drapery.",
+    am: ["Seats 8","Pendant Lighting","Marble-Top Table","Adjacent Kitchen","Garden Light"], occ: "Shared space · all guests" },
+  { img: "images/img-15e5acb78d.jpg", floor: "Upper Floor", title: "Master Bedroom",
+    desc: "The signature room — a wide platform bed against an upholstered feature wall, with a bay window seat overlooking the greenery. Spacious, serene, and beautifully understated.",
+    am: ["King Bed","Bay Window Seat","Air Conditioning","Upholstered Headboard","Teak Flooring","Pendant Lighting"], occ: "Sleeps 2–3 guests" },
+  { img: "images/img-8bbd80cda6.jpg", floor: "Ground Floor", title: "Prestige Suite",
+    desc: "A warm, generously sized suite with a timber ceiling feature, ambient cove lighting and sliding wardrobes — refined comfort on the ground floor.",
+    am: ["Queen Bed","Sliding Wardrobes","Cove Lighting","Air Conditioning","Dressing Area","Ceiling Fan"], occ: "Sleeps 2–3 guests" },
+  { img: "images/img-92b74bcf3c.jpg", floor: "Ground Floor", title: "Azure Suite",
+    desc: "A distinctive suite with a teal upholstered feature wall, bay window seat and soft natural light — a quiet corner with its own character.",
+    am: ["Queen Bed","Bay Window Seat","Feature Wall","Air Conditioning","Wardrobe","Premium Bedding"], occ: "Sleeps 2–3 guests" },
+];
+
+const rModal = document.getElementById('rModal');
+const rmImg = document.getElementById('rmImg');
+let curRoom = 0;
+
+function renderRoom(i, fade=true) {
+  const r = ROOMS[i];
+  const apply = () => {
+    rmImg.src = r.img;
+    document.getElementById('rmFloor').textContent = r.floor;
+    document.getElementById('rmTitle').textContent = r.title;
+    document.getElementById('rmDesc').textContent = r.desc;
+    document.getElementById('rmCount').textContent = (i+1) + ' / ' + ROOMS.length;
+    document.getElementById('rmOcc').innerHTML = '👤&nbsp; ' + r.occ;
+    document.getElementById('rmAm').innerHTML = r.am.map(a => `<span class="rmi-chip">${a}</span>`).join('');
+    rmImg.classList.remove('fading');
+  };
+  if (fade) { rmImg.classList.add('fading'); setTimeout(apply, 220); }
+  else apply();
+}
+function openRoom(i) {
+  curRoom = i; renderRoom(i, false);
+  rModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeRoom() {
+  rModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function navRoom(d) {
+  curRoom = (curRoom + d + ROOMS.length) % ROOMS.length;
+  renderRoom(curRoom);
+}
+rModal.addEventListener('click', closeRoom);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeRoom(); closeLB(); }
+  if (rModal.classList.contains('open')) {
+    if (e.key === 'ArrowLeft') navRoom(-1);
+    if (e.key === 'ArrowRight') navRoom(1);
+  }
+});
+/* Swipe support */
+let tX = null;
+rModal.addEventListener('touchstart', e => tX = e.touches[0].clientX, {passive:true});
+rModal.addEventListener('touchend', e => {
+  if (tX === null) return;
+  const dx = e.changedTouches[0].clientX - tX;
+  if (Math.abs(dx) > 50) navRoom(dx > 0 ? -1 : 1);
+  tX = null;
+}, {passive:true});
+
+/* ── BOOKING FORM (guests + dates, no pricing) ── */
+const LIMIT = 12;
+let guests = 2;
+const gNum = document.getElementById('gNum');
+const exNote = document.getElementById('exNote'), exCount = document.getElementById('exCount');
+const ciD = document.getElementById('ciD'), coD = document.getElementById('coD');
+const ciT = document.getElementById('ciT'), coT = document.getElementById('coT');
+
+const today = new Date().toISOString().split('T')[0];
+ciD.min = today; coD.min = today;
+
+function nights() {
+  if (!ciD.value || !coD.value) return 0;
+  const d = Math.round((new Date(coD.value) - new Date(ciD.value)) / 864e5);
+  return d > 0 ? d : 0;
+}
+function syncGuests() {
+  const ex = Math.max(0, guests - LIMIT);
+  if (ex > 0) { exCount.textContent = ex; exNote.classList.add('show'); }
+  else exNote.classList.remove('show');
+}
+document.getElementById('gMinus').addEventListener('click', () => { if (guests > 1) { guests--; gNum.textContent = guests; syncGuests(); } });
+document.getElementById('gPlus').addEventListener('click', () => { if (guests < 30) { guests++; gNum.textContent = guests; syncGuests(); } });
+ciD.addEventListener('change', () => {
+  if (ciD.value) {
+    const nx = new Date(ciD.value); nx.setDate(nx.getDate() + 1);
+    coD.min = nx.toISOString().split('T')[0];
+    if (coD.value && coD.value <= ciD.value) coD.value = coD.min;
+  }
+});
+syncGuests();
+
+/* ── SUBMIT ── */
+const form = document.getElementById('bkForm');
+const sBtn = document.getElementById('sBtn'), sucMsg = document.getElementById('sucMsg'), errMsg = document.getElementById('errMsg');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  errMsg.style.display = 'none';
+  const name = document.getElementById('fName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const email = document.getElementById('fEmail').value.trim();
+  const msg = document.getElementById('fMsg').value.trim();
+  const n = nights();
+  if (!name || !phone || !email) {
+    errMsg.textContent = 'Please fill in your name, phone and email.';
+    errMsg.style.display = 'block'; return;
+  }
+  if (!ciD.value || !coD.value || n === 0) {
+    errMsg.textContent = 'Please choose valid check-in and check-out dates.';
+    errMsg.style.display = 'block'; return;
+  }
+  sBtn.disabled = true; sBtn.textContent = 'Sending…';
+  const summary =
+    `BOOKING ENQUIRY\n` +
+    `Check-in: ${ciD.value} at ${ciT.value}\n` +
+    `Check-out: ${coD.value} at ${coT.value}\n` +
+    `Nights: ${n}\nGuests: ${guests}` +
+    (msg ? `\n\nAdditional details: ${msg}` : '');
+  try {
+    const res = await fetch('https://formspree.io/f/xredooqp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name, email, phone,
+        checkin: `${ciD.value} ${ciT.value}`,
+        checkout: `${coD.value} ${coT.value}`,
+        nights: n, guests,
+        message: summary,
+        _subject: `New Booking Enquiry from ${name} – Mon Rêve (${n}N, ${guests}G)`,
+        _replyto: email
+      })
+    });
+    if (res.ok) {
+      form.style.display = 'none';
+      sucMsg.style.display = 'block';
+      sucMsg.scrollIntoView({ behavior:'smooth', block:'center' });
+    } else throw new Error();
+  } catch {
+    errMsg.textContent = 'Something went wrong. Please email us at monreveholidays@gmail.com';
+    errMsg.style.display = 'block';
+    sBtn.disabled = false; sBtn.textContent = 'Send Enquiry';
+  }
+});
+
+/* ── MOBILE MENU TOGGLE ── */
+const burger = document.getElementById('nvBurger');
+const mMenu = document.getElementById('mMenu');
+if (burger && mMenu) {
+  burger.addEventListener('click', () => {
+    const open = mMenu.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mMenu.classList.remove('open');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
+}
+
+/* ── CINEMATIC HERO (trial) JS ── */
+(function(){
+  var cprog=document.getElementById('cprog');
+  var cbg=document.getElementById('cheroBg');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement.scrollHeight-innerHeight;
+    if(cprog) cprog.style.width=(scrollY/h*100)+'%';
+    if(cbg && scrollY<innerHeight) cbg.style.transform='translateY('+(scrollY*0.38)+'px) scale(1.05)';
+  },{passive:true});
+})();
+
+/* ── PRELOADER (trial) JS ── */
+document.body.classList.add('loading');
+(function(){
+  var pre=document.getElementById('preloader');
+  var start=Date.now(), MIN=2200;
+  function hide(){
+    var wait=Math.max(0, MIN-(Date.now()-start));
+    setTimeout(function(){
+      pre.classList.add('done');
+      document.body.classList.remove('loading');
+    }, wait);
+  }
+  if(document.readyState==='complete') hide();
+  else window.addEventListener('load', hide);
+  // safety fallback
+  setTimeout(function(){ if(!pre.classList.contains('done')){pre.classList.add('done');document.body.classList.remove('loading');} }, 6000);
+})();
+</script>
+
+
+</body>
+</html>
