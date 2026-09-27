@@ -3,516 +3,463 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mon Rêve Holiday Home — Kozhikode, Kerala</title>
-<link rel="icon" type="image/png" sizes="32x32" href="images/img-1db2603c0c.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/img-27572c3591.png">
-<link rel="apple-touch-icon" sizes="180x180" href="images/img-8ba2c2944e.png">
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Mon Rêve Holiday Home · Engapuzha, Kozhikode, Kerala</title>
+<meta name="description" content="Mon Rêve is a private four-bedroom holiday villa in Engapuzha, Kozhikode, with a waterfall pool, teak interiors and room for twelve.">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="preload" as="image" href="images/living-round-window.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ivory:#FAF8F4; --beige:#F3EEE6; --stone:#E9E2D6; --sand:#EFE9DE;
-  --walnut:#5B4636; --walnut-deep:#43352A; --charcoal:#2E2A25;
-  --bronze:#A98E6F; --bronze-soft:#C2AC8F;
-  --text:#3A332C; --muted:#8A7D6D; --line:rgba(91,70,54,0.12);
-  --ease:cubic-bezier(0.22,1,0.36,1);
+  --paper:#FBF8F2;
+  --cream:#F3ECDF;
+  --linen:#E8DECC;
+  --teak:#9A6A3E;
+  --sepia:#6E5139;
+  --ink:#2A211A;
+  --body:#4A3E34;
+  --muted:#85776A;
+  --night:#15120F;
+  --gold:#E7C99F;
+  --line:rgba(110,81,57,.18);
+  --gutter:clamp(16px,5vw,72px);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,sans-serif;
 }
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--ivory);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-::selection{background:var(--bronze-soft);color:#fff}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--teak);color:var(--paper)}
+section[id]{scroll-margin-top:72px}
 
-/* ── REVEALS (replay both directions) ── */
-.rv{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
-.rv.in{opacity:1;transform:translateY(0)}
-.rv-l{opacity:0;transform:translateX(-44px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
-.rv-l.in{opacity:1;transform:translateX(0)}
-.rv-r{opacity:0;transform:translateX(44px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
-.rv-r.in{opacity:1;transform:translateX(0)}
-.rv-sc{opacity:0;transform:scale(0.96);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
-.rv-sc.in{opacity:1;transform:scale(1)}
-.stg>*{opacity:0;transform:translateY(26px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
-.stg.in>*{opacity:1;transform:translateY(0)}
-.stg.in>*:nth-child(1){transition-delay:.04s}.stg.in>*:nth-child(2){transition-delay:.12s}
-.stg.in>*:nth-child(3){transition-delay:.2s}.stg.in>*:nth-child(4){transition-delay:.28s}
-.stg.in>*:nth-child(5){transition-delay:.36s}.stg.in>*:nth-child(6){transition-delay:.44s}
-.stg.in>*:nth-child(7){transition-delay:.52s}.stg.in>*:nth-child(8){transition-delay:.6s}
-@media (prefers-reduced-motion:reduce){
-  .rv,.rv-l,.rv-r,.rv-sc,.stg>*{opacity:1!important;transform:none!important;transition:none!important}
-}
+.eyebrow{font-size:13px;letter-spacing:.28em;text-transform:uppercase;font-weight:400;color:var(--teak)}
+.display{font-family:var(--serif);font-weight:300;line-height:1.02;letter-spacing:-.01em}
+.display em{font-style:italic;color:var(--teak)}
+.h2{font-size:clamp(46px,5.6vw,84px);margin:18px 0 28px}
+.lead{font-size:18px;color:var(--body);max-width:48ch}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font:400 13px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:19px 32px;border:1px solid currentColor;border-radius:999px;transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease)}
+.btn-solid{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.btn-solid:hover{background:var(--teak);border-color:var(--teak)}
+.btn-line:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn .arr{transition:transform .4s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:24px 56px;background:transparent;backdrop-filter:none;border-bottom:1px solid transparent;transition:padding .45s var(--ease),background .5s var(--ease),backdrop-filter .5s,border-color .45s,box-shadow .45s}
-nav.sc{padding:12px 56px;background:rgba(250,248,244,0.85);backdrop-filter:blur(24px) saturate(1.4);border-bottom-color:var(--line);box-shadow:0 1px 24px rgba(46,42,37,0.05)}
-.nv-logo{display:flex;align-items:center;gap:13px;text-decoration:none;cursor:pointer}
-.nv-logo img{height:44px;width:44px;object-fit:contain;transition:height .45s var(--ease),width .45s var(--ease)}
-nav.sc .nv-logo img{height:36px;width:36px}
-.nv-name{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--charcoal);letter-spacing:.06em}
-.nv-links{display:flex;gap:34px;list-style:none}
-.nv-links a{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;position:relative;transition:color .3s;font-weight:400}
-.nv-links a::after{content:'';position:absolute;bottom:-5px;left:50%;width:0;height:1px;background:var(--bronze);transition:width .4s var(--ease),left .4s var(--ease)}
-.nv-links a:hover{color:var(--charcoal)}
-.nv-links a:hover::after{width:100%;left:0}
-.nv-cta{padding:11px 26px;background:var(--charcoal);color:var(--ivory);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:background .35s,transform .35s var(--ease);border-radius:2px}
-.nv-cta:hover{background:var(--walnut);transform:translateY(-1px)}
+.nav{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px var(--gutter);transition:background .5s var(--ease),padding .5s var(--ease),box-shadow .5s}
+.nav.solid{background:rgba(251,248,242,.97);padding-top:10px;padding-bottom:10px;box-shadow:0 1px 0 var(--line)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:50px;height:50px;border-radius:50%}
+.brand span{font:400 24px/1 var(--serif);letter-spacing:.04em}
+.nav ul{display:flex;gap:34px;list-style:none}
+.nav ul a{font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--sepia);position:relative}
+.nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:1px;background:var(--teak);transition:right .4s var(--ease)}
+.nav ul a:hover::after{right:0}
+.nav-r{display:flex;align-items:center;gap:14px}
+.nav .btn{padding:14px 24px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);position:relative}
+.burger i{position:absolute;left:14px;right:14px;height:1px;background:var(--ink);transition:transform .4s var(--ease),opacity .3s}
+.burger i:nth-child(1){top:17px}.burger i:nth-child(2){top:22.5px}.burger i:nth-child(3){top:28px}
+.menu-open .burger i:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.menu-open .burger i:nth-child(2){opacity:0}
+.menu-open .burger i:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:55;background:var(--paper);display:flex;flex-direction:column;justify-content:center;padding:90px var(--gutter) 40px;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility 0s .45s}
+.menu-open .mmenu{opacity:1;visibility:visible;transition:opacity .45s var(--ease)}
+.mmenu a{display:block;text-decoration:none;font:300 clamp(38px,9vw,56px)/1.25 var(--serif);color:var(--ink);padding:4px 0}
+.mmenu a em{color:var(--teak)}
+.mmenu p{margin-top:36px;font-size:14px;color:var(--muted)}
+@media (max-width:1000px){.nav ul{display:none}.burger{display:block}}
+@media (max-width:480px){.brand span{display:none}.nav .btn{padding:13px 18px;letter-spacing:.14em}}
 
 /* ── HERO ── */
-.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:flex-end;overflow:hidden}
-.hero-bg{position:absolute;inset:-70px 0;background-size:cover;background-position:center 32%;will-change:transform}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(46,42,37,0.72) 0%,rgba(46,42,37,0.18) 50%,rgba(46,42,37,0.04) 100%)}
-.hero-inner{position:relative;z-index:2;padding:0 72px 96px;max-width:860px}
-.hero-tag{font-size:10.5px;letter-spacing:.4em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:22px;opacity:0;animation:fdUp 1.2s .35s var(--ease) forwards}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(50px,7vw,92px);font-weight:300;line-height:1;color:#fff;letter-spacing:-0.005em}
-.hero h1 .ln{display:block;overflow:hidden}
-.hero h1 .ln span{display:block;transform:translateY(112%);animation:slUp 1.5s var(--ease) forwards}
-.hero h1 .ln:nth-child(1) span{animation-delay:.55s}
-.hero h1 .ln:nth-child(2) span{animation-delay:.72s;font-style:italic;color:#EDE3D3}
-.hero-sub{font-size:15px;color:rgba(255,255,255,0.62);font-weight:300;margin-top:26px;line-height:1.8;opacity:0;animation:fdUp 1.2s 1.1s var(--ease) forwards;letter-spacing:.01em}
-.hero-acts{display:flex;gap:14px;margin-top:42px;flex-wrap:wrap;opacity:0;animation:fdUp 1.2s 1.3s var(--ease) forwards}
-@keyframes fdUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
-@keyframes slUp{to{transform:translateY(0)}}
-.btn{padding:16px 38px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;font-weight:400;transition:all .4s var(--ease);border-radius:2px;display:inline-block}
-.btn-fill{background:var(--ivory);color:var(--charcoal)}
-.btn-fill:hover{background:#fff;transform:translateY(-3px);box-shadow:0 18px 38px rgba(0,0,0,0.28)}
-.btn-ghost{border:1px solid rgba(255,255,255,0.42);color:#fff}
-.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,0.08);transform:translateY(-3px)}
-.scroll-cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:11px;color:rgba(255,255,255,0.45);font-size:9px;letter-spacing:.3em;text-transform:uppercase;z-index:2;opacity:0;animation:fdUp 1s 1.9s forwards}
-.scroll-cue::after{content:'';width:1px;height:42px;background:linear-gradient(to bottom,rgba(255,255,255,0.6),transparent);animation:cue 2.4s ease-in-out infinite}
-@keyframes cue{0%,100%{opacity:.3;transform:scaleY(.65);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
-
-/* ── BASE SECTIONS ── */
-section{padding:120px 56px;position:relative}
-.wrap{max-width:1180px;margin:0 auto}
-.eyebrow{font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:var(--bronze);margin-bottom:16px;font-weight:400}
-.h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,54px);font-weight:300;line-height:1.12;color:var(--charcoal);margin-bottom:18px}
-.h2 em{font-style:italic;color:var(--walnut)}
-.lead{font-size:15px;color:var(--muted);line-height:1.9;font-weight:300;max-width:600px}
-.rule{width:44px;height:1px;background:var(--bronze);margin:28px 0;transform-origin:left;transition:transform 1.2s var(--ease)}
-.rv:not(.in) .rule{transform:scaleX(0)}
-
-/* ── INTRO STRIP ── */
-.intro{background:var(--ivory);padding:100px 56px 80px;text-align:center}
-.intro p{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.8vw,34px);font-weight:300;font-style:italic;color:var(--walnut);line-height:1.5;max-width:780px;margin:0 auto}
-
-/* ── ABOUT ── */
-.about{background:var(--beige);overflow:hidden}
-.about-g{display:grid;grid-template-columns:1.05fr 0.95fr;gap:90px;align-items:center}
-.ab-imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.ab-w{overflow:hidden;border-radius:3px}
-.ab-main{grid-column:1/-1;height:310px}
-.ab-sm{height:195px}
-.ab-w img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
-.ab-w:hover img{transform:scale(1.05)}
-.feat-g{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.feat{padding:18px 20px;background:var(--ivory);border:1px solid var(--line);border-radius:3px;font-size:13.5px;color:var(--walnut);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
-.feat:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(46,42,37,0.08)}
-.feat span{display:block;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-
-/* ── STATS ── */
-.stats{background:var(--ivory);padding:84px 56px}
-.stats-g{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
-.st-num{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:300;color:var(--walnut);line-height:1}
-.st-num .sf{font-size:30px;color:var(--bronze)}
-.st-lbl{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:12px}
-
-/* ── WHY MON REVE ── */
-.why{background:var(--ivory)}
-.why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
-.why-c{background:#fff;border:1px solid var(--line);border-radius:4px;padding:42px 34px;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-.why-c:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(46,42,37,0.09)}
-.why-ic{width:44px;height:44px;border:1px solid var(--bronze-soft);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:22px;color:var(--bronze)}
-.why-c h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--charcoal);margin-bottom:10px}
-.why-c p{font-size:13px;color:var(--muted);line-height:1.75;font-weight:300}
-
-/* ── GALLERY ── */
-.gallery{background:var(--beige)}
-.gal-g{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:280px 280px;gap:14px;margin-top:54px}
-.gg1{grid-column:1/6}.gg2{grid-column:6/10}.gg3{grid-column:10/13}
-.gg4{grid-column:1/4}.gg5{grid-column:4/8}.gg6{grid-column:8/13}
-.g-it{overflow:hidden;position:relative;cursor:pointer;border-radius:3px}
-.g-it img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
-.g-it::after{content:'+';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:200;color:#fff;background:rgba(46,42,37,0);transition:background .5s,opacity .5s;opacity:0}
-.g-it:hover img{transform:scale(1.06)}
-.g-it:hover::after{background:rgba(46,42,37,0.32);opacity:1}
-
-/* ── POOL ── */
-.pool{background:var(--charcoal);padding:0;overflow:hidden}
-.pool-g{display:grid;grid-template-columns:1fr 1fr;min-height:580px}
-.pool-iw{overflow:hidden;position:relative}
-.pool-iw img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease)}
-.pool-iw:hover img{transform:scale(1.045)}
-.pool-tx{padding:100px 76px;display:flex;flex-direction:column;justify-content:center}
-.pool-tx .eyebrow{color:var(--bronze-soft)}
-.pool-tx .h2{color:var(--ivory)}
-.pool-tx .h2 em{color:var(--bronze-soft)}
-.pool-tx .lead{color:rgba(250,248,244,0.55)}
-.pool-tx .rule{background:var(--bronze-soft)}
-.pl-feats{margin-top:38px;display:flex;flex-direction:column;gap:15px}
-.pl-f{display:flex;align-items:center;gap:15px;font-size:14px;color:rgba(250,248,244,0.66);font-weight:300}
-.pl-f::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--bronze-soft);flex-shrink:0}
-
-/* ── ROOMS ── */
-.rooms{background:var(--ivory)}
-.rm-g{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:54px}
-.rm-g2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px}
-.rm-c{position:relative;overflow:hidden;cursor:pointer;border-radius:3px}
-.rm-c img{width:100%;height:340px;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
-.rm-c:hover img{transform:scale(1.055)}
-.rm-lbl{position:absolute;bottom:0;left:0;right:0;padding:52px 28px 26px;background:linear-gradient(to top,rgba(46,42,37,0.82),transparent);color:#fff;transition:padding-bottom .5s var(--ease)}
-.rm-c:hover .rm-lbl{padding-bottom:32px}
-.rm-lbl h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:4px}
-.rm-lbl p{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,0.66)}
-.rm-view{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(250,248,244,0.92);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--charcoal);opacity:0;transform:scale(0.8);transition:opacity .45s var(--ease),transform .45s var(--ease)}
-.rm-c:hover .rm-view{opacity:1;transform:scale(1)}
-
-/* ── ROOM MODAL ── */
-.rmodal{position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;background:rgba(46,42,37,0);visibility:hidden;transition:background .5s var(--ease),visibility .5s}
-.rmodal.open{background:rgba(46,42,37,0.96);visibility:visible}
-.rmodal-box{width:min(1120px,94vw);height:min(720px,90vh);display:grid;grid-template-columns:1.4fr 1fr;background:var(--ivory);border-radius:6px;overflow:hidden;opacity:0;transform:scale(0.94) translateY(20px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
-.rmodal.open .rmodal-box{opacity:1;transform:scale(1) translateY(0)}
-.rmodal-img{position:relative;overflow:hidden;background:var(--stone)}
-.rmodal-img img{width:100%;height:100%;object-fit:cover;transition:opacity .4s var(--ease)}
-.rmodal-img img.fading{opacity:0}
-.rm-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(250,248,244,0.92);border:none;font-size:18px;color:var(--charcoal);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s,transform .3s var(--ease)}
-.rm-nav:hover{background:#fff;transform:translateY(-50%) scale(1.08)}
-.rm-prev{left:18px}.rm-next{right:18px}
-.rm-count{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);background:rgba(46,42,37,0.55);color:rgba(255,255,255,0.85);font-size:11px;letter-spacing:.1em;padding:6px 16px;border-radius:20px}
-.rmodal-info{padding:54px 46px;display:flex;flex-direction:column;overflow-y:auto}
-.rmi-floor{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--bronze);margin-bottom:12px}
-.rmi-title{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--charcoal);margin-bottom:18px;line-height:1.1}
-.rmi-desc{font-size:13.5px;color:var(--muted);line-height:1.85;font-weight:300;margin-bottom:30px}
-.rmi-sub{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
-.rmi-am{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-.rmi-chip{font-size:11.5px;color:var(--walnut);background:var(--beige);padding:8px 16px;border-radius:20px;font-weight:300}
-.rmi-occ{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);font-weight:300;margin-top:auto;padding-top:20px;border-top:1px solid var(--line)}
-.rmodal-x{position:absolute;top:22px;right:26px;width:42px;height:42px;border-radius:50%;background:rgba(250,248,244,0.14);border:1px solid rgba(250,248,244,0.3);color:#fff;font-size:18px;cursor:pointer;transition:all .35s var(--ease);z-index:10;display:flex;align-items:center;justify-content:center}
-.rmodal-x:hover{background:rgba(250,248,244,0.95);color:var(--charcoal);transform:rotate(90deg)}
-
-/* ── LIGHTBOX ── */
-.lb{position:fixed;inset:0;z-index:600;display:flex;align-items:center;justify-content:center;background:rgba(20,18,15,0);visibility:hidden;transition:background .45s var(--ease),visibility .45s}
-.lb.open{background:rgba(20,18,15,0.95);visibility:visible}
-.lb img{max-width:88vw;max-height:86vh;object-fit:contain;border-radius:4px;opacity:0;transform:scale(0.92);transition:opacity .5s var(--ease),transform .5s var(--ease)}
-.lb.open img{opacity:1;transform:scale(1)}
-.lb-x{position:absolute;top:26px;right:32px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:19px;cursor:pointer;transition:all .35s var(--ease);display:flex;align-items:center;justify-content:center}
-.lb-x:hover{background:rgba(255,255,255,0.95);color:var(--charcoal);transform:rotate(90deg)}
-
-/* ── PRICING ── */
-.pricing{background:var(--beige)}
-.pr-g{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:54px}
-.pr-c{background:#fff;border:1px solid var(--line);border-radius:4px;padding:46px 40px;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-.pr-c:hover{transform:translateY(-6px);box-shadow:0 28px 64px rgba(46,42,37,0.1)}
-.pr-c.dark{background:var(--charcoal);border-color:var(--charcoal)}
-.pr-tag{display:inline-block;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);border:1px solid var(--bronze-soft);padding:7px 16px;border-radius:20px;margin-bottom:24px}
-.pr-c.dark .pr-tag{color:var(--bronze-soft);border-color:rgba(194,172,143,0.4)}
-.pr-h{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:400;color:var(--charcoal);margin-bottom:6px}
-.pr-c.dark .pr-h{color:var(--ivory)}
-.pr-amt{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--walnut);line-height:1;margin-bottom:4px}
-.pr-c.dark .pr-amt{color:var(--bronze-soft)}
-.pr-amt span{font-size:20px}
-.pr-per{font-size:11.5px;color:var(--muted);letter-spacing:.06em;margin-bottom:30px}
-.pr-c.dark .pr-per{color:rgba(250,248,244,0.45)}
-.pr-ls{list-style:none;margin-bottom:24px}
-.pr-ls li{font-size:13.5px;color:var(--text);font-weight:300;padding:10px 0;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;gap:12px;line-height:1.55}
-.pr-c.dark .pr-ls li{color:rgba(250,248,244,0.72);border-bottom-color:rgba(250,248,244,0.1)}
-.pr-ls li::before{content:'—';color:var(--bronze);flex-shrink:0;font-weight:300}
-.pr-note{font-size:11.5px;color:var(--muted);font-weight:300;line-height:1.75;font-style:italic}
-.pr-c.dark .pr-note{color:rgba(250,248,244,0.38)}
-.ex-g{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
-.ex-c{background:#fff;border:1px solid var(--line);border-radius:4px;padding:28px 22px;text-align:center;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
-.ex-c:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(46,42,37,0.08)}
-.ex-c .ic{font-size:24px;margin-bottom:12px}
-.ex-c h5{font-size:13px;font-weight:500;color:var(--charcoal);margin-bottom:6px}
-.ex-c p{font-size:11px;color:var(--muted);font-weight:300}
-
-/* ── LOCATION ── */
-.loc{background:var(--ivory);overflow:hidden}
-.loc-g{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;margin-top:54px}
-.loc-iw{overflow:hidden;border-radius:4px}
-.loc-iw img{width:100%;height:450px;object-fit:cover;transition:transform 1.4s var(--ease)}
-.loc-iw:hover img{transform:scale(1.045)}
-.loc-pt{display:flex;gap:18px;margin-bottom:32px;align-items:flex-start}
-.loc-d{width:7px;height:7px;border-radius:50%;background:var(--bronze);margin-top:6px;flex-shrink:0}
-.loc-pt h4{font-size:13.5px;font-weight:500;color:var(--charcoal);margin-bottom:6px;letter-spacing:.02em}
-.loc-pt p{font-size:13px;color:var(--muted);font-weight:300;line-height:1.7}
-.loc-pt a{color:var(--bronze);text-decoration:none}
-
-/* ── BOOKING FORM ── */
-.book{background:var(--beige)}
-.bk-wrap{display:grid;grid-template-columns:0.82fr 1.18fr;gap:64px;align-items:start;margin-top:54px}
-.bk-left img{width:100%;border-radius:4px;display:block}
-.bk-left .im2{margin-top:16px}
-.bk-note{font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.85;margin-top:18px}
-.form-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:52px 48px;box-shadow:0 40px 100px rgba(46,42,37,0.07)}
-.fs-lbl{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze);margin:34px 0 22px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.fs-lbl:first-child{margin-top:0}
-.f-row{display:grid;grid-template-columns:1fr 1fr;gap:26px}
-
-/* Floating labels */
-.ff{position:relative;margin-bottom:26px}
-.ff input,.ff textarea{width:100%;border:none;border-bottom:1px solid rgba(91,70,54,0.2);background:transparent;padding:22px 0 9px;font-size:15px;font-family:'Inter',sans-serif;color:var(--text);outline:none;transition:border-color .35s;font-weight:300}
-.ff textarea{resize:none;height:96px}
-.ff label{position:absolute;left:0;top:22px;font-size:14px;color:#A99C8B;pointer-events:none;transition:all .3s var(--ease);font-weight:300}
-.ff input:focus,.ff textarea:focus{border-bottom-color:var(--bronze)}
-.ff input:focus~label,.ff input.filled~label,.ff textarea:focus~label,.ff textarea.filled~label{top:0;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze)}
-.ff .req{color:var(--bronze)}
-
-/* Date/time */
-.fd{margin-bottom:26px}
-.fd label{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;font-weight:400}
-.fd label .req{color:var(--bronze)}
-.fd input{width:100%;border:1px solid rgba(91,70,54,0.18);padding:14px 15px;background:var(--ivory);font-size:14px;font-family:'Inter',sans-serif;color:var(--text);outline:none;cursor:pointer;border-radius:3px;transition:border-color .3s,background .3s;font-weight:300}
-.fd input:focus{border-color:var(--bronze);background:#fff}
-
-/* Guest counter */
-.gc{display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(91,70,54,0.18);padding:14px 18px;background:var(--ivory);border-radius:3px}
-.gc-n{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--charcoal);line-height:1}
-.gc-s{font-size:10px;color:var(--muted);letter-spacing:.06em;margin-top:4px}
-.gc-btns{display:flex;gap:10px}
-.gb{width:44px;height:44px;border:1px solid var(--line);background:#fff;font-size:19px;color:var(--walnut);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s var(--ease);user-select:none;border-radius:50%;font-family:'Inter',sans-serif;font-weight:300}
-.gb:hover{background:var(--charcoal);color:var(--ivory);border-color:var(--charcoal);transform:scale(1.07)}
-.gb:active{transform:scale(0.94)}
-.exn{font-size:11.5px;color:#A6691E;margin-top:10px;font-weight:400;display:none;animation:fdUp .4s var(--ease)}
-.exn.show{display:block}
-
-/* Price summary */
-.psum{background:var(--charcoal);padding:32px 34px;margin:34px 0 28px;position:relative;border-radius:5px;overflow:hidden}
-.ps-t{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze-soft);margin-bottom:20px}
-.ps-r{display:flex;justify-content:space-between;align-items:center;padding:9px 0;font-size:13px;color:rgba(250,248,244,0.55);font-weight:300}
-.ps-r .v{color:rgba(250,248,244,0.85)}
-.ps-div{height:1px;background:rgba(250,248,244,0.12);margin:14px 0}
-.ps-tot{display:flex;justify-content:space-between;align-items:center}
-.ps-tot .l{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,248,244,0.6)}
-.ps-tot .a{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--bronze-soft)}
-.ps-tot .a.bp{animation:bump .45s var(--ease)}
-@keyframes bump{0%{transform:scale(1)}40%{transform:scale(1.07)}100%{transform:scale(1)}}
-.ps-h{font-size:11px;color:rgba(250,248,244,0.32);margin-top:12px;font-style:italic;font-weight:300}
-
-.sbtn{width:100%;padding:21px;background:var(--charcoal);color:var(--ivory);border:none;font-family:'Inter',sans-serif;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;cursor:pointer;font-weight:400;transition:all .45s var(--ease);border-radius:3px}
-.sbtn:hover{background:var(--walnut);transform:translateY(-2px);box-shadow:0 18px 44px rgba(46,42,37,0.25)}
-.sbtn:disabled{opacity:.55;cursor:not-allowed;transform:none}
-.errm{display:none;background:#FBF3F0;border:1px solid #E8C8BC;padding:15px 18px;margin-top:18px;font-size:12.5px;color:#A6512E;text-align:center;border-radius:3px}
-.sucm{display:none;text-align:center;padding:64px 24px}
-.suc-i{width:62px;height:62px;border:1px solid var(--bronze);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;font-size:24px;color:var(--bronze);animation:pop .6s var(--ease)}
-@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
-.sucm h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--charcoal);margin-bottom:14px}
-.sucm p{font-size:14px;color:var(--muted);font-weight:300;line-height:1.75}
-
-/* ── FOOTER ── */
-footer{background:var(--charcoal);padding:72px 56px 40px}
-.ft-g{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:56px;margin-bottom:56px}
-.ft-logo img{height:52px;object-fit:contain;margin-bottom:20px}
-.ft-tag{font-size:13px;color:rgba(250,248,244,0.42);font-weight:300;line-height:1.8}
-.ft-c h4{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--bronze-soft);margin-bottom:20px}
-.ft-c p,.ft-c a{display:block;font-size:13px;color:rgba(250,248,244,0.46);font-weight:300;line-height:2.1;text-decoration:none;transition:color .3s,padding-left .3s var(--ease)}
-.ft-c a:hover{color:var(--bronze-soft);padding-left:5px}
-.ft-b{border-top:1px solid rgba(250,248,244,0.08);padding-top:28px;display:flex;justify-content:space-between;align-items:center;max-width:1180px;margin:0 auto}
-.ft-b p{font-size:11.5px;color:rgba(250,248,244,0.26);font-weight:300}
-
-@media(max-width:920px){
-  nav{padding:14px 24px}
-  nav.sc{padding:10px 24px}
-  .nv-links{display:none}
-  section{padding:76px 24px}
-  .about-g,.bk-wrap,.loc-g,.pool-g{grid-template-columns:1fr;gap:46px}
-  .gal-g{grid-template-columns:1fr 1fr;grid-template-rows:auto}
-  .gg1,.gg2,.gg3,.gg4,.gg5,.gg6{grid-column:auto}
-  .g-it{height:215px}
-  .rm-g,.rm-g2{grid-template-columns:1fr}
-  .why-g{grid-template-columns:1fr}
-  .pr-g{grid-template-columns:1fr}
-  .ex-g{grid-template-columns:1fr}
-  .stats-g{grid-template-columns:repeat(2,1fr);gap:38px}
-  .ft-g{grid-template-columns:1fr;gap:38px}
-  .hero-inner{padding:0 24px 76px}
-  .f-row{grid-template-columns:1fr;gap:0}
-  .ft-b{flex-direction:column;gap:10px;text-align:center}
-  .pool-tx{padding:56px 28px}
-  .form-card{padding:38px 26px}
-  .rmodal-box{grid-template-columns:1fr;height:min(860px,92vh);overflow-y:auto}
-  .rmodal-img{height:300px;flex-shrink:0}
-  .rmodal-info{padding:34px 28px}
+.hero{position:relative;height:260vh;background:var(--cream)}
+.hero-stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.hero-headwrap{position:absolute;inset:0;z-index:3;display:flex;align-items:center;padding:90px var(--gutter) 40px;pointer-events:none}
+.hero-head{width:44%;will-change:opacity,transform;pointer-events:auto}
+.hero-head .eyebrow{margin-bottom:22px}
+.hero-head h1{font-size:clamp(64px,8.2vw,150px)}
+.hero-head h1 span{display:block;font-style:italic;color:var(--teak);font-size:.52em;margin-top:.12em;letter-spacing:0}
+.hero-head .sub{margin-top:26px;font-size:18px;color:var(--body);max-width:36ch}
+.hero-head .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.hero-win{position:absolute;left:0;top:0;border-radius:50%;overflow:hidden;z-index:1;transform-origin:50% 50%;will-change:transform;background:var(--linen);contain:strict}
+.hero-win img{position:absolute;max-width:none;object-fit:cover;object-position:30% 50%;transform-origin:50% 50%;will-change:transform;backface-visibility:hidden}
+.hero-ring{position:absolute;left:0;top:0;border:1px solid var(--sepia);border-radius:50%;z-index:2;pointer-events:none;transform-origin:50% 50%;will-change:transform,opacity}
+.hero-ring::after{content:"";position:absolute;inset:-10px;border:1px solid var(--line);border-radius:50%}
+.hero-shade{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(21,18,15,.82) 0%,rgba(21,18,15,.35) 45%,rgba(21,18,15,.05) 100%);opacity:0;pointer-events:none;will-change:opacity}
+.hero-after{position:absolute;left:var(--gutter);right:var(--gutter);bottom:clamp(40px,9vh,100px);z-index:3;color:var(--paper);display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;opacity:0;pointer-events:none;will-change:opacity,transform}
+.hero-after.on{pointer-events:auto}
+.hero-after h2{font-size:clamp(46px,6vw,96px);max-width:12ch}
+.hero-after h2 em{color:var(--gold)}
+.hero-after p{max-width:36ch;font-size:18px;color:rgba(251,248,242,.88)}
+.hero-after .btn{color:var(--paper);margin-top:24px}
+.hero-after .btn:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.scroll-cue{position:absolute;right:var(--gutter);bottom:26px;z-index:3;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--sepia);display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-cue::after{content:"";width:1px;height:40px;background:currentColor;animation:cue 2.2s var(--ease) infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+@media (max-width:900px){
+  .hero-headwrap{align-items:flex-start;text-align:center;padding-top:clamp(96px,14vh,130px)}
+  .hero-head{width:100%}
+  .hero-head .eyebrow{margin-bottom:14px}
+  .hero-head h1{font-size:clamp(58px,15vw,110px)}
+  .hero-head .sub,.hero-head .acts{display:none}
+  .scroll-cue{right:50%;transform:translateX(50%)}
 }
 
-/* ── MOBILE MENU ── */
-.nv-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:8px;z-index:400}
-.nv-burger span{display:block;height:1.6px;background:var(--charcoal);border-radius:2px;transition:transform .4s var(--ease),opacity .3s}
-.nv-burger.open span:nth-child(1){transform:translateY(6.6px) rotate(45deg)}
-.nv-burger.open span:nth-child(2){opacity:0}
-.nv-burger.open span:nth-child(3){transform:translateY(-6.6px) rotate(-45deg)}
-.m-menu{position:fixed;inset:0;z-index:350;background:var(--ivory);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s}
-.m-menu.open{opacity:1;visibility:visible}
-.m-menu ul{list-style:none;text-align:center;padding:0}
-.m-menu li{margin:10px 0;opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
-.m-menu.open li{opacity:1;transform:translateY(0)}
-.m-menu.open li:nth-child(1){transition-delay:.08s}.m-menu.open li:nth-child(2){transition-delay:.14s}
-.m-menu.open li:nth-child(3){transition-delay:.2s}.m-menu.open li:nth-child(4){transition-delay:.26s}
-.m-menu.open li:nth-child(5){transition-delay:.32s}.m-menu.open li:nth-child(6){transition-delay:.38s}
-.m-menu.open li:nth-child(7){transition-delay:.46s}
-.m-menu a{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--charcoal);text-decoration:none;letter-spacing:.02em}
-.m-menu .m-reserve{display:inline-block;margin-top:18px;font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;background:var(--charcoal);color:var(--ivory);padding:16px 36px;border-radius:3px}
-@media (max-width:920px){ .nv-burger{display:flex} }
+/* ── FACTS ── */
+.facts{border-bottom:1px solid var(--line)}
+.facts ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);max-width:1320px;margin:0 auto}
+.facts li{padding:48px 16px;border-right:1px solid var(--line);text-align:center}
+.facts li:last-child{border-right:0}
+.facts b{display:block;font:300 clamp(46px,5vw,72px)/1 var(--serif)}
+.facts b small{font-size:.42em;margin-left:4px;color:var(--teak)}
+.facts span{display:block;margin-top:12px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:760px){.facts ul{grid-template-columns:1fr 1fr}.facts li:nth-child(2){border-right:0}.facts li:nth-child(-n+2){border-bottom:1px solid var(--line)}.facts li{padding:32px 12px}}
 
-/* ── CINEMATIC HERO (trial) ── */
-.cprog{position:fixed;top:0;left:0;height:2px;background:var(--bronze);z-index:400;width:0}
-.chero{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
-.chero-bg{position:absolute;inset:-8% 0;background-size:cover;background-position:center 32%;will-change:transform}
-.chero-veil{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(46,42,37,0.22),rgba(46,42,37,0.74))}
-.chero-inner{position:relative;z-index:3;padding:0 28px;max-width:900px}
-.chero-tag{font-size:11px;letter-spacing:0.42em;text-transform:uppercase;color:rgba(255,255,255,0.72);margin-bottom:26px;opacity:0;animation:cfade 1.5s .4s var(--ease) forwards}
-.chero-title{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:0.98;font-size:clamp(54px,9vw,122px);letter-spacing:-0.01em;color:#fff}
-.chero-title .cl{display:block;overflow:hidden}
-.chero-title .cl span{display:block;transform:translateY(112%);animation:crise 1.6s var(--ease) forwards}
-.chero-title .cl:nth-child(1) span{animation-delay:.5s}
-.chero-title .cl:nth-child(2) span{animation-delay:.68s;font-style:italic;color:#EADBC0}
-.chero-sub{margin-top:28px;font-size:15px;font-weight:300;letter-spacing:0.02em;line-height:1.8;color:rgba(255,255,255,0.62);opacity:0;animation:cfade 1.5s 1.2s var(--ease) forwards}
-.chero-acts{display:flex;gap:14px;margin-top:40px;justify-content:center;flex-wrap:wrap;opacity:0;animation:cfade 1.5s 1.45s var(--ease) forwards}
-.chero-cue{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);z-index:3;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.42);display:flex;flex-direction:column;align-items:center;gap:11px;opacity:0;animation:cfade 1.5s 1.9s forwards}
-.chero-cue::after{content:'';width:1px;height:44px;background:linear-gradient(rgba(255,255,255,0.5),transparent);animation:ccue 2.4s ease-in-out infinite}
-@keyframes crise{to{transform:translateY(0)}}
-@keyframes cfade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes ccue{0%,100%{opacity:.3;transform:scaleY(.6);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+/* ── ABOUT ── */
+.about{padding:clamp(96px,13vw,190px) 0}
+.about-g{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(48px,7vw,120px);align-items:center}
+.porthole{position:relative;aspect-ratio:1;width:100%;max-width:620px}
+.porthole img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.porthole::before{content:"";position:absolute;inset:-18px;border:1px solid var(--sepia);border-radius:50%;opacity:.45}
+.porthole .mini{position:absolute;right:-6%;bottom:-2%;width:38%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:8px solid var(--paper);box-shadow:0 24px 50px -28px rgba(42,33,26,.5)}
+.porthole .mini img{border-radius:0}
+.about p{margin-bottom:18px}
+.feat{display:grid;grid-template-columns:1fr 1fr;margin-top:38px;border-top:1px solid var(--line)}
+.feat div{padding:18px 0;border-bottom:1px solid var(--line)}
+.feat div:nth-child(odd){padding-right:16px}
+.feat small{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.feat b{font:400 23px/1.3 var(--serif)}
+@media (max-width:900px){.about-g{grid-template-columns:1fr}.porthole{max-width:460px;margin:0 auto}}
 
-/* ── TRANSPARENT NAV OVER HERO (trial) ── */
-nav:not(.sc) .nv-name{color:#fff}
-nav:not(.sc) .nv-links a{color:rgba(255,255,255,0.82)}
-nav:not(.sc) .nv-links a:hover{color:#fff}
-nav:not(.sc) .nv-cta{background:rgba(255,255,255,0.16);color:#fff;border:1px solid rgba(255,255,255,0.35);backdrop-filter:blur(6px)}
-nav:not(.sc) .nv-cta:hover{background:#fff;color:var(--charcoal)}
-nav:not(.sc) .nv-burger span{background:#fff}
-/* logo stays visible on both; add subtle shadow so it reads on light image areas */
-nav:not(.sc) .nv-logo img{filter:drop-shadow(0 2px 6px rgba(0,0,0,0.25))}
-/* hero already starts at very top now */
-.chero{margin-top:0}
+/* ── WHY ── */
+.why{background:var(--cream);padding:clamp(96px,12vw,170px) 0}
+.why-top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:64px}
+.why-top .h2{margin-bottom:0}
+.why-top .lead{max-width:40ch}
+.why-g{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.why-c{padding:40px 36px 44px 0;border-bottom:1px solid var(--line)}
+.why-c:not(:nth-child(3n+1)){padding-left:36px;border-left:1px solid var(--line)}
+.why-c .n{font:italic 300 22px var(--serif);color:var(--teak)}
+.why-c h3{font:400 32px/1.15 var(--serif);margin:14px 0 12px}
+.why-c p{color:var(--body);font-size:16px}
+@media (max-width:980px){.why-g{grid-template-columns:1fr 1fr}.why-c:not(:nth-child(3n+1)){padding-left:0;border-left:0}.why-c:nth-child(even){padding-left:32px;border-left:1px solid var(--line)}}
+@media (max-width:620px){.why-g{grid-template-columns:1fr}.why-c:nth-child(even){padding-left:0;border-left:0}.why-c{padding-right:0}}
 
-/* ── PRELOADER (trial) ── */
-.preloader{position:fixed;inset:0;z-index:9999;background:var(--ivory);display:flex;align-items:center;justify-content:center;transition:opacity .8s var(--ease),visibility .8s}
+/* ── GALLERY ── */
+.gallery{padding:clamp(96px,12vw,170px) 0}
+.gal-g{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(150px,17vw,250px);gap:clamp(10px,1.4vw,20px);margin-top:20px}
+.gi{position:relative;overflow:hidden;border-radius:3px;cursor:zoom-in;background:var(--linen)}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.gi:hover img{transform:scale(1.05)}
+.gi figcaption{position:absolute;left:16px;bottom:14px;color:var(--paper);font:italic 400 20px var(--serif);opacity:0;transform:translateY(8px);transition:opacity .5s var(--ease),transform .5s var(--ease);text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.gi:hover figcaption{opacity:1;transform:none}
+.gi:nth-child(1){grid-column:1/6;grid-row:span 2;border-radius:999px 999px 3px 3px}
+.gi:nth-child(2){grid-column:6/10}
+.gi:nth-child(3){grid-column:10/13;grid-row:span 2}
+.gi:nth-child(4){grid-column:6/10}
+.gi:nth-child(5){grid-column:1/7}
+.gi:nth-child(6){grid-column:7/13}
+@media (max-width:760px){
+  .gal-g{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+  .gi:nth-child(n){grid-column:auto;grid-row:auto}
+  .gi:nth-child(1){grid-column:1/3;grid-row:span 2}
+  .gi:nth-child(5),.gi:nth-child(6){grid-column:1/3}
+  .gi figcaption{opacity:1;transform:none;font-size:17px}
+}
+
+/* ── POOL ── */
+.pool{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:var(--paper);background:var(--night);overflow:hidden}
+.pool-bg{position:absolute;inset:-8% 0;background:url('images/pool-night.jpg') center/cover no-repeat;will-change:transform}
+.pool::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(21,18,15,.88) 0%,rgba(21,18,15,.55) 42%,rgba(21,18,15,.05) 75%)}
+.pool .wrap{position:relative;z-index:1;width:100%;padding-top:120px;padding-bottom:clamp(56px,10vh,110px)}
+.pool .eyebrow{color:var(--gold)}
+.pool h2{font-size:clamp(52px,7vw,110px);margin:20px 0 28px;max-width:10ch}
+.pool h2 em{color:var(--gold)}
+.pool p{max-width:42ch;font-size:18px;color:rgba(251,248,242,.85)}
+.pool ol{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;max-width:660px}
+.pool li{border:1px solid rgba(231,201,159,.45);border-radius:999px;padding:10px 20px;font-size:14px;letter-spacing:.05em;color:rgba(251,248,242,.92)}
+
+/* ── ROOMS ── */
+.rooms{padding:clamp(96px,12vw,170px) 0 clamp(80px,10vw,140px)}
+.rooms-h{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:60px}
+.rooms-h .h2{margin-bottom:0}
+.sub-h{display:flex;align-items:center;gap:18px;margin:0 0 30px;font:italic 400 26px var(--serif);color:var(--sepia)}
+.sub-h::after{content:"";flex:1;height:1px;background:var(--line)}
+.arch-row{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,30px)}
+.card{display:block;text-align:left;width:100%}
+.card figure{position:relative;overflow:hidden;background:var(--linen)}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.card:hover img{transform:scale(1.06)}
+.card figure::after{content:"View";position:absolute;right:14px;bottom:14px;background:rgba(251,248,242,.94);color:var(--ink);font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:9px 14px;border-radius:999px;opacity:0;transform:translateY(6px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.card:hover figure::after,.card:focus-visible figure::after{opacity:1;transform:none}
+.card .cap{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:18px}
+.card h3{font:400 29px/1.1 var(--serif)}
+.card small{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.card .occ{display:block;margin-top:6px;font-size:14px;color:var(--muted)}
+.arch-row .card figure{aspect-ratio:3/4.2;border-radius:999px 999px 4px 4px}
+.arch-row .card .cap{flex-direction:column;gap:6px}
+.arch-row .card:nth-child(even){margin-top:56px}
+.wide-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,30px);margin-top:clamp(64px,8vw,110px)}
+.wide-row .card figure{aspect-ratio:4/3;border-radius:4px}
+@media (max-width:980px){.arch-row{grid-template-columns:1fr 1fr}.arch-row .card:nth-child(even){margin-top:40px}.wide-row{grid-template-columns:1fr}.wide-row .card figure{aspect-ratio:16/10}}
+@media (max-width:420px){.card h3{font-size:23px}.card .cap{flex-direction:column;gap:4px}}
+
+/* ── INCLUDED ── */
+.incl{background:var(--cream);padding:clamp(96px,12vw,170px) 0}
+.incl-g{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(48px,7vw,110px);align-items:start}
+.incl-card{background:var(--paper);border:1px solid var(--line);padding:clamp(28px,4vw,56px);position:relative}
+.incl-card::before{content:"";position:absolute;inset:10px;border:1px solid var(--line);pointer-events:none}
+.incl-card h3{font:400 34px/1.1 var(--serif);margin:12px 0 8px}
+.incl-card ul{list-style:none;margin:22px 0 0}
+.incl-card li{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px}
+.incl-card li:last-child{border-bottom:0}
+.incl-card li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--teak);transform:translateY(-2px)}
+.incl-card .alt li::before{background:none;border:1px solid var(--teak)}
+.incl-card hr{border:0;border-top:1px solid var(--line);margin:34px 0 26px}
+.incl-card .fine{margin-top:18px;font-size:14px;color:var(--muted)}
+@media (max-width:900px){.incl-g{grid-template-columns:1fr}}
+
+/* ── LOCATION ── */
+.loc{padding:clamp(96px,12vw,170px) 0}
+.loc-g{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(40px,6vw,100px);align-items:center}
+.loc-img{aspect-ratio:4/3.4;overflow:hidden;border-radius:999px 999px 4px 4px}
+.loc-img img{width:100%;height:100%;object-fit:cover}
+.place{display:grid;grid-template-columns:92px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--line)}
+.place:last-child{border-bottom:1px solid var(--line)}
+.place b{font:300 32px/1 var(--serif);color:var(--teak)}
+.place b small{font-size:15px;margin-left:2px}
+.place h4{font:400 25px/1.2 var(--serif)}
+.place p{font-size:16px;color:var(--muted)}
+.place a{color:var(--sepia)}
+@media (max-width:900px){.loc-g{grid-template-columns:1fr}.loc-img{max-width:560px}}
+
+/* ── BOOK ── */
+.book{background:var(--night);color:var(--paper);padding:clamp(96px,12vw,170px) 0;position:relative;overflow:hidden}
+.book::before{content:"";position:absolute;left:-20vw;top:50%;width:min(1100px,150vw);aspect-ratio:1;transform:translateY(-50%);border:1px solid rgba(231,201,159,.12);border-radius:50%}
+.book-g{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(48px,7vw,110px);align-items:start}
+.book .eyebrow{color:var(--gold)}
+.book .h2 em{color:var(--gold)}
+.book .lead{color:rgba(251,248,242,.78)}
+.book-notes{list-style:none;margin-top:36px;border-top:1px solid rgba(251,248,242,.14)}
+.book-notes li{padding:16px 0;border-bottom:1px solid rgba(251,248,242,.14);color:rgba(251,248,242,.85);display:flex;gap:14px}
+.book-notes li::before{content:"✦";color:var(--gold);font-size:12px;line-height:2.1}
+.book-notes a{color:var(--gold)}
+.fcard{background:var(--paper);color:var(--ink);padding:clamp(26px,4vw,52px);border-radius:4px}
+.fcard .grp{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--teak);margin:6px 0 16px}
+.fcard .grp:not(:first-child){margin-top:30px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fld{display:block;margin-bottom:16px}
+.fld span{display:block;font-size:13px;color:var(--muted);margin-bottom:7px}
+.fld span i{color:var(--teak);font-style:normal}
+.fld input,.fld textarea{width:100%;font:300 17px/1.4 var(--sans);color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:3px;padding:14px 16px;transition:border-color .3s,box-shadow .3s}
+.fld textarea{min-height:110px;resize:vertical}
+.fld input:focus,.fld textarea:focus{outline:0;border-color:var(--teak);box-shadow:0 0 0 3px rgba(154,106,62,.15)}
+.gc{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:3px;background:#fff;padding:12px 12px 12px 18px}
+.gc b{font:400 36px/1 var(--serif)}
+.gc small{display:block;font-size:13px;color:var(--muted)}
+.gc .bt{display:flex;gap:8px}
+.gc button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);font-size:22px;line-height:1;transition:background .3s,color .3s}
+.gc button:hover{background:var(--ink);color:var(--paper)}
+.exn{display:none;margin-top:10px;font-size:14px;color:var(--teak)}
+.exn.show{display:block}
+.send{width:100%;margin-top:26px;padding:21px}
+.send:disabled{opacity:.6;cursor:wait}
+.err{display:none;margin-top:14px;font-size:15px;color:#A2402E}
+.ok{display:none;text-align:center;padding:40px 10px}
+.ok .tick{width:72px;height:72px;margin:0 auto 22px;border-radius:50%;border:1px solid var(--teak);display:grid;place-items:center;font-size:28px;color:var(--teak)}
+.ok h3{font:400 38px var(--serif);margin-bottom:10px}
+.ok p{color:var(--body)}
+@media (max-width:900px){.book-g{grid-template-columns:1fr}}
+@media (max-width:520px){.frow{grid-template-columns:1fr;gap:0}}
+
+footer{background:var(--night);color:rgba(251,248,242,.6);border-top:1px solid rgba(251,248,242,.08);padding:64px var(--gutter) 28px}
+.ft-g{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.ft-g img{width:96px;height:96px;border-radius:50%;margin-bottom:18px}
+.ft-g p{max-width:36ch;font-size:15px}
+.ft-g h4{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:16px}
+.ft-g a{display:block;text-decoration:none;color:rgba(251,248,242,.82);font-size:15px;padding:4px 0}
+.ft-g a:hover{color:var(--gold)}
+.ft-b{max-width:1320px;margin:52px auto 0;padding-top:22px;border-top:1px solid rgba(251,248,242,.08);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px}
+@media (max-width:760px){.ft-g{grid-template-columns:1fr 1fr}.ft-g>div:first-child{grid-column:1/-1}}
+
+/* ── ROOM MODAL + LIGHTBOX ── */
+.modal{position:fixed;inset:0;z-index:80;background:rgba(21,18,15,.9);display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,40px);opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility 0s .45s}
+.modal.open{opacity:1;visibility:visible;transition:opacity .45s var(--ease)}
+.x{position:absolute;top:16px;right:16px;z-index:3;width:50px;height:50px;border-radius:50%;background:rgba(251,248,242,.12);color:var(--paper);font-size:26px;line-height:1}
+.x:hover{background:rgba(251,248,242,.25)}
+.room-box{width:min(1200px,100%);max-height:100%;display:grid;grid-template-columns:1.35fr 1fr;background:var(--paper);border-radius:4px;overflow:hidden;transform:translateY(20px) scale(.98);transition:transform .6s var(--ease)}
+.modal.open .room-box{transform:none}
+.room-img{position:relative;min-height:320px;background:var(--linen)}
+.room-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.room-img img.fade{opacity:0}
+.nv{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:rgba(251,248,242,.92);color:var(--ink);font-size:24px;line-height:1}
+.nv:hover{background:var(--paper)}
+.nv.p{left:16px}.nv.n{right:16px}
+.cnt{position:absolute;left:16px;bottom:16px;background:rgba(21,18,15,.6);color:var(--paper);font-size:13px;letter-spacing:.14em;padding:7px 13px;border-radius:999px}
+.room-info{padding:clamp(28px,4vw,56px);overflow:auto}
+.room-info h3{font:300 clamp(38px,4vw,54px)/1.05 var(--serif);margin:12px 0 18px}
+.room-info p{color:var(--body)}
+.room-info .am-h{margin-top:28px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:14px;color:var(--sepia)}
+.room-info .occ{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);font:italic 400 21px var(--serif);color:var(--sepia)}
+@media (max-width:820px){.room-box{grid-template-columns:1fr;max-height:calc(100svh - 24px);overflow:auto}.room-img{aspect-ratio:4/3;min-height:0}.room-info{overflow:visible}}
+.lb-img{max-width:min(1300px,100%);max-height:84vh;border-radius:3px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.lb-cap{position:absolute;left:0;right:0;bottom:22px;text-align:center;color:rgba(251,248,242,.85);font:italic 400 22px var(--serif)}
+.modal .nv.p{left:max(16px,2vw)}.modal .nv.n{right:max(16px,2vw)}
+
+/* ── PRELOADER (same as the live site) ── */
+.preloader{position:fixed;inset:0;z-index:9999;background:var(--paper);display:flex;align-items:center;justify-content:center;transition:opacity .8s var(--ease),visibility .8s}
 .preloader.done{opacity:0;visibility:hidden}
 .pl-inner{display:flex;flex-direction:column;align-items:center}
-.pl-logo{width:120px;height:120px;object-fit:contain;opacity:0;transform:scale(0.9);animation:plIn 1s var(--ease) forwards}
-.pl-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;color:var(--charcoal);letter-spacing:.04em;margin-top:14px;opacity:0;animation:plIn 1s .25s var(--ease) forwards}
-.pl-bar{width:120px;height:2px;background:rgba(91,70,54,0.14);border-radius:2px;margin-top:26px;overflow:hidden;opacity:0;animation:plIn 1s .45s var(--ease) forwards}
-.pl-bar span{display:block;height:100%;width:0;background:var(--bronze);animation:plFill 1.6s .5s var(--ease) forwards}
+.pl-logo{width:120px;height:120px;object-fit:contain;opacity:0;transform:scale(.9);animation:plIn 1s var(--ease) forwards}
+.pl-name{font:italic 400 26px var(--serif);color:var(--ink);letter-spacing:.04em;margin-top:14px;opacity:0;animation:plIn 1s .25s var(--ease) forwards}
+.pl-bar{width:120px;height:2px;background:rgba(110,81,57,.14);border-radius:2px;margin-top:26px;overflow:hidden;opacity:0;animation:plIn 1s .45s var(--ease) forwards}
+.pl-bar span{display:block;height:100%;width:0;background:var(--teak);animation:plFill 1.6s .5s var(--ease) forwards}
 @keyframes plIn{to{opacity:1;transform:scale(1)}}
 @keyframes plFill{to{width:100%}}
-/* prevent scroll while loading */
-body.loading{overflow:hidden}
+html.loading{overflow:hidden}
+/* hero eases in as the loader fades */
+.hero-head>*,.hero-win,.hero-ring{transition:opacity 1.1s var(--ease),translate 1.1s var(--ease),scale 1.4s var(--ease)}
+.hero-head>*:nth-child(2){transition-delay:.08s}.hero-head>*:nth-child(3){transition-delay:.16s}.hero-head>*:nth-child(4){transition-delay:.24s}
+.hero-win,.hero-ring{transition-delay:.1s}
+html.loading .hero-head>*{opacity:0;translate:0 26px}
+html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
+
+@media (prefers-reduced-motion:reduce){
+  .preloader{display:none}
+  .rv{opacity:1;transform:none;transition:none}
+  .hero{height:auto}
+  .hero-stick{position:relative}
+  .scroll-cue{display:none}
+}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
 </head>
 <body>
-<div class="preloader" id="preloader">
+<div class="preloader" id="preloader" aria-hidden="true">
   <div class="pl-inner">
-    <img src="images/img-a93cbd0d4a.png" alt="Mon Rêve" class="pl-logo">
+    <img src="images/emblem.png" alt="" class="pl-logo">
     <div class="pl-name">Mon Rêve</div>
     <div class="pl-bar"><span></span></div>
   </div>
 </div>
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('loading')</script>
 
-
-<nav id="nav">
-  <a class="nv-logo" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
-    <img loading="lazy" decoding="async" src="images/img-a93cbd0d4a.png" alt="Mon Reve Holiday Home">
-    <span class="nv-name">Mon Rêve</span>
-  </a>
-  <ul class="nv-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#why">Why Mon Rêve</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#rooms">Rooms</a></li>
-    <li><a href="#location">Location</a></li>
-  </ul>
-  <a href="#book" class="nv-cta">Reserve</a>
-  <button class="nv-burger" id="nvBurger" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div class="m-menu" id="mMenu">
+<nav class="nav" id="nav">
+  <a class="brand" href="#top"><img src="images/emblem.png" alt=""><span>Mon Rêve</span></a>
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#why">Why Mon Rêve</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#rooms">Rooms</a></li>
     <li><a href="#location">Location</a></li>
-    <li><a href="#book" class="m-reserve">Reserve Your Stay</a></li>
   </ul>
-</div>
-
-
-<!-- HERO (cinematic trial) -->
-<div class="cprog" id="cprog"></div>
-<section class="chero">
-  <div class="chero-bg" id="cheroBg" style="background-image:url('images/img-3ac1559921.jpg')"></div>
-  <div class="chero-veil"></div>
-  <div class="chero-inner">
-    <p class="chero-tag">Engapuzha · Kozhikode · Kerala</p>
-    <h1 class="chero-title">
-      <span class="cl"><span>Mon Rêve</span></span>
-      <span class="cl"><span>Holiday Home</span></span>
-    </h1>
-    <p class="chero-sub">A private villa in the heart of Kerala — warm wood, open architecture,<br>a private pool and quiet green surroundings.</p>
-    <div class="chero-acts">
-      <a href="#book" class="btn btn-fill">Reserve Your Stay</a>
-      <a href="#gallery" class="btn btn-ghost">Explore</a>
-    </div>
+  <div class="nav-r">
+    <a class="btn btn-solid" href="#book">Reserve</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i><i></i><i></i></button>
   </div>
-  <div class="chero-cue">Scroll</div>
-</section>
-
-<!-- INTRO -->
-<div class="intro">
-  <p class="rv">"Some places don't simply give you a room —<br>they give you a feeling."</p>
+</nav>
+<div class="mmenu" id="mmenu">
+  <a href="#about">About</a>
+  <a href="#why">Why <em>Mon Rêve</em></a>
+  <a href="#gallery">Gallery</a>
+  <a href="#rooms">Rooms</a>
+  <a href="#location">Location</a>
+  <a href="#book"><em>Reserve your stay</em></a>
+  <p>monreveholidays@gmail.com</p>
 </div>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="wrap">
-    <div class="about-g">
-      <div class="ab-imgs rv-l">
-        <div class="ab-w ab-main"><img loading="lazy" decoding="async" src="images/img-44d76ba9ba.jpg" alt="Living area"></div>
-        <div class="ab-w ab-sm"><img loading="lazy" decoding="async" src="images/img-8f8b4c1d5e.jpg" alt="Bathroom"></div>
-        <div class="ab-w ab-sm"><img loading="lazy" decoding="async" src="images/img-5f42ad9e64.jpg" alt="Kitchen"></div>
-      </div>
-      <div class="rv-r">
-        <p class="eyebrow">Welcome</p>
-        <h2 class="h2">Your <em>Dream Home</em><br>in Kerala</h2>
-        <div class="rule"></div>
-        <p class="lead">Nestled in Engapuzha, Kozhikode, Mon Rêve is a thoughtfully designed two-storey residence where contemporary architecture meets Kerala's warm hospitality. Signature round windows, teak floors and a private waterfall pool set among lush greenery.</p>
-        <div class="feat-g stg">
-          <div class="feat"><span>Bedrooms</span>4 Spacious Rooms</div>
-          <div class="feat"><span>Capacity</span>Up to 12 Guests</div>
-          <div class="feat"><span>Pool</span>Private Pool &amp; Waterfall</div>
-          <div class="feat"><span>Setting</span>Tropical Greenery</div>
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-stick" id="heroStick">
+    <div class="hero-headwrap">
+      <div class="hero-head" id="heroHead">
+        <p class="eyebrow">Engapuzha · Kozhikode · Kerala</p>
+        <h1 class="display">Mon Rêve<span>Holiday Home</span></h1>
+        <p class="sub">A private villa in the heart of Kerala: warm wood, open architecture, a private pool and quiet green surroundings.</p>
+        <div class="acts">
+          <a class="btn btn-solid" href="#book">Reserve your stay</a>
+          <a class="btn btn-line" href="#gallery">Explore</a>
         </div>
       </div>
     </div>
+    <div class="hero-win" id="heroWin"><img id="heroImg" src="images/living-round-window.jpg" alt="Living room at Mon Rêve with a round teak-framed window, grey sofa and teak floor" fetchpriority="high" decoding="async"></div>
+    <div class="hero-ring" id="heroRing"></div>
+    <div class="hero-shade" id="heroShade"></div>
+    <div class="hero-after" id="heroAfter">
+      <h2 class="display">The whole house, <em>yours alone.</em></h2>
+      <div>
+        <p>Four bedrooms, teak floors, round windows and a waterfall pool, set among the greenery of Engapuzha.</p>
+        <a class="btn" href="#about">Step inside <span class="arr">→</span></a>
+      </div>
+    </div>
+    <div class="scroll-cue" id="heroCue">Scroll</div>
+  </div>
+</header>
+
+<!-- FACTS -->
+<section class="facts" aria-label="At a glance">
+  <ul>
+    <li class="rv"><b>4</b><span>Bedrooms</span></li>
+    <li class="rv d1"><b>12</b><span>Guests</span></li>
+    <li class="rv d2"><b>2</b><span>Storeys</span></li>
+    <li class="rv d3"><b>7<small>km</small></b><span>To Thusharagiri Falls</span></li>
+  </ul>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap about-g">
+    <div class="porthole rv">
+      <img src="images/living-area.jpg" alt="Living area at Mon Rêve" loading="lazy">
+      <div class="mini"><img src="images/open-kitchen.jpg" alt="Open kitchen with island" loading="lazy"></div>
+    </div>
+    <div>
+      <p class="eyebrow rv">Welcome</p>
+      <h2 class="display h2 rv d1">Your <em>dream home</em> in Kerala</h2>
+      <p class="lead rv d2">Nestled in Engapuzha, Kozhikode, Mon Rêve is a thoughtfully designed two-storey residence where contemporary architecture meets Kerala's warm hospitality.</p>
+      <p class="lead rv d2">Signature round windows, teak floors and a private waterfall pool, set among lush greenery. You book the entire villa, so no one else shares the house, the pool or the garden.</p>
+      <div class="feat rv d3">
+        <div><small>Bedrooms</small><b>4 spacious rooms</b></div>
+        <div><small>Capacity</small><b>Up to 12 guests</b></div>
+        <div><small>Pool</small><b>Private, with waterfalls</b></div>
+        <div><small>Breakfast</small><b>Vegetarian, included</b></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats">
-  <div class="stats-g stg">
-    <div><div class="st-num"><span class="cnt" data-t="4">0</span></div><div class="st-lbl">Bedrooms</div></div>
-    <div><div class="st-num"><span class="cnt" data-t="12">0</span><span class="sf">+</span></div><div class="st-lbl">Guest Capacity</div></div>
-    <div><div class="st-num"><span class="cnt" data-t="2">0</span></div><div class="st-lbl">Storeys</div></div>
-    <div><div class="st-num"><span class="cnt" data-t="7">0</span><span class="sf">km</span></div><div class="st-lbl">To Thusharagiri Falls</div></div>
-  </div>
-</section>
-
-<!-- WHY MON REVE -->
+<!-- WHY -->
 <section class="why" id="why">
   <div class="wrap">
-    <div class="rv" style="text-align:center">
-      <p class="eyebrow">The Difference</p>
-      <h2 class="h2">Why <em>Mon Rêve</em></h2>
-      <div class="rule" style="margin-left:auto;margin-right:auto"></div>
+    <div class="why-top">
+      <div>
+        <p class="eyebrow rv">The difference</p>
+        <h2 class="display h2 rv d1">Why <em>Mon Rêve</em></h2>
+      </div>
+      <p class="lead rv d2">Six reasons families and friends choose to spend their Kerala holiday here.</p>
     </div>
-    <div class="why-g stg">
-      <div class="why-c"><div class="why-ic">⌂</div><h3>Entire Private Villa</h3><p>The whole property is exclusively yours — no shared spaces, no other guests. Just you and the people you choose.</p></div>
-      <div class="why-c"><div class="why-ic">≈</div><h3>Private Swimming Pool</h3><p>A waterfall pool with underwater lighting and a timber deck, reserved entirely for your stay — day and night.</p></div>
-      <div class="why-c"><div class="why-ic">⌒</div><h3>Spacious Family Living</h3><p>Two storeys of open-plan living, dining and lounge spaces designed to bring large families comfortably together.</p></div>
-      <div class="why-c"><div class="why-ic">◇</div><h3>Premium Interiors</h3><p>Teak floors, architectural round windows and warm, considered design throughout every room of the house.</p></div>
-      <div class="why-c"><div class="why-ic">○</div><h3>Complete Privacy</h3><p>Set among quiet greenery in Engapuzha, away from crowds — a calm and secluded base for your Kerala escape.</p></div>
-      <div class="why-c"><div class="why-ic">✦</div><h3>Exclusive Experience</h3><p>Complimentary vegetarian breakfast, optional Kerala cuisine, airport transfers and curated tours — all arranged for you.</p></div>
+    <div class="why-g">
+      <div class="why-c rv"><span class="n">01</span><h3>Entire private villa</h3><p>The whole property is exclusively yours. No shared spaces, no other guests, just you and the people you choose.</p></div>
+      <div class="why-c rv d1"><span class="n">02</span><h3>Private swimming pool</h3><p>A waterfall pool with underwater lighting and a timber deck, reserved entirely for your stay, day and night.</p></div>
+      <div class="why-c rv d2"><span class="n">03</span><h3>Spacious family living</h3><p>Two storeys of open-plan living, dining and lounge spaces, designed to bring large families comfortably together.</p></div>
+      <div class="why-c rv"><span class="n">04</span><h3>Premium interiors</h3><p>Teak floors, architectural round windows and warm, considered design throughout every room of the house.</p></div>
+      <div class="why-c rv d1"><span class="n">05</span><h3>Complete privacy</h3><p>Set among quiet greenery in Engapuzha, away from crowds. A calm and secluded base for your Kerala escape.</p></div>
+      <div class="why-c rv d2"><span class="n">06</span><h3>Exclusive experience</h3><p>Complimentary vegetarian breakfast, with optional Kerala cuisine, airport transfers and curated tours arranged for you.</p></div>
     </div>
   </div>
 </section>
@@ -520,489 +467,489 @@ body.loading{overflow:hidden}
 <!-- GALLERY -->
 <section class="gallery" id="gallery">
   <div class="wrap">
-    <div class="rv">
-      <p class="eyebrow">Gallery</p>
-      <h2 class="h2">Inside <em>Mon Rêve</em></h2>
-      <div class="rule"></div>
-    </div>
-    <div class="gal-g rv-sc">
-      <div class="g-it gg1"><img loading="lazy" decoding="async" src="images/img-d64c533dbb.jpg" alt="Floating staircase" onclick="openLB(this.src)"></div>
-      <div class="g-it gg2"><img loading="lazy" decoding="async" src="images/img-f15aba2f5c.jpg" alt="Dining room" onclick="openLB(this.src)"></div>
-      <div class="g-it gg3"><img loading="lazy" decoding="async" src="images/img-8f8b4c1d5e.jpg" alt="Bathroom" onclick="openLB(this.src)"></div>
-      <div class="g-it gg4"><img loading="lazy" decoding="async" src="images/img-a041f5d924.jpg" alt="Bedroom" onclick="openLB(this.src)"></div>
-      <div class="g-it gg5"><img loading="lazy" decoding="async" src="images/img-15e5acb78d.jpg" alt="Master bedroom" onclick="openLB(this.src)"></div>
-      <div class="g-it gg6"><img loading="lazy" decoding="async" src="images/img-d88cea9098.jpg" alt="Living lounge" onclick="openLB(this.src)"></div>
+    <p class="eyebrow rv">Gallery</p>
+    <h2 class="display h2 rv d1">Inside <em>Mon Rêve</em></h2>
+    <div class="gal-g" id="galG">
+      <figure class="gi rv"><img src="images/upper-lounge.jpg" alt="Upper lounge beside the floating staircase" loading="lazy"><figcaption>Upper lounge</figcaption></figure>
+      <figure class="gi rv d1"><img src="images/dining.jpg" alt="Dining room" loading="lazy"><figcaption>Dining room</figcaption></figure>
+      <figure class="gi rv d2"><img src="images/teal-bedroom.jpg" alt="Bedroom with teal upholstered headboard and timber ceiling" loading="lazy"><figcaption>Bedroom</figcaption></figure>
+      <figure class="gi rv d1"><img src="images/bedroom.jpg" alt="Guest bedroom" loading="lazy"><figcaption>Guest bedroom</figcaption></figure>
+      <figure class="gi rv"><img src="images/master-bedroom.jpg" alt="Master bedroom" loading="lazy"><figcaption>Master bedroom</figcaption></figure>
+      <figure class="gi rv d1"><img src="images/living-lounge.jpg" alt="Living lounge" loading="lazy"><figcaption>Living lounge</figcaption></figure>
     </div>
   </div>
 </section>
 
 <!-- POOL -->
 <section class="pool" id="pool">
-  <div class="pool-g">
-    <div class="pool-iw rv-l"><img loading="lazy" decoding="async" src="images/img-68f1887318.jpg" alt="Private pool with waterfalls"></div>
-    <div class="pool-tx rv-r">
-      <p class="eyebrow">Signature Feature</p>
-      <h2 class="h2">The Private<br><em>Waterfall Pool</em></h2>
-      <div class="rule"></div>
-      <p class="lead">Unwind in your own pool with dramatic waterfall features, soft underwater lighting and a timber deck — beneath a glass canopy framed by tropical green.</p>
-      <div class="pl-feats stg">
-        <div class="pl-f">Dual waterfall features</div>
-        <div class="pl-f">Underwater mood lighting</div>
-        <div class="pl-f">Timber deck with lanterns</div>
-        <div class="pl-f">Glass canopy — swim rain or shine</div>
-        <div class="pl-f">Exclusively yours, day and night</div>
-      </div>
-    </div>
+  <div class="pool-bg" id="poolBg" role="img" aria-label="Private pool at night with twin waterfalls, lanterns and a timber deck"></div>
+  <div class="wrap">
+    <p class="eyebrow rv">Signature feature</p>
+    <h2 class="display rv d1">The private <em>waterfall pool</em></h2>
+    <p class="rv d2">Unwind in your own pool with waterfall features, soft underwater lighting and a timber deck, beneath a glass canopy framed by tropical green.</p>
+    <ol class="rv d3">
+      <li>Dual waterfall features</li>
+      <li>Underwater mood lighting</li>
+      <li>Timber deck with lanterns</li>
+      <li>Glass canopy, swim rain or shine</li>
+      <li>Exclusively yours, day and night</li>
+    </ol>
   </div>
 </section>
 
 <!-- ROOMS -->
 <section class="rooms" id="rooms">
   <div class="wrap">
-    <div class="rv">
-      <p class="eyebrow">Accommodation</p>
-      <h2 class="h2">Rooms &amp; <em>Spaces</em></h2>
-      <div class="rule"></div>
-      <p class="lead">Tap any space to explore it in detail.</p>
+    <div class="rooms-h">
+      <div>
+        <p class="eyebrow rv">Accommodation</p>
+        <h2 class="display h2 rv d1">Rooms &amp; <em>spaces</em></h2>
+      </div>
+      <p class="lead rv d2">Tap any room to see it in detail, with its amenities and how many it sleeps.</p>
     </div>
+    <p class="sub-h rv">The bedrooms</p>
+    <div class="arch-row" id="bedrooms"></div>
+    <div class="wide-row" id="shared"></div>
   </div>
-  <div class="wrap">
-    <div class="rm-g rv">
-      <div class="rm-c" onclick="openRoom(0)">
-        <img loading="lazy" decoding="async" src="images/img-54375f88dc.jpg" alt="Modern open kitchen">
-        <div class="rm-view">⤢</div>
-        <div class="rm-lbl"><p>Ground Floor</p><h3>Modern Open Kitchen</h3></div>
-      </div>
-      <div class="rm-c" onclick="openRoom(1)">
-        <img loading="lazy" decoding="async" src="images/img-5f42ad9e64.jpg" alt="Living room">
-        <div class="rm-view">⤢</div>
-        <div class="rm-lbl"><p>Upper Floor</p><h3>Living Room</h3></div>
-      </div>
-      <div class="rm-c" onclick="openRoom(2)">
-        <img loading="lazy" decoding="async" src="images/img-a041f5d924.jpg" alt="Guest bedroom">
-        <div class="rm-view">⤢</div>
-        <div class="rm-lbl"><p>Upper Floor</p><h3>Guest Bedroom</h3></div>
-      </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="incl" id="included">
+  <div class="wrap incl-g">
+    <div>
+      <p class="eyebrow rv">Your stay</p>
+      <h2 class="display h2 rv d1">Everything that comes <em>with the house</em></h2>
+      <p class="lead rv d2">The entire villa is yours for the length of your stay. Tell us your dates and group size, and we'll reply within 24 hours with availability and a personalised quote.</p>
+      <p class="rv d3" style="margin-top:34px"><a class="btn btn-solid" href="#book">Send an enquiry <span class="arr">→</span></a></p>
     </div>
-    <div class="rm-g2 rv">
-      <div class="rm-c" onclick="openRoom(3)">
-        <img loading="lazy" decoding="async" src="images/img-f15aba2f5c.jpg" alt="Dining area">
-        <div class="rm-view">⤢</div>
-        <div class="rm-lbl"><p>Ground Floor</p><h3>Dining Area</h3></div>
-      </div>
-      <div class="rm-c" onclick="openRoom(4)">
-        <img loading="lazy" decoding="async" src="images/img-15e5acb78d.jpg" alt="Master bedroom">
-        <div class="rm-view">⤢</div>
-        <div class="rm-lbl"><p>Upper Floor</p><h3>Master Bedroom</h3></div>
-      </div>
-    </div>
-    <div class="rm-g2 rv">
-      <div class="rm-c" onclick="openRoom(5)">
-        <img loading="lazy" decoding="async" src="images/img-8bbd80cda6.jpg" alt="Prestige Suite">
-        <div class="rm-view">⤢</div>
-        <div class="rm-lbl"><p>Ground Floor</p><h3>Prestige Suite</h3></div>
-      </div>
-      <div class="rm-c" onclick="openRoom(6)">
-        <img loading="lazy" decoding="async" src="images/img-92b74bcf3c.jpg" alt="Azure Suite">
-        <div class="rm-view">⤢</div>
-        <div class="rm-lbl"><p>Ground Floor</p><h3>Azure Suite</h3></div>
-      </div>
+    <div class="incl-card rv d1">
+      <p class="eyebrow">Included</p>
+      <h3>With every booking</h3>
+      <ul>
+        <li>Full, exclusive use of the villa</li>
+        <li>All four bedrooms, for up to 12 guests</li>
+        <li>Vegetarian breakfast for every guest</li>
+        <li>Private pool &amp; waterfall access</li>
+        <li>Fully equipped kitchen &amp; appliances</li>
+        <li>Pets welcome on request</li>
+      </ul>
+      <hr>
+      <p class="eyebrow">On request</p>
+      <h3>Arranged for you</h3>
+      <ul class="alt">
+        <li>Lunch &amp; dinner, including traditional Kerala cuisine</li>
+        <li>Special dietary requests</li>
+        <li>Airport pick-up &amp; drop-off</li>
+        <li>Car rental, self-drive or with a chauffeur</li>
+        <li>Curated Kerala tour packages</li>
+      </ul>
+      <p class="fine">Extras are quoted on enquiry. Just mention what you'd like in your message.</p>
     </div>
   </div>
 </section>
 
 <!-- LOCATION -->
 <section class="loc" id="location">
-  <div class="wrap">
-    <div class="rv">
-      <p class="eyebrow">Find Us</p>
-      <h2 class="h2">Kozhikode, <em>Kerala</em></h2>
-      <div class="rule"></div>
-    </div>
-    <div class="loc-g">
-      <div class="loc-iw rv-l"><img loading="lazy" decoding="async" src="images/img-af0a8b6728.jpg" alt="Mon Reve exterior"></div>
-      <div class="rv-r">
-        <p class="lead" style="margin-bottom:36px">Mon Rêve sits in Engapuzha, Kozhikode district — perfectly positioned to explore the natural beauty of God's Own Country.</p>
-        <div class="loc-pt"><div class="loc-d"></div><div><h4>Address</h4><p>Engapuzha, Kozhikode District<br>Kerala, India</p></div></div>
-        <div class="loc-pt"><div class="loc-d"></div><div><h4>Nearby</h4><p>Thusharagiri Waterfalls · Wayanad · Kakkad Vanaparvam Biodiversity Park</p></div></div>
-        <div class="loc-pt"><div class="loc-d"></div><div><h4>Nearest Airport</h4><p>Calicut International Airport (CCJ)<br>Kozhikode, Kerala</p></div></div>
-        <div class="loc-pt"><div class="loc-d"></div><div><h4>Contact</h4><p><a href="mailto:monreveholidays@gmail.com">monreveholidays@gmail.com</a></p></div></div>
-      </div>
+  <div class="wrap loc-g">
+    <div class="loc-img rv"><img src="images/exterior-dusk.jpg" alt="Mon Rêve and its garden at dusk, with forested hills behind" loading="lazy"></div>
+    <div>
+      <p class="eyebrow rv">Find us</p>
+      <h2 class="display h2 rv d1">Engapuzha, <em>Kozhikode</em></h2>
+      <p class="lead rv d2" style="margin-bottom:30px">Perfectly placed to explore the natural beauty of God's Own Country.</p>
+      <div class="place rv d2"><b>7<small>km</small></b><div><h4>Thusharagiri Waterfalls</h4><p>Forest trails and waterfalls, a short drive away</p></div></div>
+      <div class="place rv d3"><b>✦</b><div><h4>Wayanad &amp; Kakkad Vanaparvam</h4><p>Hill country and the Kakkad Vanaparvam Biodiversity Park</p></div></div>
+      <div class="place rv d3"><b>✈</b><div><h4>Kozhikode International Airport</h4><p>The nearest airport (CCJ). We can arrange pick-up.</p></div></div>
+      <div class="place rv d4"><b>✉</b><div><h4>Address &amp; contact</h4><p>Engapuzha, Kozhikode District, Kerala, India<br><a href="mailto:monreveholidays@gmail.com">monreveholidays@gmail.com</a></p></div></div>
     </div>
   </div>
 </section>
 
-<!-- BOOKING -->
+<!-- BOOK -->
 <section class="book" id="book">
-  <div class="wrap">
-    <div class="rv">
-      <p class="eyebrow">Reserve</p>
-      <h2 class="h2">Book Your <em>Stay</em></h2>
-      <div class="rule"></div>
-      <p class="lead">Choose your dates, add your guests and see your estimated total instantly. We confirm availability within 24 hours.</p>
+  <div class="wrap book-g">
+    <div>
+      <p class="eyebrow rv">Reserve</p>
+      <h2 class="display h2 rv d1">Book your <em>stay</em></h2>
+      <p class="lead rv d2">Choose your dates and tell us how many are coming. We confirm availability within 24 hours.</p>
+      <ul class="book-notes rv d3">
+        <li>The entire villa, exclusively yours</li>
+        <li>Vegetarian breakfast included</li>
+        <li>Up to 12 guests · pets welcome on request</li>
+        <li>Prefer email? <a href="mailto:monreveholidays@gmail.com">monreveholidays@gmail.com</a></li>
+      </ul>
     </div>
-    <div class="bk-wrap">
-      <div class="bk-left rv-l">
-        <img loading="lazy" decoding="async" src="images/img-68f1887318.jpg" alt="Pool at Mon Reve">
-        <img loading="lazy" decoding="async" src="images/img-af0a8b6728.jpg" alt="Mon Reve villa" class="im2">
-        <p class="bk-note">The entire villa, exclusively yours · vegetarian breakfast included · up to 12 guests · pets welcome on request. Send us your dates and we'll reply within 24 hours with availability and a personalised quote.</p>
+    <div class="fcard rv d1">
+      <div class="ok" id="okMsg" role="status">
+        <div class="tick">✓</div>
+        <h3>Enquiry received</h3>
+        <p>Thank you for choosing Mon Rêve.<br>We'll confirm availability and reply within 24 hours.</p>
       </div>
-      <div class="rv-r">
-        <div class="form-card">
-          <div class="sucm" id="sucMsg">
-            <div class="suc-i">✓</div>
-            <h3>Enquiry Received</h3>
-            <p>Thank you for choosing Mon Rêve.<br>We'll confirm availability and reply within 24 hours.</p>
-          </div>
-          <form id="bkForm" novalidate>
-
-            <p class="fs-lbl">Your Details</p>
-            <div class="f-row">
-              <div class="ff"><input type="text" id="fName" required><label>Full Name <span class="req">*</span></label></div>
-              <div class="ff"><input type="tel" id="fPhone" required><label>Phone <span class="req">*</span></label></div>
-            </div>
-            <div class="ff"><input type="email" id="fEmail" required><label>Email Address <span class="req">*</span></label></div>
-
-            <p class="fs-lbl">Stay Dates</p>
-            <div class="f-row">
-              <div class="fd"><label>Check-in Date <span class="req">*</span></label><input type="date" id="ciD" required></div>
-              <div class="fd"><label>Check-in Time</label><input type="time" id="ciT" value="13:00"></div>
-            </div>
-            <div class="f-row">
-              <div class="fd"><label>Check-out Date <span class="req">*</span></label><input type="date" id="coD" required></div>
-              <div class="fd"><label>Check-out Time</label><input type="time" id="coT" value="11:00"></div>
-            </div>
-
-            <p class="fs-lbl">Guests <span class="req">*</span></p>
-            <div class="fd">
-              <div class="gc">
-                <div>
-                  <div class="gc-n" id="gNum">2</div>
-                  <div class="gc-s">guests · up to 12</div>
-                </div>
-                <div class="gc-btns">
-                  <button type="button" class="gb" id="gMinus">−</button>
-                  <button type="button" class="gb" id="gPlus">+</button>
-                </div>
-              </div>
-              <p class="exn" id="exNote"><span id="exCount"></span> guest(s) over 12 — we'll confirm details by email</p>
-            </div>
-
-            <p class="fs-lbl">Anything Else</p>
-            <div class="ff"><textarea id="fMsg"></textarea><label>Meals, transfers, tours, pets, requests… (optional)</label></div>
-
-            <button type="submit" class="sbtn" id="sBtn">Send Enquiry</button>
-            <div class="errm" id="errMsg"></div>
-          </form>
+      <form id="bkForm" novalidate>
+        <p class="grp">Your details</p>
+        <div class="frow">
+          <label class="fld"><span>Full name <i>*</i></span><input type="text" id="fName" autocomplete="name" required></label>
+          <label class="fld"><span>Phone <i>*</i></span><input type="tel" id="fPhone" autocomplete="tel" required></label>
         </div>
-      </div>
+        <label class="fld"><span>Email address <i>*</i></span><input type="email" id="fEmail" autocomplete="email" required></label>
+
+        <p class="grp">Stay dates</p>
+        <div class="frow">
+          <label class="fld"><span>Check-in date <i>*</i></span><input type="date" id="ciD" required></label>
+          <label class="fld"><span>Check-in time</span><input type="time" id="ciT" value="13:00"></label>
+        </div>
+        <div class="frow">
+          <label class="fld"><span>Check-out date <i>*</i></span><input type="date" id="coD" required></label>
+          <label class="fld"><span>Check-out time</span><input type="time" id="coT" value="11:00"></label>
+        </div>
+
+        <p class="grp">Guests <i style="font-style:normal">*</i></p>
+        <div class="gc">
+          <div><b id="gNum">2</b><small>guests · up to 12</small></div>
+          <div class="bt"><button type="button" id="gMinus" aria-label="Fewer guests">−</button><button type="button" id="gPlus" aria-label="More guests">+</button></div>
+        </div>
+        <p class="exn" id="exNote"><span id="exCount"></span> guest(s) over 12. We'll confirm details by email.</p>
+
+        <p class="grp">Anything else</p>
+        <label class="fld"><span>Meals, transfers, tours, pets, requests… (optional)</span><textarea id="fMsg"></textarea></label>
+
+        <button type="submit" class="btn btn-solid send" id="sBtn">Send enquiry</button>
+        <p class="err" id="errMsg" role="alert"></p>
+      </form>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="ft-g">
     <div>
-      <div class="ft-logo"><img loading="lazy" decoding="async" src="images/img-8689f63e26.png" alt="Mon Reve logo"></div>
-      <p class="ft-tag">A private holiday villa in Kozhikode, Kerala — warm hospitality, a waterfall pool and quiet green surroundings in Engapuzha.</p>
+      <img src="images/emblem.png" alt="Mon Rêve Holiday Home emblem" loading="lazy">
+      <p>A private holiday villa in Kozhikode, Kerala: warm hospitality, a waterfall pool and quiet green surroundings in Engapuzha.</p>
     </div>
-    <div class="ft-c">
+    <div>
       <h4>Explore</h4>
-      <a href="#about">About</a>
-      <a href="#why">Why Mon Rêve</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#rooms">Rooms</a>
-      <a href="#book">Reserve</a>
+      <a href="#about">About</a><a href="#why">Why Mon Rêve</a><a href="#gallery">Gallery</a><a href="#rooms">Rooms</a><a href="#book">Reserve</a>
     </div>
-    <div class="ft-c">
+    <div>
       <h4>Contact</h4>
       <a href="mailto:monreveholidays@gmail.com">monreveholidays@gmail.com</a>
-      <p>Engapuzha, Kozhikode District</p>
-      <p>Kerala, India</p>
+      <p>Engapuzha, Kozhikode District<br>Kerala, India</p>
     </div>
   </div>
-  <div class="ft-b">
-    <p>© 2026 Mon Rêve Holiday Home · Kozhikode, Kerala</p>
-    <p>All enquiries via email</p>
-  </div>
+  <div class="ft-b"><span>© 2026 Mon Rêve Holiday Home · Kozhikode, Kerala</span><span>All enquiries via email</span></div>
 </footer>
 
-<!-- LIGHTBOX -->
-<div class="lb" id="lb" onclick="closeLB()">
-  <button class="lb-x" onclick="closeLB()">×</button>
-  <img id="lbImg" src="" alt="Gallery">
-</div>
-
 <!-- ROOM MODAL -->
-<div class="rmodal" id="rModal">
-  <button class="rmodal-x" onclick="closeRoom()">×</button>
-  <div class="rmodal-box" onclick="event.stopPropagation()">
-    <div class="rmodal-img" id="rmImgWrap">
-      <img id="rmImg" src="" alt="Room">
-      <button class="rm-nav rm-prev" onclick="navRoom(-1)">‹</button>
-      <button class="rm-nav rm-next" onclick="navRoom(1)">›</button>
-      <div class="rm-count" id="rmCount"></div>
+<div class="modal" id="roomModal" role="dialog" aria-modal="true" aria-labelledby="rmTitle">
+  <button class="x" data-close aria-label="Close">×</button>
+  <div class="room-box">
+    <div class="room-img">
+      <img id="rmImg" src="" alt="">
+      <button class="nv p" data-step="-1" aria-label="Previous room">‹</button>
+      <button class="nv n" data-step="1" aria-label="Next room">›</button>
+      <span class="cnt" id="rmCount"></span>
     </div>
-    <div class="rmodal-info">
-      <p class="rmi-floor" id="rmFloor"></p>
-      <h3 class="rmi-title" id="rmTitle"></h3>
-      <p class="rmi-desc" id="rmDesc"></p>
-      <p class="rmi-sub">Amenities</p>
-      <div class="rmi-am" id="rmAm"></div>
-      <div class="rmi-occ" id="rmOcc"></div>
+    <div class="room-info">
+      <p class="eyebrow" id="rmFloor"></p>
+      <h3 id="rmTitle"></h3>
+      <p id="rmDesc"></p>
+      <p class="am-h">Amenities</p>
+      <div class="chips" id="rmAm"></div>
+      <p class="occ" id="rmOcc"></p>
     </div>
   </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="modal" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="x" data-close aria-label="Close">×</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="nv p" data-step="-1" aria-label="Previous photo">‹</button>
+  <button class="nv n" data-step="1" aria-label="Next photo">›</button>
+  <p class="lb-cap" id="lbCap"></p>
 </div>
 
 <script>
-/* ── NAV / PARALLAX ── */
-const nav = document.getElementById('nav');
-const heroBg = document.getElementById('heroBg');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('sc', window.scrollY > 60);
-  const y = window.scrollY;
-  if (heroBg && y < window.innerHeight) heroBg.style.transform = `translateY(${y * 0.32}px)`;
-}, { passive: true });
-
-/* ── REVEALS (replay both directions) ── */
-const io = new IntersectionObserver((es) => {
-  es.forEach(e => e.target.classList.toggle('in', e.isIntersecting));
-}, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
-document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-sc,.stg').forEach(el => io.observe(el));
-
-/* ── COUNTERS (replay) ── */
-const cio = new IntersectionObserver((es) => {
-  es.forEach(e => {
-    const el = e.target;
-    if (e.isIntersecting) {
-      const t = parseInt(el.dataset.t); let c = 0;
-      const step = Math.max(1, Math.ceil(t / 36));
-      const tick = () => { c = Math.min(c + step, t); el.textContent = c; if (c < t) requestAnimationFrame(tick); };
-      setTimeout(tick, 250);
-    } else { el.textContent = '0'; }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.cnt').forEach(el => cio.observe(el));
-
-/* ── FLOATING LABELS ── */
-document.querySelectorAll('.ff input, .ff textarea').forEach(el => {
-  const sync = () => el.classList.toggle('filled', el.value.trim() !== '');
-  el.addEventListener('input', sync); el.addEventListener('blur', sync); sync();
-});
-
-/* ── LIGHTBOX ── */
-const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
-function openLB(src) { lbImg.src = src; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeLB() { lb.classList.remove('open'); document.body.style.overflow = ''; }
-
-/* ── ROOM MODAL ── */
+/* ── ROOM DATA ── */
 const ROOMS = [
-  { img: "images/img-54375f88dc.jpg", floor: "Ground Floor", title: "Modern Open Kitchen",
-    desc: "A sleek open-plan kitchen with a central island, premium appliances and warm pendant lighting — flowing directly into the dining and living spaces. Cook together, gather together.",
-    am: ["Kitchen Island","Full Appliances","Microwave & Oven","Double-Door Fridge","Water Dispenser","Open-Plan Layout"], occ: "Shared space · all guests" },
-  { img: "images/img-5f42ad9e64.jpg", floor: "Upper Floor", title: "Living Room",
-    desc: "A bright, open lounge beneath the staircase with hanging greenery, soft seating and views across the double-height interior. The heart of the upper floor.",
-    am: ["Soft Lounge Seating","Hanging Garden","Natural Light","Open Layout","Ceiling Fans"], occ: "Shared space · all guests" },
-  { img: "images/img-a041f5d924.jpg", floor: "Upper Floor", title: "Guest Bedroom",
-    desc: "A calm, warmly lit bedroom with textured walls, a generous queen bed and an en-suite feel — quiet comfort for restful nights.",
-    am: ["Queen Bed","Air Conditioning","Ceiling Fan","Wardrobe","Premium Bedding","Soft Rug"], occ: "Sleeps 2–3 guests" },
-  { img: "images/img-f15aba2f5c.jpg", floor: "Ground Floor", title: "Dining Area",
-    desc: "An elegant eight-seat dining table beneath a floating timber canopy with warm pendant light — set against polished floors and golden drapery.",
-    am: ["Seats 8","Pendant Lighting","Marble-Top Table","Adjacent Kitchen","Garden Light"], occ: "Shared space · all guests" },
-  { img: "images/img-15e5acb78d.jpg", floor: "Upper Floor", title: "Master Bedroom",
-    desc: "The signature room — a wide platform bed against an upholstered feature wall, with a bay window seat overlooking the greenery. Spacious, serene, and beautifully understated.",
-    am: ["King Bed","Bay Window Seat","Air Conditioning","Upholstered Headboard","Teak Flooring","Pendant Lighting"], occ: "Sleeps 2–3 guests" },
-  { img: "images/img-8bbd80cda6.jpg", floor: "Ground Floor", title: "Prestige Suite",
-    desc: "A warm, generously sized suite with a timber ceiling feature, ambient cove lighting and sliding wardrobes — refined comfort on the ground floor.",
-    am: ["Queen Bed","Sliding Wardrobes","Cove Lighting","Air Conditioning","Dressing Area","Ceiling Fan"], occ: "Sleeps 2–3 guests" },
-  { img: "images/img-92b74bcf3c.jpg", floor: "Ground Floor", title: "Azure Suite",
-    desc: "A distinctive suite with a teal upholstered feature wall, bay window seat and soft natural light — a quiet corner with its own character.",
-    am: ["Queen Bed","Bay Window Seat","Feature Wall","Air Conditioning","Wardrobe","Premium Bedding"], occ: "Sleeps 2–3 guests" },
+  { group: 'bed', img: 'images/master-bedroom.jpg', floor: 'Upper Floor', title: 'Master Bedroom',
+    desc: 'The signature room: a wide platform bed against an upholstered feature wall, with a bay window seat overlooking the greenery. Spacious, serene and beautifully understated.',
+    am: ['King Bed','Bay Window Seat','Air Conditioning','Upholstered Headboard','Teak Flooring','Pendant Lighting'], occ: 'Sleeps 2–3 guests' },
+  { group: 'bed', img: 'images/bedroom.jpg', floor: 'Upper Floor', title: 'Guest Bedroom',
+    desc: 'A calm, warmly lit bedroom with textured walls and a generous queen bed. Quiet comfort for restful nights.',
+    am: ['Queen Bed','Air Conditioning','Ceiling Fan','Wardrobe','Premium Bedding','Soft Rug'], occ: 'Sleeps 2–3 guests' },
+  { group: 'bed', img: 'images/prestige-suite.jpg', floor: 'Ground Floor', title: 'Prestige Suite',
+    desc: 'A warm, generously sized suite with a timber ceiling feature, ambient cove lighting and sliding wardrobes. Refined comfort on the ground floor.',
+    am: ['Queen Bed','Sliding Wardrobes','Cove Lighting','Air Conditioning','Dressing Area','Ceiling Fan'], occ: 'Sleeps 2–3 guests' },
+  { group: 'bed', img: 'images/azure-suite.jpg', floor: 'Ground Floor', title: 'Azure Suite',
+    desc: 'A distinctive suite with a teal upholstered feature wall, bay window seat and soft natural light. A quiet corner with its own character.',
+    am: ['Queen Bed','Bay Window Seat','Feature Wall','Air Conditioning','Wardrobe','Premium Bedding'], occ: 'Sleeps 2–3 guests' },
+  { group: 'shared', img: 'images/open-kitchen.jpg', floor: 'Ground Floor', title: 'Modern Open Kitchen',
+    desc: 'A sleek open-plan kitchen with a central island, premium appliances and warm pendant lighting, flowing directly into the dining and living spaces. Cook together, gather together.',
+    am: ['Kitchen Island','Full Appliances','Microwave & Oven','Double-Door Fridge','Water Dispenser','Open-Plan Layout'], occ: 'Shared space · all guests' },
+  { group: 'shared', img: 'images/living-room-upper.jpg', floor: 'Upper Floor', title: 'Living Room',
+    desc: 'A bright, open lounge with soft seating, a round window and views across the double-height interior. The heart of the upper floor.',
+    am: ['Soft Lounge Seating','Round Window','Natural Light','Open Layout','Ceiling Fans'], occ: 'Shared space · all guests' },
+  { group: 'shared', img: 'images/dining.jpg', floor: 'Ground Floor', title: 'Dining Area',
+    desc: 'An elegant eight-seat dining table beneath a floating timber canopy with warm pendant light, set against polished floors and golden drapery.',
+    am: ['Seats 8','Pendant Lighting','Marble-Top Table','Adjacent Kitchen','Garden Light'], occ: 'Shared space · all guests' },
 ];
 
-const rModal = document.getElementById('rModal');
-const rmImg = document.getElementById('rmImg');
-let curRoom = 0;
+(() => {
+  const $ = id => document.getElementById(id);
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let lenis = null;
 
-function renderRoom(i, fade=true) {
-  const r = ROOMS[i];
-  const apply = () => {
-    rmImg.src = r.img;
-    document.getElementById('rmFloor').textContent = r.floor;
-    document.getElementById('rmTitle').textContent = r.title;
-    document.getElementById('rmDesc').textContent = r.desc;
-    document.getElementById('rmCount').textContent = (i+1) + ' / ' + ROOMS.length;
-    document.getElementById('rmOcc').innerHTML = '👤&nbsp; ' + r.occ;
-    document.getElementById('rmAm').innerHTML = r.am.map(a => `<span class="rmi-chip">${a}</span>`).join('');
-    rmImg.classList.remove('fading');
-  };
-  if (fade) { rmImg.classList.add('fading'); setTimeout(apply, 220); }
-  else apply();
-}
-function openRoom(i) {
-  curRoom = i; renderRoom(i, false);
-  rModal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeRoom() {
-  rModal.classList.remove('open');
-  document.body.style.overflow = '';
-}
-function navRoom(d) {
-  curRoom = (curRoom + d + ROOMS.length) % ROOMS.length;
-  renderRoom(curRoom);
-}
-rModal.addEventListener('click', closeRoom);
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeRoom(); closeLB(); }
-  if (rModal.classList.contains('open')) {
-    if (e.key === 'ArrowLeft') navRoom(-1);
-    if (e.key === 'ArrowRight') navRoom(1);
+  /* ── room cards ── */
+  const card = (r, i, d) => `<button class="card rv d${d}" data-room="${i}" aria-label="View ${r.title}">
+      <figure><img src="${r.img}" alt="${r.title}" loading="lazy"></figure>
+      <div class="cap"><h3>${r.title}</h3><small>${r.floor}</small></div>
+      <span class="occ">${r.occ}</span></button>`;
+  $('bedrooms').innerHTML = ROOMS.map((r, i) => r.group === 'bed' ? card(r, i, i % 4) : '').join('');
+  $('shared').innerHTML = ROOMS.map((r, i) => r.group === 'shared' ? card(r, i, i % 3) : '').join('');
+
+  /* ── modals (room + lightbox) ── */
+  let openModal = null;
+  function lock(on) {
+    document.documentElement.style.overflow = on ? 'hidden' : '';
+    if (lenis) on ? lenis.stop() : lenis.start();
   }
-});
-/* Swipe support */
-let tX = null;
-rModal.addEventListener('touchstart', e => tX = e.touches[0].clientX, {passive:true});
-rModal.addEventListener('touchend', e => {
-  if (tX === null) return;
-  const dx = e.changedTouches[0].clientX - tX;
-  if (Math.abs(dx) > 50) navRoom(dx > 0 ? -1 : 1);
-  tX = null;
-}, {passive:true});
+  function show(m) { openModal = m; m.classList.add('open'); lock(true); m.querySelector('[data-close]').focus({ preventScroll: true }); }
+  function hide() { if (!openModal) return; openModal.classList.remove('open'); openModal = null; lock(false); }
 
-/* ── BOOKING FORM (guests + dates, no pricing) ── */
-const LIMIT = 12;
-let guests = 2;
-const gNum = document.getElementById('gNum');
-const exNote = document.getElementById('exNote'), exCount = document.getElementById('exCount');
-const ciD = document.getElementById('ciD'), coD = document.getElementById('coD');
-const ciT = document.getElementById('ciT'), coT = document.getElementById('coT');
+  const roomModal = $('roomModal'), rmImg = $('rmImg');
+  let cur = 0;
+  function renderRoom(i, fade) {
+    const r = ROOMS[i];
+    const apply = () => {
+      rmImg.src = r.img; rmImg.alt = r.title;
+      $('rmFloor').textContent = r.floor;
+      $('rmTitle').textContent = r.title;
+      $('rmDesc').textContent = r.desc;
+      $('rmCount').textContent = `${i + 1} / ${ROOMS.length}`;
+      $('rmOcc').textContent = r.occ;
+      $('rmAm').innerHTML = r.am.map(a => `<span>${a}</span>`).join('');
+      rmImg.classList.remove('fade');
+    };
+    if (fade) { rmImg.classList.add('fade'); setTimeout(apply, 200); } else apply();
+  }
+  document.querySelectorAll('[data-room]').forEach(b => b.addEventListener('click', () => { cur = +b.dataset.room; renderRoom(cur, false); show(roomModal); }));
 
-const today = new Date().toISOString().split('T')[0];
-ciD.min = today; coD.min = today;
+  const gal = [...document.querySelectorAll('#galG .gi')].map(f => ({ src: f.querySelector('img').src, cap: f.querySelector('figcaption').textContent }));
+  const lightbox = $('lightbox'), lbImg = $('lbImg');
+  let gi = 0;
+  function renderLB(i) { lbImg.src = gal[i].src; lbImg.alt = gal[i].cap; $('lbCap').textContent = gal[i].cap; }
+  document.querySelectorAll('#galG .gi').forEach((f, i) => f.addEventListener('click', () => { gi = i; renderLB(gi); show(lightbox); }));
 
-function nights() {
-  if (!ciD.value || !coD.value) return 0;
-  const d = Math.round((new Date(coD.value) - new Date(ciD.value)) / 864e5);
-  return d > 0 ? d : 0;
-}
-function syncGuests() {
-  const ex = Math.max(0, guests - LIMIT);
-  if (ex > 0) { exCount.textContent = ex; exNote.classList.add('show'); }
-  else exNote.classList.remove('show');
-}
-document.getElementById('gMinus').addEventListener('click', () => { if (guests > 1) { guests--; gNum.textContent = guests; syncGuests(); } });
-document.getElementById('gPlus').addEventListener('click', () => { if (guests < 30) { guests++; gNum.textContent = guests; syncGuests(); } });
-ciD.addEventListener('change', () => {
-  if (ciD.value) {
+  function step(d) {
+    if (openModal === roomModal) { cur = (cur + d + ROOMS.length) % ROOMS.length; renderRoom(cur, true); }
+    else if (openModal === lightbox) { gi = (gi + d + gal.length) % gal.length; renderLB(gi); }
+  }
+  [roomModal, lightbox].forEach(m => {
+    m.addEventListener('click', e => {
+      const s = e.target.closest('[data-step]');
+      if (s) return step(+s.dataset.step);
+      if (e.target === m || e.target.closest('[data-close]')) hide();
+    });
+    let tx = null;
+    m.addEventListener('touchstart', e => tx = e.touches[0].clientX, { passive: true });
+    m.addEventListener('touchend', e => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) step(dx > 0 ? -1 : 1); tx = null; }, { passive: true });
+  });
+  addEventListener('keydown', e => {
+    if (!openModal) return;
+    if (e.key === 'Escape') hide();
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+
+  /* ── mobile menu ── */
+  const burger = $('burger');
+  function menu(open) {
+    document.body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    lock(open);
+  }
+  burger.addEventListener('click', () => menu(!document.body.classList.contains('menu-open')));
+
+  /* ── anchor links (smooth, accounts for the fixed nav) ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const id = a.getAttribute('href'), t = id === '#top' ? document.body : document.querySelector(id);
+    if (!t) return;
+    e.preventDefault();
+    if (document.body.classList.contains('menu-open')) menu(false);
+    const y = id === '#top' ? 0 : t.getBoundingClientRect().top + scrollY - 70;
+    if (lenis) lenis.scrollTo(y, { duration: 1.4 });
+    else scrollTo({ top: y, behavior: still ? 'auto' : 'smooth' });
+  }));
+
+  /* ── HERO: round window opens into the room ──
+     Layout is measured on resize only; each frame touches transform + opacity only,
+     and the photo always renders at its own size so it never gets blurry. */
+  const nav = $('nav'), hero = document.querySelector('.hero'), head = $('heroHead');
+  const win = $('heroWin'), img = $('heroImg'), ring = $('heroRing');
+  const shade = $('heroShade'), after = $('heroAfter'), cue = $('heroCue');
+  const poolBg = $('poolBg'), pool = $('pool');
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const IW = 1350, IH = 900, FOCUS = [0.285, 0.30], POS = [0.30, 0.5];  // round window in the photo; object-position
+  let L = {};
+
+  function measure() {
+    const vw = innerWidth, vh = innerHeight, wide = vw > 900;
+    const D = Math.ceil(Math.hypot(vw, vh)) + 4;
+    let r0, cx0, cy0;
+    if (wide) {
+      r0 = Math.min(vh * 0.4, vw * 0.25);
+      cx0 = vw - Math.max(vw * 0.08, 40) - r0 - 10;
+      cy0 = vh * 0.54;
+    } else {
+      const top = head.offsetTop + head.offsetHeight + 40;   // layout position, unaffected by the scroll transform
+      r0 = Math.max(100, Math.min(vw * 0.4, (vh - top - 70) / 2));
+      cx0 = vw / 2; cy0 = top + r0 + 10;
+    }
+    const k = Math.max(vw / IW, vh / IH), W = IW * k, H = IH * k;
+    const fxs = (vw - W) * POS[0] + FOCUS[0] * W, fys = (vh - H) * POS[1] + FOCUS[1] * H;
+    L = { vw, vh, D, r0, cx0, cy0, fx: vw / 2 - fxs, fy: vh / 2 - fys, span: hero.offsetHeight - vh, poolTop: pool.offsetTop, poolH: pool.offsetHeight };
+    win.style.width = win.style.height = D + 'px';
+    Object.assign(img.style, { width: vw + 'px', height: vh + 'px', left: (D - vw) / 2 + 'px', top: (D - vh) / 2 + 'px' });
+    const R = 2 * r0 + 40;
+    ring.style.width = ring.style.height = R + 'px';
+    frame();
+  }
+
+  function frame() {
+    const { vw, vh, D, r0, cx0, cy0, fx, fy, span } = L, y = scrollY;
+    const p = still ? 1 : clamp(y / span);
+    nav.classList.toggle('solid', p > 0.3);
+    if (p === 1 && L.lastP === 1) return poolFrame(y, vh);
+    L.lastP = p;
+    const g = ease(clamp(p / 0.6));
+    const r = r0 + (D / 2 - r0) * g, s = (2 * r) / D;
+    const cx = cx0 + (vw / 2 - cx0) * g, cy = cy0 + (vh / 2 - cy0) * g;
+    const zoom = 1 + 0.06 * (1 - g);
+    // keep the round window centred in the circle, but never let the photo's edge show
+    const ox = clamp(zoom * fx, -(zoom * vw / 2 - r), zoom * vw / 2 - r);
+    const oy = clamp(zoom * fy, -(zoom * vh / 2 - r), zoom * vh / 2 - r);
+    const icx = (cx + ox) * (1 - g) + (vw / 2) * g, icy = (cy + oy) * (1 - g) + (vh / 2) * g;
+    win.style.transform = `translate3d(${cx - D / 2}px,${cy - D / 2}px,0) scale(${s})`;
+    img.style.transform = `scale(${zoom / s}) translate3d(${(icx - cx) / zoom}px,${(icy - cy) / zoom}px,0)`;
+    const R = 2 * r0 + 40;
+    ring.style.transform = `translate3d(${cx - R / 2}px,${cy - R / 2}px,0) scale(${(2 * r + 40) / R})`;
+    ring.style.opacity = 1 - clamp(g * 5);
+    cue.style.opacity = 1 - clamp(p * 8);
+    shade.style.opacity = clamp((p - 0.4) / 0.3);
+    const a = clamp((p - 0.58) / 0.25);
+    after.style.opacity = a;
+    after.style.transform = `translate3d(0,${(1 - a) * 30}px,0)`;
+    after.classList.toggle('on', a > 0.5);
+    head.style.opacity = 1 - clamp(p / 0.25);
+    head.style.transform = `translate3d(0,${-p * 140}px,0)`;
+    head.style.visibility = p > 0.26 ? 'hidden' : '';
+    poolFrame(y, vh);
+  }
+  function poolFrame(y, vh) {
+    if (still) return;
+    const top = L.poolTop - y;
+    if (top < vh && top + L.poolH > 0) poolBg.style.transform = `translate3d(0,${(top / vh) * -6}%,0)`;
+  }
+
+  let ticking = false;
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { frame(); ticking = false; }); } };
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', measure);
+  if (document.fonts) document.fonts.ready.then(measure);
+  addEventListener('load', measure);
+  measure();
+
+  /* ── preloader: show at least 2.2s (same as the live site), 6s safety fallback ── */
+  const pre = $('preloader'), start = Date.now();
+  let loaded = false;
+  function reveal() {
+    if (loaded) return; loaded = true;
+    pre.classList.add('done');
+    document.documentElement.classList.remove('loading');
+    if (lenis) lenis.start();
+  }
+  const afterLoad = () => setTimeout(reveal, Math.max(0, 2200 - (Date.now() - start)));
+  if (document.readyState === 'complete') afterLoad(); else addEventListener('load', afterLoad);
+  setTimeout(reveal, 6000);
+
+  /* smooth wheel scrolling so the hero animation glides instead of stepping */
+  addEventListener('DOMContentLoaded', () => {
+    if (still || !window.Lenis) return;
+    lenis = new Lenis({ duration: 1.15, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+    if (!loaded) lenis.stop();
+    lenis.on('scroll', frame);
+    const raf = t => { lenis.raf(t); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+  });
+
+  /* ── reveal on scroll ── */
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  /* ── BOOKING FORM (Formspree, same fields as before, no pricing) ── */
+  const LIMIT = 12;
+  let guests = 2;
+  const gNum = $('gNum'), exNote = $('exNote'), exCount = $('exCount');
+  const ciD = $('ciD'), coD = $('coD'), ciT = $('ciT'), coT = $('coT');
+  const today = new Date().toISOString().split('T')[0];
+  ciD.min = today; coD.min = today;
+  const nights = () => {
+    if (!ciD.value || !coD.value) return 0;
+    const d = Math.round((new Date(coD.value) - new Date(ciD.value)) / 864e5);
+    return d > 0 ? d : 0;
+  };
+  function syncGuests() {
+    gNum.textContent = guests;
+    const ex = Math.max(0, guests - LIMIT);
+    exCount.textContent = ex;
+    exNote.classList.toggle('show', ex > 0);
+  }
+  $('gMinus').addEventListener('click', () => { if (guests > 1) { guests--; syncGuests(); } });
+  $('gPlus').addEventListener('click', () => { if (guests < 30) { guests++; syncGuests(); } });
+  ciD.addEventListener('change', () => {
+    if (!ciD.value) return;
     const nx = new Date(ciD.value); nx.setDate(nx.getDate() + 1);
     coD.min = nx.toISOString().split('T')[0];
     if (coD.value && coD.value <= ciD.value) coD.value = coD.min;
-  }
-});
-syncGuests();
-
-/* ── SUBMIT ── */
-const form = document.getElementById('bkForm');
-const sBtn = document.getElementById('sBtn'), sucMsg = document.getElementById('sucMsg'), errMsg = document.getElementById('errMsg');
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  errMsg.style.display = 'none';
-  const name = document.getElementById('fName').value.trim();
-  const phone = document.getElementById('fPhone').value.trim();
-  const email = document.getElementById('fEmail').value.trim();
-  const msg = document.getElementById('fMsg').value.trim();
-  const n = nights();
-  if (!name || !phone || !email) {
-    errMsg.textContent = 'Please fill in your name, phone and email.';
-    errMsg.style.display = 'block'; return;
-  }
-  if (!ciD.value || !coD.value || n === 0) {
-    errMsg.textContent = 'Please choose valid check-in and check-out dates.';
-    errMsg.style.display = 'block'; return;
-  }
-  sBtn.disabled = true; sBtn.textContent = 'Sending…';
-  const summary =
-    `BOOKING ENQUIRY\n` +
-    `Check-in: ${ciD.value} at ${ciT.value}\n` +
-    `Check-out: ${coD.value} at ${coT.value}\n` +
-    `Nights: ${n}\nGuests: ${guests}` +
-    (msg ? `\n\nAdditional details: ${msg}` : '');
-  try {
-    const res = await fetch('https://formspree.io/f/xredooqp', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        name, email, phone,
-        checkin: `${ciD.value} ${ciT.value}`,
-        checkout: `${coD.value} ${coT.value}`,
-        nights: n, guests,
-        message: summary,
-        _subject: `New Booking Enquiry from ${name} – Mon Rêve (${n}N, ${guests}G)`,
-        _replyto: email
-      })
-    });
-    if (res.ok) {
-      form.style.display = 'none';
-      sucMsg.style.display = 'block';
-      sucMsg.scrollIntoView({ behavior:'smooth', block:'center' });
-    } else throw new Error();
-  } catch {
-    errMsg.textContent = 'Something went wrong. Please email us at monreveholidays@gmail.com';
-    errMsg.style.display = 'block';
-    sBtn.disabled = false; sBtn.textContent = 'Send Enquiry';
-  }
-});
-
-/* ── MOBILE MENU TOGGLE ── */
-const burger = document.getElementById('nvBurger');
-const mMenu = document.getElementById('mMenu');
-if (burger && mMenu) {
-  burger.addEventListener('click', () => {
-    const open = mMenu.classList.toggle('open');
-    burger.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', open);
-    document.body.style.overflow = open ? 'hidden' : '';
   });
-  mMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    mMenu.classList.remove('open');
-    burger.classList.remove('open');
-    document.body.style.overflow = '';
-  }));
-}
+  syncGuests();
 
-/* ── CINEMATIC HERO (trial) JS ── */
-(function(){
-  var cprog=document.getElementById('cprog');
-  var cbg=document.getElementById('cheroBg');
-  window.addEventListener('scroll',function(){
-    var h=document.documentElement.scrollHeight-innerHeight;
-    if(cprog) cprog.style.width=(scrollY/h*100)+'%';
-    if(cbg && scrollY<innerHeight) cbg.style.transform='translateY('+(scrollY*0.38)+'px) scale(1.05)';
-  },{passive:true});
-})();
-
-/* ── PRELOADER (trial) JS ── */
-document.body.classList.add('loading');
-(function(){
-  var pre=document.getElementById('preloader');
-  var start=Date.now(), MIN=2200;
-  function hide(){
-    var wait=Math.max(0, MIN-(Date.now()-start));
-    setTimeout(function(){
-      pre.classList.add('done');
-      document.body.classList.remove('loading');
-    }, wait);
-  }
-  if(document.readyState==='complete') hide();
-  else window.addEventListener('load', hide);
-  // safety fallback
-  setTimeout(function(){ if(!pre.classList.contains('done')){pre.classList.add('done');document.body.classList.remove('loading');} }, 6000);
+  const form = $('bkForm'), sBtn = $('sBtn'), okMsg = $('okMsg'), errMsg = $('errMsg');
+  const fail = t => { errMsg.textContent = t; errMsg.style.display = 'block'; };
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    errMsg.style.display = 'none';
+    const name = $('fName').value.trim(), phone = $('fPhone').value.trim(), email = $('fEmail').value.trim(), msg = $('fMsg').value.trim();
+    const n = nights();
+    if (!name || !phone || !email) return fail('Please fill in your name, phone and email.');
+    if (!ciD.value || !coD.value || n === 0) return fail('Please choose valid check-in and check-out dates.');
+    sBtn.disabled = true; sBtn.textContent = 'Sending…';
+    const summary = `BOOKING ENQUIRY\nCheck-in: ${ciD.value} at ${ciT.value}\nCheck-out: ${coD.value} at ${coT.value}\nNights: ${n}\nGuests: ${guests}` + (msg ? `\n\nAdditional details: ${msg}` : '');
+    try {
+      const res = await fetch('https://formspree.io/f/xredooqp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name, email, phone,
+          checkin: `${ciD.value} ${ciT.value}`,
+          checkout: `${coD.value} ${coT.value}`,
+          nights: n, guests,
+          message: summary,
+          _subject: `New Booking Enquiry from ${name} – Mon Rêve (${n}N, ${guests}G)`,
+          _replyto: email
+        })
+      });
+      if (!res.ok) throw new Error();
+      form.style.display = 'none';
+      okMsg.style.display = 'block';
+    } catch {
+      fail('Something went wrong. Please email us at monreveholidays@gmail.com');
+      sBtn.disabled = false; sBtn.textContent = 'Send enquiry';
+    }
+  });
 })();
 </script>
-
-
 </body>
 </html>
