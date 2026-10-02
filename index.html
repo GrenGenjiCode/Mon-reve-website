@@ -125,7 +125,7 @@ section[id]{scroll-margin-top:72px}
 .facts li:last-child{border-right:0}
 .facts b{display:block;font:300 clamp(46px,5vw,72px)/1 var(--serif)}
 .facts b small{font-size:.42em;margin-left:4px;color:var(--teak)}
-.facts span{display:block;margin-top:12px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.facts li>span{display:block;margin-top:12px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 @media (max-width:760px){.facts ul{grid-template-columns:1fr 1fr}.facts li:nth-child(2){border-right:0}.facts li:nth-child(-n+2){border-bottom:1px solid var(--line)}.facts li{padding:32px 12px}}
 
 /* ── ABOUT ── */
@@ -323,7 +323,69 @@ section[id]{scroll-margin-top:72px}
 .gc button:hover{background:var(--ink);color:var(--paper)}
 .exn{display:none;margin-top:10px;font-size:14px;color:var(--teak)}
 .exn.show{display:block}
-.send{width:100%;margin-top:26px;padding:21px}
+.callfirst{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--cream);border:1px solid var(--line);border-radius:4px;padding:20px 22px;margin-bottom:28px}
+.callfirst b{display:block;font:400 25px/1.15 var(--serif)}
+.callfirst p{font-size:15px;color:var(--body);margin-top:4px;max-width:34ch}
+.callfirst .btn{padding:15px 22px;white-space:nowrap}
+.hint{font-size:14px;color:var(--muted);margin:-6px 0 16px}
+.datebox{position:relative;margin-bottom:16px}
+.drow{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:3px;background:#fff;overflow:hidden}
+.dbtn{text-align:left;padding:13px 16px 14px;transition:background .3s,box-shadow .3s;position:relative}
+.dbtn+.dbtn{border-left:1px solid var(--line)}
+.dbtn small{display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.dbtn small i{color:var(--teak);font-style:normal}
+.dbtn b{display:block;margin-top:4px;font:400 22px/1.2 var(--serif);color:var(--ink)}
+.dbtn b.ph{color:#B7A898}
+.dbtn:hover{background:var(--paper)}
+.dbtn.act{background:var(--paper);box-shadow:inset 0 -2px 0 var(--teak)}
+.cal{position:absolute;left:0;right:0;top:calc(100% + 10px);z-index:30;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:22px 22px 18px;box-shadow:0 30px 60px -28px rgba(42,33,26,.45);opacity:0;transform:translateY(-10px) scale(.97);transform-origin:50% 0;pointer-events:none;transition:opacity .4s var(--ease),transform .5s var(--ease)}
+.cal.open{opacity:1;transform:none;pointer-events:auto}
+.cal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.cal-top p{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--teak)}
+.cal-nav{display:flex;gap:6px}
+.cal-nav button{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);font-size:17px;transition:background .3s,color .3s,opacity .3s}
+.cal-nav button:hover{background:var(--ink);color:var(--paper)}
+.cal-nav button:disabled{opacity:.3;pointer-events:none}
+.cal-months{display:grid;grid-template-columns:repeat(var(--m,1),1fr);gap:28px}
+.cal-month h4{font:400 24px/1 var(--serif);text-align:center;margin:8px 0 14px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);row-gap:4px}
+.cal-grid .wd{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center;padding-bottom:8px}
+.day{position:relative;height:40px;font:400 15px/1 var(--sans);color:var(--ink);z-index:0}
+.day span{position:relative;z-index:1;display:grid;place-items:center;width:38px;height:38px;margin:0 auto;border-radius:50%;transition:background .35s var(--ease),color .35s var(--ease),transform .35s var(--ease)}
+.day:active span{transform:scale(.9)}
+.day:hover span{background:var(--linen)}
+.day.dis{color:#C9BCAE;pointer-events:none}
+.day.dis span{text-decoration:line-through;text-decoration-color:rgba(133,119,106,.35)}
+.day.today span::after{content:"";position:absolute;bottom:5px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--teak)}
+.day::before{content:"";position:absolute;top:1px;bottom:1px;left:0;right:0;background:rgba(154,106,62,.14);z-index:-1;transform:scaleX(0);transform-origin:left;opacity:0;transition:transform .34s var(--ease),opacity .26s var(--ease)}
+.day.inr::before,.day.s.hasr::before,.day.e::before{transform:scaleX(1);opacity:1;transition-delay:calc(var(--i,0) * 14ms)}
+.day.s.hasr::before{left:50%}
+.day.e::before{right:50%}
+.day.s span,.day.e span{background:var(--teak);color:var(--paper)}
+.day.s:hover span,.day.e:hover span{background:var(--sepia)}
+.day.pop span{animation:dayPop .55s cubic-bezier(.34,1.56,.64,1)}
+@keyframes dayPop{0%{transform:scale(.5)}100%{transform:scale(1)}}
+.cal-months.slide-l{animation:calSlideL .5s var(--ease)}
+.cal-months.slide-r{animation:calSlideR .5s var(--ease)}
+@keyframes calSlideL{from{opacity:0;transform:translateX(32px)}to{opacity:1;transform:none}}
+@keyframes calSlideR{from{opacity:0;transform:translateX(-32px)}to{opacity:1;transform:none}}
+.dbtn b.swap,#calSum.swap,#dateHint.swap{animation:calUp .45s var(--ease)}
+@keyframes calUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.cal,.cal *,.dbtn b{animation:none!important;transition:none!important}}
+.day:focus-visible{outline:none}
+.day:focus-visible span{box-shadow:0 0 0 2px var(--paper),0 0 0 4px var(--teak)}
+.cal-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.cal-foot p{font:italic 400 19px var(--serif);color:var(--sepia)}
+.cal-foot div{display:flex;gap:8px}
+.cal-foot .lnk{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:12px 14px}
+.cal-foot .lnk:hover{color:var(--ink)}
+.cal-foot .btn{padding:13px 22px}
+@media (max-width:520px){.cal{padding:16px 12px 14px;left:-8px;right:-8px}.day{height:38px}.day span{width:36px;height:36px}.dbtn b{font-size:19px}}
+.confirm{display:flex;gap:14px;align-items:flex-start;margin-top:22px;padding:16px 18px;border:1px solid var(--line);border-radius:3px;background:#fff;cursor:pointer;font-size:16px;line-height:1.45}
+.confirm input{flex:none;width:22px;height:22px;margin-top:1px;accent-color:var(--teak);cursor:pointer}
+.confirm i{color:var(--teak);font-style:normal}
+.confirm.bad{border-color:#A2402E;box-shadow:0 0 0 3px rgba(162,64,46,.12)}
+.send{width:100%;margin-top:22px;padding:21px}
 .send:disabled{opacity:.6;cursor:wait}
 .err{display:none;margin-top:14px;font-size:15px;color:#A2402E}
 .ok{display:none;text-align:center;padding:40px 10px}
@@ -387,6 +449,73 @@ html.loading{overflow:hidden}
 html.loading .hero-head>*{opacity:0;translate:0 26px}
 html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
 
+/* ═══ MOTION LAYER ═══
+   Small, quick feedback for touch (presses ~150ms); calm, slower motion for content (reveals ~0.7–1.8s).
+   Only transform / scale / opacity are animated. Exits are quicker than entrances. */
+:root{--out-quint:cubic-bezier(.23,1,.32,1);--in-cubic:cubic-bezier(.32,0,.67,0)}
+
+/* press feedback */
+.btn{transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease),scale .16s var(--out-quint)}
+.btn:active{scale:.97}
+.gc button,.rev-nav button,.cal-nav button,.x,.nv{transition:background .3s,color .3s,opacity .3s,scale .16s var(--out-quint)}
+.gc button:active,.rev-nav button:active,.cal-nav button:active,.x:active,.nv:active,.burger:active{scale:.9}
+.burger{transition:scale .16s var(--out-quint)}
+.card figure{transition:scale .2s var(--out-quint)}
+.card:active figure{scale:.985}
+
+/* scroll progress */
+.prog{position:fixed;left:0;right:0;top:0;height:2px;z-index:61;background:var(--teak);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+
+/* photos settle from a slight zoom as their section appears (scale, so hover zoom on transform still works) */
+.rv img{scale:1.08;transition:transform 1.4s var(--ease),scale 1.8s var(--ease)}
+.rv.in img{scale:1}
+
+/* lists cascade in after their block */
+.stg>*{opacity:0;transform:translateY(12px);transition:opacity .7s var(--ease),transform .8s var(--ease)}
+.in.stg>*,.in .stg>*{opacity:1;transform:none}
+.in.stg>*:nth-child(1),.in .stg>*:nth-child(1){transition-delay:.25s}
+.in.stg>*:nth-child(2),.in .stg>*:nth-child(2){transition-delay:.31s}
+.in.stg>*:nth-child(3),.in .stg>*:nth-child(3){transition-delay:.37s}
+.in.stg>*:nth-child(4),.in .stg>*:nth-child(4){transition-delay:.43s}
+.in.stg>*:nth-child(5),.in .stg>*:nth-child(5){transition-delay:.49s}
+.in.stg>*:nth-child(6),.in .stg>*:nth-child(6){transition-delay:.55s}
+.in.stg>*:nth-child(n+7),.in .stg>*:nth-child(n+7){transition-delay:.61s}
+
+/* mobile menu: links glide in one after another; closing is quick and all at once */
+.mmenu a,.mmenu p{opacity:0;transform:translateY(18px);transition:opacity .2s var(--in-cubic),transform .2s var(--in-cubic)}
+.menu-open .mmenu a,.menu-open .mmenu p{opacity:1;transform:none;transition:opacity .55s var(--out-quint),transform .7s var(--out-quint)}
+.menu-open .mmenu a:nth-child(1){transition-delay:.08s}.menu-open .mmenu a:nth-child(2){transition-delay:.13s}
+.menu-open .mmenu a:nth-child(3){transition-delay:.18s}.menu-open .mmenu a:nth-child(4){transition-delay:.23s}
+.menu-open .mmenu a:nth-child(5){transition-delay:.28s}.menu-open .mmenu a:nth-child(6){transition-delay:.33s}
+.menu-open .mmenu a:nth-child(7){transition-delay:.38s}.menu-open .mmenu p{transition-delay:.45s}
+
+/* pop-ups: open at a calm pace, close quicker */
+.modal{transition:opacity .26s var(--in-cubic),visibility 0s .26s}
+.modal.open{transition:opacity .42s var(--out-quint)}
+.lb-img{transform:scale(.96);transition:transform .55s var(--out-quint)}
+.modal.open .lb-img{transform:none}
+.lb-cap{transition:opacity .3s}
+
+/* form messages */
+.err.pop,.exn.show{animation:msgIn .32s var(--out-quint)}
+@keyframes msgIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+.ok .tick{border:0;width:84px;height:84px}
+.ok .tick svg{width:84px;height:84px;display:block}
+.ok .tick circle{fill:none;stroke:var(--teak);stroke-width:1.5;stroke-dasharray:252;stroke-dashoffset:252}
+.ok .tick path{fill:none;stroke:var(--teak);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:40;stroke-dashoffset:40}
+.ok.go .tick circle{animation:draw .8s .1s var(--out-quint) forwards}
+.ok.go .tick path{animation:draw .45s .65s var(--out-quint) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.ok.go h3,.ok.go p{animation:calUp .6s var(--out-quint) backwards}
+.ok.go h3{animation-delay:.55s}.ok.go p{animation-delay:.7s}
+
+@media (prefers-reduced-motion:reduce){
+  .rv img{scale:1}
+  .stg>*,.mmenu a,.mmenu p{opacity:1;transform:none;transition:none}
+  .ok .tick circle,.ok .tick path{stroke-dashoffset:0;animation:none}
+  .err.pop,.exn.show,.ok.go h3,.ok.go p{animation:none}
+}
+
 @media (prefers-reduced-motion:reduce){
   .preloader{display:none}
   .rv{opacity:1;transform:none;transition:none}
@@ -422,6 +551,7 @@ html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i><i></i><i></i></button>
   </div>
 </nav>
+<div class="prog" id="prog" aria-hidden="true"></div>
 <div class="mmenu" id="mmenu">
   <a href="#about">About</a>
   <a href="#why">Why <em>Mon Rêve</em></a>
@@ -430,7 +560,7 @@ html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
   <a href="#reviews">Reviews</a>
   <a href="#location">Location</a>
   <a href="#book"><em>Reserve your stay</em></a>
-  <p>monreveholidays@gmail.com</p>
+  <p><a href="tel:+919526700051" style="font:inherit;padding:0;display:inline">+91 95267 00051</a> · monreveholidays@gmail.com</p>
 </div>
 
 <!-- HERO -->
@@ -464,10 +594,10 @@ html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
 <!-- FACTS -->
 <section class="facts" aria-label="At a glance">
   <ul>
-    <li class="rv"><b>4</b><span>Bedrooms</span></li>
-    <li class="rv d1"><b>12</b><span>Guests</span></li>
-    <li class="rv d2"><b>2</b><span>Storeys</span></li>
-    <li class="rv d3"><b>7<small>km</small></b><span>To Thusharagiri Falls</span></li>
+    <li class="rv"><b><span class="num" data-to="4">4</span></b><span>Bedrooms</span></li>
+    <li class="rv d1"><b><span class="num" data-to="12">12</span></b><span>Guests</span></li>
+    <li class="rv d2"><b><span class="num" data-to="2">2</span></b><span>Storeys</span></li>
+    <li class="rv d3"><b><span class="num" data-to="7">7</span><small>km</small></b><span>To Thusharagiri Falls</span></li>
   </ul>
 </section>
 
@@ -483,7 +613,7 @@ html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
       <h2 class="display h2 rv d1">Your <em>dream home</em> in Kerala</h2>
       <p class="lead rv d2">Nestled in Engapuzha, Kozhikode, Mon Rêve is a thoughtfully designed two-storey residence where contemporary architecture meets Kerala's warm hospitality.</p>
       <p class="lead rv d2">Signature round windows, teak floors and a private waterfall pool, set among lush greenery. You book the entire villa, so no one else shares the house, the pool or the garden.</p>
-      <div class="feat rv d3">
+      <div class="feat rv d3 stg">
         <div><small>Bedrooms</small><b>4 spacious rooms</b></div>
         <div><small>Capacity</small><b>Up to 12 guests</b></div>
         <div><small>Pool</small><b>Private, with waterfalls</b></div>
@@ -537,7 +667,7 @@ html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
     <p class="eyebrow rv">Signature feature</p>
     <h2 class="display rv d1">The private <em>waterfall pool</em></h2>
     <p class="rv d2">Unwind in your own pool with waterfall features, soft underwater lighting and a timber deck, beneath a glass canopy framed by tropical green.</p>
-    <ol class="rv d3">
+    <ol class="rv d3 stg">
       <li>Dual waterfall features</li>
       <li>Underwater mood lighting</li>
       <li>Timber deck with lanterns</li>
@@ -616,7 +746,7 @@ html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
     <div class="incl-card rv d1">
       <p class="eyebrow">Included</p>
       <h3>With every booking</h3>
-      <ul>
+      <ul class="stg">
         <li>Full, exclusive use of the villa</li>
         <li>All four bedrooms, for up to 12 guests</li>
         <li>Vegetarian breakfast for every guest</li>
@@ -627,7 +757,7 @@ html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
       <hr>
       <p class="eyebrow">On request</p>
       <h3>Arranged for you</h3>
-      <ul class="alt">
+      <ul class="alt stg">
         <li>Lunch &amp; dinner, including traditional Kerala cuisine</li>
         <li>Special dietary requests</li>
         <li>Airport pick-up &amp; drop-off</li>
@@ -650,7 +780,7 @@ html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
       <div class="place rv d2"><b>7<small>km</small></b><div><h4>Thusharagiri Waterfalls</h4><p>Forest trails and waterfalls, a short drive away</p></div></div>
       <div class="place rv d3"><b>✦</b><div><h4>Wayanad &amp; Kakkad Vanaparvam</h4><p>Hill country and the Kakkad Vanaparvam Biodiversity Park</p></div></div>
       <div class="place rv d3"><b>✈</b><div><h4>Kozhikode International Airport</h4><p>The nearest airport (CCJ). We can arrange pick-up.</p></div></div>
-      <div class="place rv d4"><b>✉</b><div><h4>Address &amp; contact</h4><p>Engapuzha, Kozhikode District, Kerala, India<br><a href="mailto:monreveholidays@gmail.com">monreveholidays@gmail.com</a></p></div></div>
+      <div class="place rv d4"><b>✉</b><div><h4>Address &amp; contact</h4><p>Engapuzha, Kozhikode District, Kerala, India<br><a href="tel:+919526700051">+91 95267 00051</a> · <a href="mailto:monreveholidays@gmail.com">monreveholidays@gmail.com</a></p></div></div>
     </div>
   </div>
 </section>
@@ -661,21 +791,27 @@ html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
     <div>
       <p class="eyebrow rv">Reserve</p>
       <h2 class="display h2 rv d1">Book your <em>stay</em></h2>
-      <p class="lead rv d2">Choose your dates and tell us how many are coming. We confirm availability within 24 hours.</p>
-      <ul class="book-notes rv d3">
+      <p class="lead rv d2">Please call us first to check your dates are free, then send your enquiry below. Bookings need at least 24 hours' notice before check-in so we can prepare the house for you.</p>
+      <ul class="book-notes rv d3 stg">
         <li>The entire villa, exclusively yours</li>
         <li>Vegetarian breakfast included</li>
         <li>Up to 12 guests · pets welcome on request</li>
+        <li>At least 24 hours' notice before check-in</li>
+        <li>Call to check availability: <a href="tel:+919526700051">+91 95267 00051</a></li>
         <li>Prefer email? <a href="mailto:monreveholidays@gmail.com">monreveholidays@gmail.com</a></li>
       </ul>
     </div>
     <div class="fcard rv d1">
       <div class="ok" id="okMsg" role="status">
-        <div class="tick">✓</div>
+        <div class="tick" aria-hidden="true"><svg viewBox="0 0 84 84"><circle cx="42" cy="42" r="40"/><path d="M28 43l9.5 9.5L57 33"/></svg></div>
         <h3>Enquiry received</h3>
         <p>Thank you for choosing Mon Rêve.<br>We'll confirm availability and reply within 24 hours.</p>
       </div>
       <form id="bkForm" novalidate>
+        <div class="callfirst">
+          <div><b>Step 1 · Call us first</b><p>Check your dates are available before sending this form.</p></div>
+          <a class="btn btn-solid" href="tel:+919526700051">Call +91 95267 00051</a>
+        </div>
         <p class="grp">Your details</p>
         <div class="frow">
           <label class="fld"><span>Full name <i>*</i></span><input type="text" id="fName" autocomplete="name" required></label>
@@ -684,12 +820,21 @@ html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
         <label class="fld"><span>Email address <i>*</i></span><input type="email" id="fEmail" autocomplete="email" required></label>
 
         <p class="grp">Stay dates</p>
-        <div class="frow">
-          <label class="fld"><span>Check-in date <i>*</i></span><input type="date" id="ciD" required></label>
-          <label class="fld"><span>Check-in time</span><input type="time" id="ciT" value="13:00"></label>
+        <p class="hint" id="dateHint">Earliest check-in is tomorrow. Same-day bookings aren't possible.</p>
+        <div class="datebox" id="dateBox">
+          <div class="drow">
+            <button type="button" class="dbtn" id="ciBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="cal"><small>Check-in <i>*</i></small><b class="ph">Add date</b></button>
+            <button type="button" class="dbtn" id="coBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="cal"><small>Check-out <i>*</i></small><b class="ph">Add date</b></button>
+          </div>
+          <div class="cal" id="cal" role="dialog" aria-label="Choose your check-in and check-out dates">
+            <div class="cal-top"><p id="calPrompt">Select check-in</p><div class="cal-nav"><button type="button" id="calPrev" aria-label="Previous month">←</button><button type="button" id="calNext" aria-label="Next month">→</button></div></div>
+            <div class="cal-months" id="calMonths"></div>
+            <div class="cal-foot"><p id="calSum">Choose your dates</p><div><button type="button" class="lnk" id="calClear">Clear</button><button type="button" class="btn btn-solid" id="calDone">Done</button></div></div>
+          </div>
+          <input type="hidden" id="ciD"><input type="hidden" id="coD">
         </div>
         <div class="frow">
-          <label class="fld"><span>Check-out date <i>*</i></span><input type="date" id="coD" required></label>
+          <label class="fld"><span>Check-in time</span><input type="time" id="ciT" value="13:00"></label>
           <label class="fld"><span>Check-out time</span><input type="time" id="coT" value="11:00"></label>
         </div>
 
@@ -703,6 +848,7 @@ html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
         <p class="grp">Anything else</p>
         <label class="fld"><span>Meals, transfers, tours, pets, requests… (optional)</span><textarea id="fMsg"></textarea></label>
 
+        <label class="confirm" id="confirmBox"><input type="checkbox" id="fCalled" required><span>I've called Mon Rêve on +91 95267 00051 and confirmed my dates are available <i>*</i></span></label>
         <button type="submit" class="btn btn-solid send" id="sBtn">Send enquiry</button>
         <p class="err" id="errMsg" role="alert"></p>
       </form>
@@ -722,11 +868,12 @@ html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
     </div>
     <div>
       <h4>Contact</h4>
+      <a href="tel:+919526700051">+91 95267 00051</a>
       <a href="mailto:monreveholidays@gmail.com">monreveholidays@gmail.com</a>
       <p>Engapuzha, Kozhikode District<br>Kerala, India</p>
     </div>
   </div>
-  <div class="ft-b"><span>© 2026 Mon Rêve Holiday Home · Kozhikode, Kerala</span><span>All enquiries via email</span></div>
+  <div class="ft-b"><span>© 2026 Mon Rêve Holiday Home · Kozhikode, Kerala</span><span>Call to check availability before booking</span></div>
 </footer>
 
 <!-- ROOM MODAL -->
@@ -959,6 +1106,22 @@ const ROOMS = [
   function show(m) { openModal = m; m.classList.add('open'); lock(true); m.querySelector('[data-close]').focus({ preventScroll: true }); }
   function hide() { if (!openModal) return; openModal.classList.remove('open'); openModal = null; lock(false); }
 
+  /* slide content out the way you came from and in from the way you're going */
+  async function slideSwap(els, update, dir) {
+    if (still || !els[0].animate) return update();
+    els.forEach(el => el.getAnimations().forEach(a => a.cancel()));
+    const outs = els.map(el => el.animate([{ opacity: 1, transform: 'none' }, { opacity: 0, transform: `translateX(${-dir * 26}px)` }],
+      { duration: 170, easing: 'cubic-bezier(.32,0,.67,0)', fill: 'forwards' }));
+    const settle = (pr, ms) => Promise.race([pr, new Promise(r => setTimeout(r, ms))]);   // never wait on a paused tab
+    await settle(Promise.all(outs.map(a => a.finished.catch(() => {}))), 230);
+    update();
+    const img = els.find(el => el.tagName === 'IMG');
+    if (img && img.decode) { try { await settle(img.decode(), 600); } catch (e) {} }
+    outs.forEach(a => a.cancel());
+    els.forEach(el => el.animate([{ opacity: 0, transform: `translateX(${dir * 26}px)` }, { opacity: 1, transform: 'none' }],
+      { duration: 360, easing: 'cubic-bezier(.23,1,.32,1)' }));
+  }
+
   const roomModal = $('roomModal'), rmImg = $('rmImg');
   let cur = 0;
   function renderRoom(i, fade) {
@@ -973,19 +1136,22 @@ const ROOMS = [
       $('rmAm').innerHTML = r.am.map(a => `<span>${a}</span>`).join('');
       rmImg.classList.remove('fade');
     };
-    if (fade) { rmImg.classList.add('fade'); setTimeout(apply, 200); } else apply();
+    if (fade) slideSwap([rmImg, document.querySelector('.room-info')], apply, fade); else apply();
   }
   document.querySelectorAll('[data-room]').forEach(b => b.addEventListener('click', () => { cur = +b.dataset.room; renderRoom(cur, false); show(roomModal); }));
 
   const gal = [...document.querySelectorAll('#galG .gi')].map(f => ({ src: f.querySelector('img').src, cap: f.querySelector('figcaption').textContent }));
   const lightbox = $('lightbox'), lbImg = $('lbImg');
   let gi = 0;
-  function renderLB(i) { lbImg.src = gal[i].src; lbImg.alt = gal[i].cap; $('lbCap').textContent = gal[i].cap; }
+  function renderLB(i, dir) {
+    const apply = () => { lbImg.src = gal[i].src; lbImg.alt = gal[i].cap; $('lbCap').textContent = gal[i].cap; };
+    if (dir) slideSwap([lbImg, $('lbCap')], apply, dir); else apply();
+  }
   document.querySelectorAll('#galG .gi').forEach((f, i) => f.addEventListener('click', () => { gi = i; renderLB(gi); show(lightbox); }));
 
   function step(d) {
-    if (openModal === roomModal) { cur = (cur + d + ROOMS.length) % ROOMS.length; renderRoom(cur, true); }
-    else if (openModal === lightbox) { gi = (gi + d + gal.length) % gal.length; renderLB(gi); }
+    if (openModal === roomModal) { cur = (cur + d + ROOMS.length) % ROOMS.length; renderRoom(cur, d); }
+    else if (openModal === lightbox) { gi = (gi + d + gal.length) % gal.length; renderLB(gi, d); }
   }
   [roomModal, lightbox].forEach(m => {
     m.addEventListener('click', e => {
@@ -1097,7 +1263,13 @@ const ROOMS = [
   }
 
   let ticking = false;
-  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { frame(); ticking = false; }); } };
+  const prog = $('prog');
+  let maxScroll = 1;
+  const progress = () => { prog.style.transform = `scaleX(${Math.min(1, Math.max(0, scrollY / maxScroll)).toFixed(4)})`; };
+  const measureProg = () => { maxScroll = Math.max(1, document.documentElement.scrollHeight - innerHeight); progress(); };
+  new ResizeObserver(measureProg).observe(document.body);
+  addEventListener('resize', measureProg); addEventListener('load', measureProg); measureProg();
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { frame(); progress(); ticking = false; }); } };
   addEventListener('scroll', onScroll, { passive: true });
   addEventListener('resize', measure);
   if (document.fonts) document.fonts.ready.then(measure);
@@ -1105,7 +1277,7 @@ const ROOMS = [
   measure();
 
   /* ── preloader: show at least 2.2s (same as the live site), 6s safety fallback ── */
-  const pre = $('preloader'), start = Date.now();
+  const pre = $('preloader'), loadStart = Date.now();
   let loaded = false;
   function reveal() {
     if (loaded) return; loaded = true;
@@ -1113,7 +1285,7 @@ const ROOMS = [
     document.documentElement.classList.remove('loading');
     if (lenis) lenis.start();
   }
-  const afterLoad = () => setTimeout(reveal, Math.max(0, 2200 - (Date.now() - start)));
+  const afterLoad = () => setTimeout(reveal, Math.max(0, 2200 - (Date.now() - loadStart)));
   if (document.readyState === 'complete') afterLoad(); else addEventListener('load', afterLoad);
   setTimeout(reveal, 6000);
 
@@ -1122,10 +1294,28 @@ const ROOMS = [
     if (still || !window.Lenis) return;
     lenis = new Lenis({ duration: 1.15, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
     if (!loaded) lenis.stop();
-    lenis.on('scroll', frame);
+    lenis.on('scroll', () => { frame(); progress(); });
     const raf = t => { lenis.raf(t); requestAnimationFrame(raf); };
     requestAnimationFrame(raf);
   });
+
+  /* ── key numbers count up when they come into view ── */
+  if (!still) {
+    const nums = document.querySelectorAll('.num');
+    nums.forEach(n => { n.textContent = '0'; });
+    const cio = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      cio.unobserve(e.target);
+      const el = e.target, to = +el.dataset.to, t0 = performance.now() + 250, dur = 1300;
+      const run = now => {
+        const t = Math.min(1, Math.max(0, (now - t0) / dur));
+        el.textContent = Math.round(to * (1 - Math.pow(1 - t, 4)));
+        if (t < 1) requestAnimationFrame(run);
+      };
+      requestAnimationFrame(run);
+    }), { threshold: 0.6 });
+    nums.forEach(n => cio.observe(n));
+  }
 
   /* ── reveal on scroll ── */
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
@@ -1136,8 +1326,26 @@ const ROOMS = [
   let guests = 2;
   const gNum = $('gNum'), exNote = $('exNote'), exCount = $('exCount');
   const ciD = $('ciD'), coD = $('coD'), ciT = $('ciT'), coT = $('coT');
-  const today = new Date().toISOString().split('T')[0];
-  ciD.min = today; coD.min = today;
+  // Times are the villa's (India), whatever the guest's time zone.
+  const pad = n => String(n).padStart(2, '0');
+  const addDays = (ymd, n) => { const [y, m, d] = ymd.split('-').map(Number); const t = new Date(Date.UTC(y, m - 1, d + n)); return `${t.getUTCFullYear()}-${pad(t.getUTCMonth() + 1)}-${pad(t.getUTCDate())}`; };
+  const todayIndia = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  // At least NOTICE_HOURS between booking and the chosen check-in time, so booking late
+  // tonight for tomorrow afternoon isn't possible.
+  const NOTICE_HOURS = 24;
+  const indiaNow = () => {
+    const p = Object.fromEntries(new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
+      .formatToParts(new Date()).map(x => [x.type, x.value]));
+    return Date.UTC(+p.year, p.month - 1, +p.day, +p.hour, +p.minute);
+  };
+  const at = (ymd, hm) => { const [y, m, d] = ymd.split('-').map(Number), [h, mi] = (hm || '13:00').split(':').map(Number); return Date.UTC(y, m - 1, d, h, mi); };
+  const earliest = () => {
+    const now = indiaNow(), t = todayIndia();
+    for (let k = 1; k <= 3; k++) { const d = addDays(t, k); if (at(d, ciT.value) - now >= NOTICE_HOURS * 36e5) return d; }
+    return addDays(t, 3);
+  };
+  const niceTime = hm => { const [h, m] = (hm || '13:00').split(':').map(Number); return `${h % 12 || 12}:${pad(m)} ${h < 12 ? 'am' : 'pm'}`; };
+  ciD.min = earliest(); coD.min = addDays(ciD.min, 1);
   const nights = () => {
     if (!ciD.value || !coD.value) return 0;
     const d = Math.round((new Date(coD.value) - new Date(ciD.value)) / 864e5);
@@ -1149,18 +1357,161 @@ const ROOMS = [
     exCount.textContent = ex;
     exNote.classList.toggle('show', ex > 0);
   }
-  $('gMinus').addEventListener('click', () => { if (guests > 1) { guests--; syncGuests(); } });
-  $('gPlus').addEventListener('click', () => { if (guests < 30) { guests++; syncGuests(); } });
-  ciD.addEventListener('change', () => {
-    if (!ciD.value) return;
-    const nx = new Date(ciD.value); nx.setDate(nx.getDate() + 1);
-    coD.min = nx.toISOString().split('T')[0];
-    if (coD.value && coD.value <= ciD.value) coD.value = coD.min;
-  });
+  const roll = dir => { if (!still && gNum.animate) gNum.animate([{ opacity: 0, transform: `translateY(${dir * 12}px)` }, { opacity: 1, transform: 'none' }], { duration: 240, easing: 'cubic-bezier(.23,1,.32,1)' }); };
+  $('gMinus').addEventListener('click', () => { if (guests > 1) { guests--; syncGuests(); roll(-1); } });
+  $('gPlus').addEventListener('click', () => { if (guests < 30) { guests++; syncGuests(); roll(1); } });
   syncGuests();
 
+  /* ── date-range calendar (replaces the browser's own date picker) ──
+     Fills the hidden ciD / coD inputs, which the rest of the form already uses. */
+  const cal = $('cal'), calMonths = $('calMonths'), ciBtn = $('ciBtn'), coBtn = $('coBtn');
+  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const ymdOf = (y, m, d) => `${y}-${pad(m + 1)}-${pad(d)}`;
+  const nice = (v, yr) => new Date(v + 'T00:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', ...(yr ? { year: 'numeric' } : {}), timeZone: 'UTC' });
+  let start = '', end = '', hover = '', picking = 'start', vy = 0, vm = 0, popped = '';
+  const restart = (el, cls) => { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); };
+
+  const monthsShown = () => (cal.clientWidth || $('dateBox').clientWidth) >= 600 ? 2 : 1;
+  const firstView = () => { const [y, m] = earliest().split('-').map(Number); return [y, m - 1]; };
+  function setView(v) { const [y, m] = v.split('-').map(Number); vy = y; vm = m - 1; }
+  function shift(n) { const t = new Date(Date.UTC(vy, vm + n, 1)); vy = t.getUTCFullYear(); vm = t.getUTCMonth(); }
+
+  function render() {
+    const k = monthsShown(), first = earliest(), todayStr = todayIndia();
+    calMonths.style.setProperty('--m', k);
+    let html = '';
+    for (let i = 0; i < k; i++) {
+      const t = new Date(Date.UTC(vy, vm + i, 1)), y = t.getUTCFullYear(), m = t.getUTCMonth();
+      const lead = t.getUTCDay(), days = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
+      html += `<div class="cal-month"><h4>${MONTHS[m]} ${y}</h4><div class="cal-grid">` +
+        ['Su','Mo','Tu','We','Th','Fr','Sa'].map(w => `<span class="wd">${w}</span>`).join('') +
+        '<span></span>'.repeat(lead);
+      for (let d = 1; d <= days; d++) {
+        const v = ymdOf(y, m, d), dis = v < first;
+        html += `<button type="button" class="day${dis ? ' dis' : ''}${v === todayStr ? ' today' : ''}" data-d="${v}"${dis ? ' disabled aria-disabled="true"' : ''} aria-label="${nice(v, true)}"><span>${d}</span></button>`;
+      }
+      html += '</div></div>';
+    }
+    calMonths.innerHTML = html;
+    const [fy, fm] = firstView();
+    $('calPrev').disabled = vy < fy || (vy === fy && vm <= fm);
+    const lim = new Date(Date.UTC(fy, fm + 18, 1));
+    $('calNext').disabled = Date.UTC(vy, vm + k, 1) >= lim.getTime();
+    paint();
+  }
+  function paint() {
+    const to = end || (picking === 'end' && start && hover > start ? hover : '');
+    calMonths.querySelectorAll('.day').forEach(b => {
+      const v = b.dataset.d;
+      b.classList.toggle('s', v === start);
+      b.classList.toggle('e', !!to && v === to);
+      b.classList.toggle('hasr', v === start && !!to);
+      b.classList.toggle('inr', !!(start && to && v > start && v < to));
+      if (start && to && v >= start && v <= to) b.style.setProperty('--i', Math.min(24, Math.round((Date.parse(v) - Date.parse(start)) / 864e5)));
+      b.setAttribute('aria-pressed', v === start || v === end ? 'true' : 'false');
+    });
+    const key = start + '|' + end;                       // pop the circle that was just chosen
+    if (key !== popped) {
+      const fresh = end && !popped.endsWith('|' + end) ? end : start;
+      const fb = fresh && calMonths.querySelector(`[data-d="${fresh}"]`);
+      if (fb) restart(fb, 'pop');
+      popped = key;
+    }
+    const n = start && end ? Math.round((Date.parse(end) - Date.parse(start)) / 864e5) : 0;
+    const sum = n ? `${n} night${n > 1 ? 's' : ''} · ${nice(start)} → ${nice(end)}`
+      : start ? `Check-in ${nice(start)} · now pick check-out` : 'Choose your dates';
+    const sumEl = $('calSum');
+    if (sumEl.textContent !== sum) { sumEl.textContent = sum; restart(sumEl, 'swap'); }
+    $('calPrompt').textContent = picking === 'end' ? 'Select check-out' : 'Select check-in';
+    ciBtn.classList.toggle('act', cal.classList.contains('open') && picking === 'start');
+    coBtn.classList.toggle('act', cal.classList.contains('open') && picking === 'end');
+  }
+  function commit() {
+    ciD.value = start; coD.value = end;
+    const set = (btn, v) => {
+      const b = btn.querySelector('b'), t = v ? nice(v, true) : 'Add date';
+      if (b.textContent === t) return;
+      b.textContent = t; b.classList.toggle('ph', !v); restart(b, 'swap');
+    };
+    set(ciBtn, start); set(coBtn, end);
+    if (start && end) errMsg.style.display = 'none';
+  }
+  function openCal(which) {
+    picking = which === 'out' && start ? 'end' : 'start';
+    setView(((picking === 'end' && (end || start)) || start || earliest()).slice(0, 7) + '-01');
+    if (!start) { const [y, m] = firstView(); vy = y; vm = m; }
+    cal.classList.add('open');
+    [ciBtn, coBtn].forEach(b => b.setAttribute('aria-expanded', 'true'));
+    render();
+    const focus = calMonths.querySelector('.day.s') || calMonths.querySelector('.day:not(.dis)');
+    if (focus) focus.focus({ preventScroll: true });
+  }
+  function closeCal(back) {
+    if (!cal.classList.contains('open')) return;
+    cal.classList.remove('open'); hover = '';
+    [ciBtn, coBtn].forEach(b => b.setAttribute('aria-expanded', 'false'));
+    paint();
+    if (back) (end ? coBtn : ciBtn).focus({ preventScroll: true });
+  }
+  ciBtn.addEventListener('click', () => cal.classList.contains('open') && picking === 'start' ? closeCal() : openCal('in'));
+  coBtn.addEventListener('click', () => cal.classList.contains('open') && picking === 'end' ? closeCal() : openCal('out'));
+  calMonths.addEventListener('click', e => {
+    const b = e.target.closest('.day'); if (!b || b.disabled) return;
+    const v = b.dataset.d;
+    if (picking === 'start' || !start || v <= start) {
+      start = v; if (end && end <= start) end = '';
+      picking = 'end';
+    } else {
+      end = v; picking = 'start';
+      commit(); paint();
+      setTimeout(() => closeCal(true), 650);              // let the range sweep across, then close
+      return;
+    }
+    commit(); paint();
+  });
+  calMonths.addEventListener('mouseover', e => {
+    const b = e.target.closest('.day'); if (!b || picking !== 'end') return;
+    if (hover !== b.dataset.d) { hover = b.dataset.d; paint(); }
+  });
+  calMonths.addEventListener('mouseleave', () => { hover = ''; paint(); });
+  calMonths.addEventListener('keydown', e => {
+    const b = e.target.closest('.day'); if (!b) return;
+    const mv = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 }[e.key];
+    if (!mv) return;
+    e.preventDefault();
+    const target = addDays(b.dataset.d, mv);
+    let nb = calMonths.querySelector(`[data-d="${target}"]`);
+    if (!nb && target >= earliest()) { shift(mv > 0 ? 1 : -1); render(); nb = calMonths.querySelector(`[data-d="${target}"]`); }
+    if (nb && !nb.disabled) nb.focus();
+  });
+  $('calPrev').addEventListener('click', () => { shift(-1); render(); restart(calMonths, 'slide-r'); calMonths.classList.remove('slide-l'); });
+  $('calNext').addEventListener('click', () => { shift(1); render(); restart(calMonths, 'slide-l'); calMonths.classList.remove('slide-r'); });
+
+  /* keep the notice rule live: the hint shows the real earliest check-in, and changing the
+     check-in time (or the clock ticking past it) clears a date that no longer has 24h notice */
+  function refreshNotice(fromTimeChange) {
+    const first = earliest();
+    ciD.min = first;
+    const hint = $('dateHint'), txt = `Bookings need at least 24 hours' notice. Earliest check-in: ${nice(first)}, ${niceTime(ciT.value)}.`;
+    if (hint.textContent !== txt) { hint.textContent = txt; restart(hint, 'swap'); }
+    if (start && start < first) {
+      start = end = ''; picking = 'start'; commit();
+      if (fromTimeChange) fail(`That check-in time is less than 24 hours away, so please choose ${nice(first, true)} or later, or call us on +91 95267 00051.`);
+    }
+    if (cal.classList.contains('open')) render();
+  }
+  ciT.addEventListener('change', () => refreshNotice(true));
+  setInterval(() => refreshNotice(false), 60000);
+  refreshNotice(false);
+  $('calClear').addEventListener('click', () => { start = end = ''; picking = 'start'; commit(); paint(); });
+  $('calDone').addEventListener('click', () => closeCal(true));
+  document.addEventListener('pointerdown', e => { if (!$('dateBox').contains(e.target)) closeCal(); });
+  cal.addEventListener('keydown', e => { if (e.key === 'Escape') { e.stopPropagation(); closeCal(true); } });
+  addEventListener('resize', () => { if (cal.classList.contains('open')) render(); });
+
   const form = $('bkForm'), sBtn = $('sBtn'), okMsg = $('okMsg'), errMsg = $('errMsg');
-  const fail = t => { errMsg.textContent = t; errMsg.style.display = 'block'; };
+  $('fCalled').addEventListener('change', e => { if (e.target.checked) { $('confirmBox').classList.remove('bad'); errMsg.style.display = 'none'; } });
+  const fail = t => { errMsg.textContent = t; errMsg.style.display = 'block'; errMsg.classList.remove('pop'); void errMsg.offsetWidth; errMsg.classList.add('pop'); };
   form.addEventListener('submit', async e => {
     e.preventDefault();
     errMsg.style.display = 'none';
@@ -1168,8 +1519,10 @@ const ROOMS = [
     const n = nights();
     if (!name || !phone || !email) return fail('Please fill in your name, phone and email.');
     if (!ciD.value || !coD.value || n === 0) return fail('Please choose valid check-in and check-out dates.');
+    if (ciD.value < earliest()) return fail(`We need at least 24 hours' notice before check-in, so the earliest is ${nice(earliest(), true)} at ${niceTime(ciT.value)}. For anything sooner, please call us on +91 95267 00051.`);
+    if (!$('fCalled').checked) { $('confirmBox').classList.add('bad'); return fail('Please call us on +91 95267 00051 to confirm your dates are available, then tick the box above.'); }
     sBtn.disabled = true; sBtn.textContent = 'Sending…';
-    const summary = `BOOKING ENQUIRY\nCheck-in: ${ciD.value} at ${ciT.value}\nCheck-out: ${coD.value} at ${coT.value}\nNights: ${n}\nGuests: ${guests}` + (msg ? `\n\nAdditional details: ${msg}` : '');
+    const summary = `BOOKING ENQUIRY\nCheck-in: ${ciD.value} at ${ciT.value}\nCheck-out: ${coD.value} at ${coT.value}\nNights: ${n}\nGuests: ${guests}\nCalled to confirm availability: Yes` + (msg ? `\n\nAdditional details: ${msg}` : '');
     try {
       const res = await fetch('https://formspree.io/f/xredooqp', {
         method: 'POST',
@@ -1181,12 +1534,15 @@ const ROOMS = [
           nights: n, guests,
           message: summary,
           _subject: `New Booking Enquiry from ${name} – Mon Rêve (${n}N, ${guests}G)`,
+          called_to_confirm: 'Yes, guest ticked that they called to confirm availability',
           _replyto: email
         })
       });
       if (!res.ok) throw new Error();
+      if (!still && form.animate) await Promise.race([form.animate([{ opacity: 1 }, { opacity: 0, transform: 'translateY(-8px)' }], { duration: 220, easing: 'cubic-bezier(.32,0,.67,0)', fill: 'forwards' }).finished, new Promise(r => setTimeout(r, 260))]);
       form.style.display = 'none';
       okMsg.style.display = 'block';
+      okMsg.classList.add('go');
     } catch {
       fail('Something went wrong. Please email us at monreveholidays@gmail.com');
       sBtn.disabled = false; sBtn.textContent = 'Send enquiry';
