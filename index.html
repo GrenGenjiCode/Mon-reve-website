@@ -1509,6 +1509,20 @@ const ROOMS = [
   cal.addEventListener('keydown', e => { if (e.key === 'Escape') { e.stopPropagation(); closeCal(true); } });
   addEventListener('resize', () => { if (cal.classList.contains('open')) render(); });
 
+  /* ── guest thank-you email via EmailJS ──
+     Paste the three values from your EmailJS dashboard below. While any are empty, no email is sent.
+     (These are public by design; restrict the allowed domain in EmailJS → Account → Security.) */
+  const EMAILJS = { serviceId: 'service_cxi7903', templateId: 'template_7h2ch9d', publicKey: 'SAzy5MRhjo2FE07pp' };
+  function sendGuestEmail(params) {
+    if (!EMAILJS.serviceId || !EMAILJS.templateId || !EMAILJS.publicKey) return;
+    if (location.hostname !== 'monreveholidays.netlify.app') return;   // only the live booking form sends guest emails
+    fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ service_id: EMAILJS.serviceId, template_id: EMAILJS.templateId, user_id: EMAILJS.publicKey, template_params: params })
+    }).catch(() => {});                                   // the enquiry already reached us; never block the guest on this
+  }
+
   const form = $('bkForm'), sBtn = $('sBtn'), okMsg = $('okMsg'), errMsg = $('errMsg');
   $('fCalled').addEventListener('change', e => { if (e.target.checked) { $('confirmBox').classList.remove('bad'); errMsg.style.display = 'none'; } });
   const fail = t => { errMsg.textContent = t; errMsg.style.display = 'block'; errMsg.classList.remove('pop'); void errMsg.offsetWidth; errMsg.classList.add('pop'); };
@@ -1539,6 +1553,12 @@ const ROOMS = [
         })
       });
       if (!res.ok) throw new Error();
+      sendGuestEmail({
+        to_email: email, name,
+        checkin: `${nice(ciD.value, true)}, ${niceTime(ciT.value)}`,
+        checkout: `${nice(coD.value, true)}, ${niceTime(coT.value)}`,
+        nights: n, guests, message: msg || '—'
+      });
       if (!still && form.animate) await Promise.race([form.animate([{ opacity: 1 }, { opacity: 0, transform: 'translateY(-8px)' }], { duration: 220, easing: 'cubic-bezier(.32,0,.67,0)', fill: 'forwards' }).finished, new Promise(r => setTimeout(r, 260))]);
       form.style.display = 'none';
       okMsg.style.display = 'block';
