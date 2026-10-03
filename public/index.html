@@ -356,6 +356,12 @@ section[id]{scroll-margin-top:72px}
 .day:hover span{background:var(--linen)}
 .day.dis{color:#C9BCAE;pointer-events:none}
 .day.dis span{text-decoration:line-through;text-decoration-color:rgba(133,119,106,.35)}
+.day.bk,.day.off{pointer-events:none}
+.day.bk{color:#C2B3A3}
+.day.bk span{text-decoration:line-through;text-decoration-color:var(--teak);text-decoration-thickness:1.5px}
+.day.off{color:#D3C7BA}
+.cal-key{margin-top:12px;font-size:13px;color:var(--muted)}
+.cal-key s{color:#C2B3A3;text-decoration-color:var(--teak);text-decoration-thickness:1.5px;margin-right:6px}
 .day.today span::after{content:"";position:absolute;bottom:5px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--teak)}
 .day::before{content:"";position:absolute;top:1px;bottom:1px;left:0;right:0;background:rgba(154,106,62,.14);z-index:-1;transform:scaleX(0);transform-origin:left;opacity:0;transition:transform .34s var(--ease),opacity .26s var(--ease)}
 .day.inr::before,.day.s.hasr::before,.day.e::before{transform:scaleX(1);opacity:1;transition-delay:calc(var(--i,0) * 14ms)}
@@ -829,6 +835,7 @@ html.loading .hero-win,html.loading .hero-ring{opacity:0;scale:.94}
           <div class="cal" id="cal" role="dialog" aria-label="Choose your check-in and check-out dates">
             <div class="cal-top"><p id="calPrompt">Select check-in</p><div class="cal-nav"><button type="button" id="calPrev" aria-label="Previous month">←</button><button type="button" id="calNext" aria-label="Next month">→</button></div></div>
             <div class="cal-months" id="calMonths"></div>
+            <p class="cal-key" id="calKey" hidden><s>12</s>Booked, not available</p>
             <div class="cal-foot"><p id="calSum">Choose your dates</p><div><button type="button" class="lnk" id="calClear">Clear</button><button type="button" class="btn btn-solid" id="calDone">Done</button></div></div>
           </div>
           <input type="hidden" id="ciD"><input type="hidden" id="coD">
@@ -1371,6 +1378,17 @@ const ROOMS = [
   let start = '', end = '', hover = '', picking = 'start', vy = 0, vm = 0, popped = '';
   const restart = (el, cls) => { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); };
 
+  /* booked nights, marked on the private /manage page. A night is stored as the date it starts,
+     so a guest may still check out on the morning another booking checks in. */
+  let booked = new Set();
+  const loadBooked = () => Promise.race([
+    fetch('/api/availability', { cache: 'no-store' }).then(r => (r.ok ? r.json() : null))
+      .then(d => { if (d && Array.isArray(d.nights)) booked = new Set(d.nights); }),
+    new Promise(r => setTimeout(r, 4000))                // never hold the guest up on a slow connection
+  ]).catch(() => {});
+  const clash = (a, b) => { for (let d = a; d && d < b; d = addDays(d, 1)) if (booked.has(d)) return true; return false; };
+  const nextBooked = after => { let m = ''; booked.forEach(d => { if (d > after && (!m || d < m)) m = d; }); return m; };
+
   const monthsShown = () => (cal.clientWidth || $('dateBox').clientWidth) >= 600 ? 2 : 1;
   const firstView = () => { const [y, m] = earliest().split('-').map(Number); return [y, m - 1]; };
   function setView(v) { const [y, m] = v.split('-').map(Number); vy = y; vm = m - 1; }
@@ -1400,7 +1418,17 @@ const ROOMS = [
     paint();
   }
   function paint() {
-    const to = end || (picking === 'end' && start && hover > start ? hover : '');
+    const lim = picking === 'end' && start ? nextBooked(start) : '';
+    calMonths.querySelectorAll('.day:not(.dis)').forEach(b => {
+      const v = b.dataset.d, bk = booked.has(v);
+      const ok = picking === 'end' && start && v > start ? (!lim || v <= lim) : !bk;   // check-out may fall on a booked night's date
+      const showBk = bk && !(ok && v === lim);
+      b.disabled = !ok;
+      b.classList.toggle('bk', showBk);
+      b.classList.toggle('off', !ok && !showBk);
+      b.setAttribute('aria-label', nice(v, true) + (showBk ? ', booked' : ''));
+    });
+    const to = end || (picking === 'end' && start && hover > start && (!lim || hover <= lim) ? hover : '');
     calMonths.querySelectorAll('.day').forEach(b => {
       const v = b.dataset.d;
       b.classList.toggle('s', v === start);
@@ -1500,6 +1528,14 @@ const ROOMS = [
     }
     if (cal.classList.contains('open')) render();
   }
+  loadBooked().then(() => {
+    $('calKey').hidden = !booked.size;
+    if (start && clash(start, end || addDays(start, 1))) {
+      start = end = ''; picking = 'start'; commit();
+      fail('Some of the dates you picked have just been booked. Please choose different dates.');
+    }
+    if (cal.classList.contains('open')) render();
+  });
   ciT.addEventListener('change', () => refreshNotice(true));
   setInterval(() => refreshNotice(false), 60000);
   refreshNotice(false);
@@ -1534,6 +1570,8 @@ const ROOMS = [
     if (!name || !phone || !email) return fail('Please fill in your name, phone and email.');
     if (!ciD.value || !coD.value || n === 0) return fail('Please choose valid check-in and check-out dates.');
     if (ciD.value < earliest()) return fail(`We need at least 24 hours' notice before check-in, so the earliest is ${nice(earliest(), true)} at ${niceTime(ciT.value)}. For anything sooner, please call us on +91 95267 00051.`);
+    await loadBooked();
+    if (clash(ciD.value, coD.value)) return fail('Sorry, some of those nights have just been booked. Please choose different dates, or call us on +91 95267 00051.');
     if (!$('fCalled').checked) { $('confirmBox').classList.add('bad'); return fail('Please call us on +91 95267 00051 to confirm your dates are available, then tick the box above.'); }
     sBtn.disabled = true; sBtn.textContent = 'Sending…';
     const summary = `BOOKING ENQUIRY\nCheck-in: ${ciD.value} at ${ciT.value}\nCheck-out: ${coD.value} at ${coT.value}\nNights: ${n}\nGuests: ${guests}\nCalled to confirm availability: Yes` + (msg ? `\n\nAdditional details: ${msg}` : '');

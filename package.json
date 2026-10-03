@@ -1,0 +1,8 @@
+{
+  "name": "mon-reve-website",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "^11.1.3"
+  }
+}
